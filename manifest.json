@@ -1,0 +1,9 @@
+{
+  "short_name": "Maps of WW2",
+  "name": "Maps of World War 2",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#d0d0d0",
+  "background_color": "#1f1f1f"
+}
