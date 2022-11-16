@@ -1,0 +1,276 @@
+.home {
+    // -------------------------------------- Mobile ---------------------------------------
+
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    height: 100%;
+    background-image: linear-gradient(to bottom, white, $silver-background-color);
+    box-shadow: 0.25rem 0.25rem 10rem rgb(0, 0, 0, 0.2) inset;
+
+    // -------------------- Mobile Header --------------------
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        z-index: 1;
+        margin-top: 5.5rem;
+        padding: 1.75rem;
+        background-image: linear-gradient(
+            to right,
+            transparent,
+            $silver-background-color 50%,
+            transparent
+        );
+
+        h1 {
+            margin: 0rem;
+            font-weight: 600;
+            font-size: 2.5rem;
+            color: rgba(0, 0, 0, 0.75);
+        }
+
+        h2 {
+            display: none;
+            margin: 0rem;
+            font-weight: 400;
+            font-size: 1.2rem;
+        }
+    }
+
+    // -------------------- Mobile Content --------------------
+    &__content {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__video {
+        display: none;
+        z-index: -1;
+        opacity: 90%;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: fill;
+        overflow: hidden;
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 92.5%;
+    }
+
+    &__link {
+        position: relative;
+        height: 9rem;
+        width: 100%;
+        overflow: hidden;
+        border: 0.15rem solid black;
+        box-shadow: 0.2rem 0.2rem 0.6rem black;
+        cursor: pointer;
+        user-select: none;
+
+        h1 {
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150%;
+            margin: 0;
+            padding: 0.2rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.3rem;
+            letter-spacing: 0.05rem;
+            color: black;
+            -webkit-text-stroke: 0.04rem white;
+            background-image: linear-gradient(
+            to right,
+            transparent,
+            $silver-background-color 50%,
+            transparent
+        );
+        }
+    }
+
+    &__link-image {
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        filter: grayscale(20%);
+    }
+
+    &__documents-image {
+        background-image: url(../../../public/images/home-documents-link.jpeg);
+    }
+
+    &__maps-image {
+        background-image: url(../../../public/images/home-maps-link.jpg);
+    }
+
+    // ------------------- Mobile Footer --------------------
+    &__footer {
+        z-index: 1;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 2rem;
+        width: 100%;
+        background-color: $silver-background-color
+    }
+
+    &__copyright-text {
+        font-size: 0.8rem;
+    }
+
+    // -------------------------------------- PC/Tablet Medium Screen ---------------------------------------
+
+    @media all and (min-width: $md) {
+        justify-content: space-between;
+        gap: 3rem;
+        background-image: none;
+        box-shadow: 0.25rem 0.25rem 10rem rgb(0, 0, 0, 0.5) inset;
+
+        // -------------------- Medium Screen Header --------------------
+        &__header {
+            margin-top: 2rem;
+            margin-bottom: 0;
+
+            h1 {
+                margin: 0rem;
+                font-weight: 600;
+                font-size: 2.5rem;
+                color: rgba(0, 0, 0, 0.75);
+            }
+
+            h2 {
+                display: block;
+                position: static;
+            }
+        }
+
+        &__links {
+            width: auto;
+        }
+
+        // -------------------- Medium Screen Content --------------------
+        &__video {
+            display: block;
+            position: absolute;
+            top: 0;
+        }
+
+        &__content {
+            margin-top: 0;
+            align-items: center;
+        }
+
+        &__links {
+            flex-direction: row;
+            gap: 2.5rem;
+        }
+
+        &__link {
+            height: 12.5rem;
+            width: 22.5rem;
+
+            h1 {
+                padding: 0.3rem;
+            }
+        }
+
+        // ------------------- Medium Screen Footer --------------------
+        &__footer {
+            position: static;
+            height: 1.75rem;
+        }
+        
+        &__copyright-text {
+            font-size: 0.9rem;
+        }
+    }
+
+    // -------------------------------------- PC/Tablet XL Screen ---------------------------------------
+
+    @media all and (min-width: $xl) {
+        // -------------------- XL Screen Header --------------------
+        &__header {
+            gap: 1.25rem;
+            margin-top: 4rem;
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+        }
+
+        // ------------------- XL Screen Content --------------------
+        &__links {
+            margin-bottom: 2rem;
+        }
+
+        &__link {
+            height: 15rem;
+            width: 30rem;
+
+            h1 {
+                font-size: 1.75rem;
+                -webkit-text-stroke: 0.075rem white;
+            }
+        }
+
+        
+    }
+
+    // -------------------------------------- PC XXL Screen ---------------------------------------
+
+    @media all and (min-width: $xxl) {
+        // -------------------- XXL Screen Header --------------------
+        &__header {
+            gap: 1.25rem;
+            margin-top: 5rem;
+
+            h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        // -------------------- XXL Screen Content --------------------
+
+        &__link {
+            h1 {
+                opacity: 0;
+                padding: 0.1rem;
+                transition: 0.15s;
+                font-size: 2.25rem;
+                -webkit-text-stroke: 0.1rem white;
+            }
+        }
+
+        &__link:hover {
+            img {
+                filter: grayscale(5%);
+            }
+            h1 {
+                opacity: 0.9;
+                transition: 0s;
+            }
+        }
+
+        // -------------------- XXL Screen Footer --------------------
+        &__copyright-text {
+            font-size: 1rem;
+        }
+    }
+}

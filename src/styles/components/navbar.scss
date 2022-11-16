@@ -1,0 +1,106 @@
+.navbar {
+  // -------------------------------------- Mobile ---------------------------------------
+
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  background-color: $dark-background-color;
+  user-select: none;
+
+  // -------------------- Mobile Dropdown Menu --------------------
+  &__dropdown-icon-wrapper {
+    z-index: 1;
+    height: 3rem;
+    width: 100%;
+    background-color: $dark-background-color;
+  }
+
+  &__dropdown-icon {
+    padding: 0.5rem;
+    font-size: 2rem !important;
+    color: $highlight-color;
+  }
+
+  // -------------------- Mobile Links --------------------
+  &__links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0.5rem;
+    width: 100%;
+    padding-top: 2.5rem;
+    transition: 0.35s;
+    background-color: $dark-background-color;
+  }
+
+  &__links--off {
+    top: -11.25rem;
+    transition: 0s;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0.3rem;
+    border-top: solid 0.1rem grey;
+    font-size: 1.2rem;
+    color: #f2f2f2;
+    text-decoration: none;
+  }
+
+  &__link:last-child {
+    padding-bottom: 0.4rem;
+  }
+
+  &__link:hover {
+    text-shadow: 0 0 0.1rem white;
+  }
+
+  &__link--active:hover {
+    text-shadow: none;
+  }
+
+  &__link--active {
+    color: black;
+    background-color: $highlight-color;
+  }
+
+  // -------------------------------------- PC/Tablet ---------------------------------------
+  @media all and (min-width: $md) {
+    position: static;
+    height: 4rem;
+
+    &__dropdown-icon-wrapper {
+      display: none;
+    }
+
+    // -------------------- PC/Tablet Links --------------------
+    &__links {
+      flex-direction: row;
+      position: relative;
+      top: 0;
+      width: auto;
+      padding-top: 0;
+      transition: 0s;
+    }
+
+    &__links--off {
+      top: 0;
+    }
+
+    &__link {
+      padding: 0 1rem;
+      border-bottom: none;
+      border-top: none;
+      font-size: 1.25rem;
+    }
+
+    &__link:last-child {
+      padding-bottom: 0;
+    }
+  }
+}
