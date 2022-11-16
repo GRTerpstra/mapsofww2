@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/mapsofww2/static/css/main.03593862.css",
-    "main.js": "/mapsofww2/static/js/main.d149a0c6.js",
-    "static/media/home-documents-link.jpeg": "/mapsofww2/static/media/home-documents-link.c8be5e87263a0cf5fefa.jpeg",
-    "static/media/home-maps-link.jpg": "/mapsofww2/static/media/home-maps-link.f2d841e5dbdae56453a8.jpg",
-    "index.html": "/mapsofww2/index.html",
-    "main.03593862.css.map": "/mapsofww2/static/css/main.03593862.css.map",
-    "main.d149a0c6.js.map": "/mapsofww2/static/js/main.d149a0c6.js.map"
+    "main.css": "./static/css/main.ccafde73.css",
+    "main.js": "./static/js/main.d149a0c6.js",
+    "static/media/home-documents-link.jpeg": "./static/media/home-documents-link.c8be5e87263a0cf5fefa.jpeg",
+    "static/media/home-maps-link.jpg": "./static/media/home-maps-link.f2d841e5dbdae56453a8.jpg",
+    "index.html": "./index.html",
+    "main.ccafde73.css.map": "./static/css/main.ccafde73.css.map",
+    "main.d149a0c6.js.map": "./static/js/main.d149a0c6.js.map"
   },
   "entrypoints": [
-    "static/css/main.03593862.css",
+    "static/css/main.ccafde73.css",
     "static/js/main.d149a0c6.js"
   ]
 }
