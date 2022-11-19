@@ -1,12 +1,11 @@
-.home {
+.home-hero {
     // -------------------------------------- Mobile ---------------------------------------
 
     display: flex;
     flex-direction: column;
     gap: 3.5rem;
-    height: 100%;
-    background-image: linear-gradient(to bottom, white, $silver-background-color);
-    box-shadow: 0.25rem 0.25rem 10rem rgb(0, 0, 0, 0.2) inset;
+    z-index: 1;
+    height: 100vh;
 
     // -------------------- Mobile Header --------------------
     &__header {
@@ -17,12 +16,9 @@
         z-index: 1;
         margin-top: 5.5rem;
         padding: 1.75rem;
-        background-image: linear-gradient(
-            to right,
-            transparent,
-            $silver-background-color 50%,
-            transparent
-        );
+        background-image: linear-gradient(to right, transparent, $silver-background-color 50%, transparent);
+        box-shadow: 0.1rem 0.1rem 0.5rem black;
+        animation: header 1.5s ease-out;
 
         h1 {
             margin: 0rem;
@@ -54,20 +50,23 @@
         width: 100%;
         object-fit: fill;
         overflow: hidden;
+        box-shadow: 0.25rem 0.25rem 7.5rem rgb(0, 0, 0, 5);
+        animation: video 1.5s ease-in;
     }
 
-    &__links {
+    &__buttons {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 1rem;
         width: 92.5%;
+        animation: buttons 1.5s ease-in;
     }
 
-    &__link {
+    &__button {
         position: relative;
         height: 9rem;
-        width: 100%;
+        width: 90%;
         overflow: hidden;
         border: 0.15rem solid black;
         box-shadow: 0.2rem 0.2rem 0.6rem black;
@@ -89,60 +88,45 @@
             letter-spacing: 0.05rem;
             color: black;
             -webkit-text-stroke: 0.04rem white;
-            background-image: linear-gradient(
-            to right,
-            transparent,
-            $silver-background-color 50%,
-            transparent
-        );
+            background-image: linear-gradient(to right, transparent, $silver-background-color 50%, transparent);
+            box-shadow: 0 0 0.25rem black;
         }
     }
 
-    &__link-image {
+    &__documents-button {
+        z-index: 1;
+        animation: documentsButton 1.5s ease-out;
+    }
+
+    &__maps-button {
+        animation: mapsButton 1.5s ease-out;
+    }
+
+    &__image-button {
         height: 100%;
         width: 100%;
         background-position: center;
         background-size: cover;
-        filter: grayscale(20%);
+        filter: grayscale(25%);
     }
 
     &__documents-image {
-        background-image: url(../../../public/images/home-documents-link.jpeg);
+        background-image: url(../../../../public/images/home-documents-link.jpeg);
     }
 
     &__maps-image {
-        background-image: url(../../../public/images/home-maps-link.jpg);
+        background-image: url(../../../../public/images/home-maps-link.jpg);
     }
 
-    // ------------------- Mobile Footer --------------------
-    &__footer {
-        z-index: 1;
-        position: absolute;
-        bottom: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 2rem;
-        width: 100%;
-        background-color: $silver-background-color
-    }
+    // -------------------------------------- Medium Screen ---------------------------------------
 
-    &__copyright-text {
-        font-size: 0.8rem;
-    }
-
-    // -------------------------------------- PC/Tablet Medium Screen ---------------------------------------
-
-    @media all and (min-width: $md) {
-        justify-content: space-between;
-        gap: 3rem;
-        background-image: none;
-        box-shadow: 0.25rem 0.25rem 10rem rgb(0, 0, 0, 0.5) inset;
+    @media all and (min-width: $lg) {
+        justify-content: space-around;
+        gap: 0;
 
         // -------------------- Medium Screen Header --------------------
         &__header {
-            margin-top: 2rem;
-            margin-bottom: 0;
+            margin-top: 4rem;
 
             h1 {
                 margin: 0rem;
@@ -157,10 +141,6 @@
             }
         }
 
-        &__links {
-            width: auto;
-        }
-
         // -------------------- Medium Screen Content --------------------
         &__video {
             display: block;
@@ -173,38 +153,30 @@
             align-items: center;
         }
 
-        &__links {
+        &__buttons {
             flex-direction: row;
             gap: 2.5rem;
+            width: auto;
+            margin-bottom: 3rem;
         }
 
-        &__link {
-            height: 12.5rem;
-            width: 22.5rem;
+        &__button {
+            height: 11rem;
+            width: 22rem;
 
             h1 {
                 padding: 0.3rem;
             }
         }
-
-        // ------------------- Medium Screen Footer --------------------
-        &__footer {
-            position: static;
-            height: 1.75rem;
-        }
-        
-        &__copyright-text {
-            font-size: 0.9rem;
-        }
     }
 
-    // -------------------------------------- PC/Tablet XL Screen ---------------------------------------
+    // -------------------------------------- XL Screen ---------------------------------------
 
     @media all and (min-width: $xl) {
         // -------------------- XL Screen Header --------------------
         &__header {
-            gap: 1.25rem;
-            margin-top: 4rem;
+            margin-top: 4.5rem;
+            gap: 1rem;
 
             h1 {
                 font-size: 3rem;
@@ -216,61 +188,107 @@
         }
 
         // ------------------- XL Screen Content --------------------
-        &__links {
-            margin-bottom: 2rem;
+        &__buttons {
+            margin-bottom: 5rem;
         }
 
-        &__link {
-            height: 15rem;
-            width: 30rem;
+        &__button {
+            height: 14rem;
+            width: 28rem;
 
             h1 {
                 font-size: 1.75rem;
                 -webkit-text-stroke: 0.075rem white;
             }
         }
-
-        
     }
 
-    // -------------------------------------- PC XXL Screen ---------------------------------------
+    // -------------------------------------- XXL Screen ---------------------------------------
 
     @media all and (min-width: $xxl) {
+        @keyframes video {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
         // -------------------- XXL Screen Header --------------------
         &__header {
             gap: 1.25rem;
-            margin-top: 5rem;
 
             h1 {
                 font-size: 3.5rem;
             }
         }
 
+        @keyframes header {
+            from {
+                opacity: 20%;
+                transform: translateY(-0.75rem);
+            }
+            to {
+                opacity: 100%;
+                transform: translateY(0);
+            }
+        }
+
         // -------------------- XXL Screen Content --------------------
 
-        &__link {
-            h1 {
-                opacity: 0;
-                padding: 0.1rem;
+        &__buttons {
+            margin-bottom: 8rem;
+        }
+
+        @keyframes buttons {
+            from {
+                opacity: 10%;
+            }
+            to {
+                opacity: 100%;
+            }
+        }
+
+        &__button {
+            height: 15rem;
+            width: 30rem;
+
+            img {
                 transition: 0.15s;
+            }
+
+            h1 {
+                padding: 0.1rem;
                 font-size: 2.25rem;
                 -webkit-text-stroke: 0.1rem white;
             }
         }
 
-        &__link:hover {
-            img {
-                filter: grayscale(5%);
+        @keyframes documentsButton {
+            from {
+                transform: translateX(16.5rem);
             }
-            h1 {
-                opacity: 0.9;
-                transition: 0s;
+            to {
+                transform: translateX(0);
             }
         }
 
-        // -------------------- XXL Screen Footer --------------------
-        &__copyright-text {
-            font-size: 1rem;
+        @keyframes mapsButton {
+            from {
+                transform: translateX(-16.5rem);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        &__button:hover {
+            img {
+                transition: 0.3s;
+                filter: grayscale(2.5%);
+                transform: scale(1.05);
+            }
         }
     }
 }
