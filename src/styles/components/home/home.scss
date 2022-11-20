@@ -8,25 +8,25 @@
 
     // -------------------- Mobile Content --------------------
     &__scroll-icon {
-        z-index: 1;
         visibility: hidden;
         opacity: 0;
+        z-index: 1;
         position: fixed;
         bottom: 2.25rem;
         left: 0;
         right: 0;
         margin: auto;
-        font-size: 2.75rem !important;
-        -webkit-text-stroke: 0.04rem white !important;
-        cursor: pointer;
-        animation: blinker 1.75s linear infinite;
-        animation-delay: 5s;
-        transition: 0s !important;
-        border-radius: 0 0 5rem 5rem;
         padding: 0.5rem 0.25rem 0.25rem;
+        border-radius: 0 0 5rem 5rem;
+        font-size: 2.75rem !important;
         color: $silver-text-color;
         background-image: linear-gradient(to bottom, transparent, black);
+        -webkit-text-stroke: 0.04rem white !important;
         box-shadow: 0 0 0.25rem black;
+        cursor: pointer;
+        transition: 0s !important;
+        animation: blinker 1.75s linear infinite;
+        animation-delay: 5s;
     }
 
     @keyframes blinker {

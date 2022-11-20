@@ -1,45 +1,9 @@
 .home-hero {
     // -------------------------------------- Mobile ---------------------------------------
-
     display: flex;
     flex-direction: column;
-    gap: 3.5rem;
     z-index: 1;
     height: 100vh;
-
-    // -------------------- Mobile Header --------------------
-    &__header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        z-index: 1;
-        margin-top: 5.5rem;
-        padding: 1.75rem;
-        background-image: linear-gradient(to right, transparent, $silver-background-color 50%, transparent);
-        box-shadow: 0.1rem 0.1rem 0.5rem black;
-        animation: header 1.5s ease-out;
-
-        h1 {
-            margin: 0rem;
-            font-weight: 600;
-            font-size: 2.5rem;
-            color: rgba(0, 0, 0, 0.75);
-        }
-
-        h2 {
-            display: none;
-            margin: 0rem;
-            font-weight: 400;
-            font-size: 1.2rem;
-        }
-    }
-
-    // -------------------- Mobile Content --------------------
-    &__content {
-        display: flex;
-        justify-content: center;
-    }
 
     &__video {
         display: none;
@@ -54,13 +18,54 @@
         animation: video 1.5s ease-in;
     }
 
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 5rem;
+        gap: 2rem;
+    }
+
+    // -------------------- Header --------------------
+    &__header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        z-index: 1;
+        width: 100%;
+        padding: 2rem 0;
+        background-image: linear-gradient(to right, transparent, $silver-background-color 50%, transparent);
+        box-shadow: 0.1rem 0.1rem 0.5rem black;
+        animation: header 1.5s ease-out;
+
+        h1 {
+            margin: 0rem;
+            font-weight: 600;
+            font-size: calc(2.25vw + 1rem);
+            color: rgba(0, 0, 0, 0.75);
+        }
+
+        h2 {
+            display: none;
+            margin: 0rem;
+            font-weight: 400;
+            font-size: calc(0.3vw + 1rem);
+        }
+    }
+
+    // -------------------- Buttons --------------------
     &__buttons {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         gap: 1rem;
-        width: 92.5%;
-        animation: buttons 1.5s ease-in;
+        width: 100%;
+        animation: buttons 1.5s forwards ease-in-out;
+        animation-delay: 0.5s;
     }
 
     &__button {
@@ -68,7 +73,7 @@
         height: 9rem;
         width: 90%;
         overflow: hidden;
-        border: 0.15rem solid black;
+        border: 0.1rem solid black;
         box-shadow: 0.2rem 0.2rem 0.6rem black;
         cursor: pointer;
         user-select: none;
@@ -84,22 +89,13 @@
             padding: 0.2rem;
             text-align: center;
             font-weight: 600;
-            font-size: 1.3rem;
+            font-size: calc(1vw + 1rem);
             letter-spacing: 0.05rem;
             color: black;
             -webkit-text-stroke: 0.04rem white;
             background-image: linear-gradient(to right, transparent, $silver-background-color 50%, transparent);
             box-shadow: 0 0 0.25rem black;
         }
-    }
-
-    &__documents-button {
-        z-index: 1;
-        animation: documentsButton 1.5s ease-out;
-    }
-
-    &__maps-button {
-        animation: mapsButton 1.5s ease-out;
     }
 
     &__image-button {
@@ -119,19 +115,38 @@
     }
 
     // -------------------------------------- Medium Screen ---------------------------------------
+    @media all and (min-width: $md) {
+        &__container {
+            margin-top: 7rem;
+            gap: 3rem;
+        }
+        &__buttons {
+            gap: 2rem;
+            width: 90%;
+        }
+    }
 
+    // -------------------------------------- Large Screen ---------------------------------------
     @media all and (min-width: $lg) {
-        justify-content: space-around;
-        gap: 0;
+        justify-content: center;
 
-        // -------------------- Medium Screen Header --------------------
+        &__video {
+            display: block;
+            position: absolute;
+            top: 0;
+        }
+
+        &__container {
+            height: 65%;
+            margin-top: 0;
+            gap: 0;
+        }        
+
         &__header {
-            margin-top: 4rem;
-
+            margin-top: 0;
+            height: 15%;
             h1 {
                 margin: 0rem;
-                font-weight: 600;
-                font-size: 2.5rem;
                 color: rgba(0, 0, 0, 0.75);
             }
 
@@ -141,70 +156,36 @@
             }
         }
 
-        // -------------------- Medium Screen Content --------------------
-        &__video {
-            display: block;
-            position: absolute;
-            top: 0;
-        }
-
-        &__content {
-            margin-top: 0;
-            align-items: center;
-        }
-
         &__buttons {
             flex-direction: row;
-            gap: 2.5rem;
-            width: auto;
-            margin-bottom: 3rem;
+            gap: 2rem;
+            height: 42.5%;
         }
 
         &__button {
-            height: 11rem;
-            width: 22rem;
+            height: 100%;
+            width: 37.5%;
+            max-height: 15rem;
+            max-width: 30rem;
 
             h1 {
-                padding: 0.3rem;
+                -webkit-text-stroke: 0.065rem white;
             }
         }
     }
 
     // -------------------------------------- XL Screen ---------------------------------------
-
     @media all and (min-width: $xl) {
-        // -------------------- XL Screen Header --------------------
         &__header {
-            margin-top: 4.5rem;
-            gap: 1rem;
-
-            h1 {
-                font-size: 3rem;
-            }
-
-            h2 {
-                font-size: 1.4rem;
-            }
+            gap: 0.5rem;
         }
 
-        // ------------------- XL Screen Content --------------------
         &__buttons {
-            margin-bottom: 5rem;
-        }
-
-        &__button {
-            height: 14rem;
-            width: 28rem;
-
-            h1 {
-                font-size: 1.75rem;
-                -webkit-text-stroke: 0.075rem white;
-            }
+            gap: 2.5rem;
         }
     }
 
     // -------------------------------------- XXL Screen ---------------------------------------
-
     @media all and (min-width: $xxl) {
         @keyframes video {
             from {
@@ -215,13 +196,9 @@
             }
         }
 
-        // -------------------- XXL Screen Header --------------------
         &__header {
-            gap: 1.25rem;
-
-            h1 {
-                font-size: 3.5rem;
-            }
+            gap: 1rem;
+            padding: 2.5rem 0;
         }
 
         @keyframes header {
@@ -235,15 +212,14 @@
             }
         }
 
-        // -------------------- XXL Screen Content --------------------
-
         &__buttons {
-            margin-bottom: 8rem;
+            opacity: 0;
+            margin-bottom: 3rem;
         }
 
         @keyframes buttons {
             from {
-                opacity: 10%;
+                opacity: 0%;
             }
             to {
                 opacity: 100%;
@@ -251,35 +227,12 @@
         }
 
         &__button {
-            height: 15rem;
-            width: 30rem;
-
             img {
                 transition: 0.15s;
             }
 
             h1 {
-                padding: 0.1rem;
-                font-size: 2.25rem;
                 -webkit-text-stroke: 0.1rem white;
-            }
-        }
-
-        @keyframes documentsButton {
-            from {
-                transform: translateX(16.5rem);
-            }
-            to {
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes mapsButton {
-            from {
-                transform: translateX(-16.5rem);
-            }
-            to {
-                transform: translateX(0);
             }
         }
 

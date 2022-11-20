@@ -4,17 +4,26 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 100vh;
 
-    // -------------------- Mobile Header --------------------
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 90%;
+        width: 100%;
+    }
+
+    // -------------------- Header --------------------
     &__header {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 0.35rem;
         width: 95%;
-        margin: -1rem 0 3rem;
         background-image: linear-gradient(to right, transparent, black 50%, transparent);
+        user-select: none;
 
         h1 {
             margin: 0;
@@ -22,38 +31,19 @@
             border-radius: 0.5rem;
             box-shadow: 0.075rem 0.075rem 0.25rem black;
             font-weight: 400;
-            font-size: 1.4rem;
+            font-size: calc(1vw + 1rem);
             color: black;
             background-color: $highlight-light-color;
         }
     }
 
-    // -------------------- Mobile Content --------------------
+    // -------------------- Content --------------------
     &__content {
         display: flex;
         justify-content: center;
         align-items: center;
-        overflow: hidden;
         width: 100%;
         margin-top: -1rem;
-    }
-
-    &__arrow {
-        z-index: 1;
-        font-size: 4rem !important;
-        color: $dark-background-color;
-
-        .path {
-            cursor: pointer;
-        }
-    }
-
-    &__arrow-next {
-        transform: scaleY(4.5) scalex(3) translateY(-1.5rem);
-    }
-
-    &__arrow-previous {
-        transform: rotate(180deg) scaleY(4.5) scalex(3) translateY(1.5rem);
     }
 
     &__documents {
@@ -63,8 +53,8 @@
         align-items: center;
         height: 30rem;
         width: 15rem;
-        margin-top: 1rem;
         transform-style: preserve-3d;
+        gap: 1.5rem;
     }
 
     input {
@@ -73,9 +63,39 @@
 
     &__document-cards {
         position: relative;
-        height: 100%;
-        width: 100%;
-        margin-bottom: 20px;
+        height: 75%; // 100%;
+        width: 90%;
+    }
+
+    #card1:checked ~ &__document-cards #document3,
+    #card2:checked ~ &__document-cards #document1,
+    #card3:checked ~ &__document-cards #document2 {
+        display: block;
+        opacity: 0.4;
+        z-index: 0;
+        transform: translatex(-40%) scale(0.8);
+    }
+
+    #card1:checked ~ &__document-cards #document2,
+    #card2:checked ~ &__document-cards #document3,
+    #card3:checked ~ &__document-cards #document1 {
+        display: block;
+        opacity: 0.4;
+        z-index: 0;
+        transform: translatex(40%) scale(0.8);
+    }
+
+    #card1:checked ~ &__document-cards #document1,
+    #card2:checked ~ &__document-cards #document2,
+    #card3:checked ~ &__document-cards #document3 {
+        opacity: 1;
+        z-index: 1;
+        transform: translatex(0) scale(1);
+        transform: scaleX(1.25);
+
+        &__document-image {
+            box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
+        }
     }
 
     &__document-card {
@@ -83,7 +103,7 @@
         left: 0;
         right: 0;
         height: 100%;
-        width: 15rem;
+        width: 100%;
         margin: auto;
         box-shadow: 0.2rem 0.2rem 1rem black;
         cursor: pointer;
@@ -95,37 +115,18 @@
         width: 100%;
         border-radius: 10px;
         object-fit: cover;
-    }
-
-    #card1:checked ~ &__document-cards #document3,
-    #card2:checked ~ &__document-cards #document1,
-    #card3:checked ~ &__document-cards #document2 {
-        display: none;
-    }
-
-    #card1:checked ~ &__document-cards #document2,
-    #card2:checked ~ &__document-cards #document3,
-    #card3:checked ~ &__document-cards #document1 {
-        display: none;
-    }
-
-    #card1:checked ~ &__document-cards #document1,
-    #card2:checked ~ &__document-cards #document2,
-    #card3:checked ~ &__document-cards #document3 {
-        opacity: 1;
-        z-index: 1;
-        transform: translatex(0) scale(1);
-
-        &__document-image {
-            box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
-        }
+        user-select: none;
     }
 
     &__document-info-container {
-        height: 5rem;
-        width: 18rem;
+        position: absolute;
+        bottom: -3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         z-index: 2;
-        margin-bottom: 3rem;
+        height: 8rem;
+        width: 125%;
         padding: 1rem;
         border-radius: 8px;
         box-shadow: 0.1rem 0.1rem 0.5rem black;
@@ -137,14 +138,14 @@
         align-items: center;
         position: relative;
         overflow: hidden;
-        height: 3rem;
-        margin-bottom: 12px;
+        height: 100%;
     }
 
     &__document-info-slider {
         display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
         position: absolute;
         top: 0;
         width: 100%;
@@ -156,11 +157,11 @@
     }
 
     #card2:checked ~ &__document-info-container #documentInfoSlider {
-        transform: translateY(-6rem);
+        transform: translateY(-7rem);
     }
 
     #card3:checked ~ &__document-info-container #documentInfoSlider {
-        transform: translateY(-12rem);
+        transform: translateY(-14rem);
     }
 
     &__document-data {
@@ -173,20 +174,21 @@
 
     &__document-title {
         font-weight: 600;
+        font-size: calc(0.5vw + 0.75rem);
     }
 
     &__document-story {
         display: flex;
         justify-content: space-between;
         width: 100%;
-        font-size: 0.9rem;
-        line-height: 1rem;
+        font-size: calc(0.4vw + 0.75rem);
         color: black;
     }
 
     &__document-cta {
+        width: fit-content;
         font-weight: 600;
-        font-size: 0.9rem;
+        font-size: calc(0.5vw + 0.75rem);
         color: black;
         text-decoration: none;
         cursor: pointer;
@@ -197,22 +199,21 @@
     }
 
     // -------------------------------------- Medium Screen ---------------------------------------
-
     @media all and (min-width: $md) {
         height: 100vh;
 
-        // -------------------- Medium Header --------------------
-        &__header {
-            width: 70%;
-            margin: 6rem 0 2rem;
-
-            h1 {
-                font-size: 1.4rem;
-            }
+        &__container {
+            gap: 2.5rem;
+            height: 70%;
+            margin-top: 3rem;
         }
 
-        // -------------------- Medium Content --------------------
+        &__header {
+            width: 70%;
+        }
+
         &__content {
+            overflow: visible;
             margin-top: 0;
         }
 
@@ -220,92 +221,61 @@
             display: none !important;
         }
 
+        &__content {
+            height: 100%;
+        }
+
         &__documents {
-            height: 27rem;
+            height: 100%;
             width: 100%;
         }
 
         &__document-card {
-            width: 28rem;
+            width: 50%;
+            max-width: 50rem;
         }
 
-        &__document-story,
-        &__document-cta {
-            font-size: 1rem;
-        }
-
-        &__document-info-container {
-            height: 5rem;
-            width: 26rem;
+        &__document-cards {
+            height: 100%;
         }
 
         #card1:checked ~ &__document-cards #document3,
         #card2:checked ~ &__document-cards #document1,
         #card3:checked ~ &__document-cards #document2 {
-            display: block;
-            opacity: 0.4;
-            z-index: 0;
-            transform: translatex(-40%) scale(0.8);
+            transform: translatex(-30%) scale(0.8);
         }
 
         #card1:checked ~ &__document-cards #document2,
         #card2:checked ~ &__document-cards #document3,
         #card3:checked ~ &__document-cards #document1 {
-            display: block;
-            opacity: 0.4;
-            z-index: 0;
-            transform: translatex(40%) scale(0.8);
+            transform: translatex(30%) scale(0.8);
+        }
+
+        #card1:checked ~ &__document-cards #document1,
+        #card2:checked ~ &__document-cards #document2,
+        #card3:checked ~ &__document-cards #document3 {
+            transform: scaleX(1);
+        }
+
+        &__document-info-container {
+            width: calc(50% - 2rem);
+            max-width: 48rem;
+            position: relative;
+            bottom: 0;
+            height: 8rem;
         }
     }
 
     // -------------------------------------- XL Screen ---------------------------------------
-
     @media all and (min-width: $xl) {
-        // -------------------- XL Header --------------------
-        &__header {
-            h1 {
-                font-size: 1.8rem;
-            }
-        }
-
-        // -------------------- XL Content--------------------
-        &__documents {
-            height: 37.5rem;
-        }
-
-        &__document-card {
-            width: 40rem;
+        &__container {
+            gap: 3.5rem;
+            height: 75%;
+            margin-top: 2rem;
         }
 
         &__document-info-container {
-            width: 38rem;
-        }
-    }
-
-    // -------------------------------------- XXL Screen ---------------------------------------
-
-    @media all and (min-width: $xxl) {
-        // -------------------- XXL Header --------------------
-        &__header {
-            margin: 4rem 0 4rem;
-
-            h1 {
-                font-size: 2rem;
-            }
-        }
-
-        // -------------------- XXL Content--------------------
-        &__documents {
-            height: 40rem;
-        }
-
-        &__document-info-container {
-            height: 12rem;
-            margin-bottom: 1rem;
-        }
-
-        &__document-info {
-            height: 6rem;
+            height: 10rem;
         }
     }
 }

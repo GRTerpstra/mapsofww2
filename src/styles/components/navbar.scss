@@ -1,6 +1,5 @@
 .navbar {
   // -------------------------------------- Mobile ---------------------------------------
-
   z-index: 2;
   display: flex;
   justify-content: center;
@@ -41,7 +40,7 @@
     transition: 1s;
   }
 
-  // -------------------- Mobile Dropdown Menu --------------------
+  // -------------------- Dropdown Menu --------------------
   &__dropdown-icon-wrapper {
     z-index: 1;
     height: 3rem;
@@ -55,7 +54,7 @@
     color: $highlight-color;
   }
 
-  // -------------------- Mobile Links --------------------
+  // -------------------- Links --------------------
   &__links {
     display: flex;
     flex-direction: column;
@@ -101,8 +100,8 @@
     background-color: $highlight-color;
   }
 
-  // -------------------------------------- Medium Screen ---------------------------------------
-  @media all and (min-width: $md) {
+  // -------------------------------------- Large Screen ---------------------------------------
+  @media all and (min-width: $lg) {
     height: 4rem;
 
     &__title {
@@ -110,13 +109,10 @@
       font-size: 1rem;
     }
 
-    // -------------------- Medium Screen Dropdown Menu --------------------
-
     &__dropdown-icon-wrapper {
       display: none;
     }
 
-    // -------------------- Medium Screen Links --------------------
     &__links {
       flex-direction: row;
       position: relative;
@@ -144,7 +140,6 @@
 
   // -------------------------------------- XL Screen ---------------------------------------
   @media all and (min-width: $xl) {
-
     &--tall {
       height: 2.5rem;
     }
