@@ -52,7 +52,7 @@
         justify-content: center;
         align-items: center;
         height: 30rem;
-        width: 15rem;
+        width: 100%;
         transform-style: preserve-3d;
         gap: 1.5rem;
     }
@@ -103,7 +103,7 @@
         left: 0;
         right: 0;
         height: 100%;
-        width: 100%;
+        width: 60%;
         margin: auto;
         box-shadow: 0.2rem 0.2rem 1rem black;
         cursor: pointer;
@@ -126,7 +126,7 @@
         justify-content: space-between;
         z-index: 2;
         height: 8rem;
-        width: 125%;
+        width: 80%;
         padding: 1rem;
         border-radius: 8px;
         box-shadow: 0.1rem 0.1rem 0.5rem black;
@@ -174,21 +174,21 @@
 
     &__document-title {
         font-weight: 600;
-        font-size: calc(0.5vw + 0.75rem);
+        font-size: calc(0.4vw + 0.75rem);
     }
 
     &__document-story {
         display: flex;
         justify-content: space-between;
         width: 100%;
-        font-size: calc(0.4vw + 0.75rem);
+        font-size: calc(0.3vw + 0.75rem);
         color: black;
     }
 
     &__document-cta {
         width: fit-content;
         font-weight: 600;
-        font-size: calc(0.5vw + 0.75rem);
+        font-size: calc(0.4vw + 0.75rem);
         color: black;
         text-decoration: none;
         cursor: pointer;
@@ -205,7 +205,6 @@
         &__container {
             gap: 2.5rem;
             height: 70%;
-            margin-top: 3rem;
         }
 
         &__header {
@@ -231,8 +230,7 @@
         }
 
         &__document-card {
-            width: 50%;
-            max-width: 50rem;
+            width: 70%;
         }
 
         &__document-cards {
@@ -258,11 +256,23 @@
         }
 
         &__document-info-container {
-            width: calc(50% - 2rem);
-            max-width: 48rem;
-            position: relative;
-            bottom: 0;
+            width: 75%;
+            bottom: -3rem;
             height: 8rem;
+        }
+    }
+
+    // -------------------------------------- Large Screen ---------------------------------------
+
+    @media all and (min-width: $lg) {
+        &__container {
+            margin-top: 3rem;
+        }
+
+        &__document-info-container {
+            width: 65%;
+            bottom: -1rem;
+            height: 6rem;
         }
     }
 
@@ -275,7 +285,16 @@
         }
 
         &__document-info-container {
+            width: 50%;
+            max-width: 48rem;
+            position: relative;
+            bottom: 0;
             height: 10rem;
+        }
+
+        &__document-card {
+            width: 50%;
+            max-width: 50rem;
         }
     }
 }

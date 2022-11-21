@@ -5,8 +5,7 @@
     background-color: linear-gradient(to bottom, $silver-background-color, $silver-light-background-color);
     box-shadow: 0.25rem 0.25rem 10rem rgb(0, 0, 0, 0.5) inset;
 
-
-    // -------------------- Mobile Content --------------------
+    // -------------------- Content --------------------
     &__scroll-icon {
         visibility: hidden;
         opacity: 0;
@@ -41,7 +40,7 @@
         transition: 2s !important;
     }
 
-    // ------------------- Mobile Footer --------------------
+    // ------------------- Footer --------------------
     &__footer {
         display: flex;
         justify-content: center;
@@ -72,7 +71,6 @@
             background-image: linear-gradient(to bottom, transparent, black);
         }
 
-        // ------------------- Medium Screen Footer --------------------
         &__footer {
             height: 1.75rem;
         }
@@ -95,7 +93,6 @@
             font-size: 5rem !important;
         }
         
-        // -------------------- XXL Screen Footer --------------------
         &__copyright-text {
             font-size: 1rem;
         }

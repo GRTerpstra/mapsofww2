@@ -6,11 +6,11 @@ body,
 #root {
     display: flex;
     flex-direction: column;
-    height: 100vh;
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
 }
 
 // Fonts
@@ -26,6 +26,12 @@ body,
 @import './components/home/home.scss';
 @import './components/home/home-hero.scss';
 @import './components/home/home-info.scss';
+@import './components/news.scss';
 
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+html {
+    background-color: linear-gradient(to bottom, $silver-background-color, $silver-light-background-color);
+    box-shadow: 0.25rem 0.25rem 10rem rgb(0, 0, 0, 0.5) inset;
+}

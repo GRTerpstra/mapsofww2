@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import Home from './components/home/Home';
 import Navbar from './components/Navbar';
+import News from './components/News';
 import {
   HashRouter,
   Routes,
@@ -35,7 +36,7 @@ root.render(
       <Navbar />
       <Routes >
         <Route path="/" element={<Home />} />
-        <Route path="/news" element={<Home />} />
+        <Route path="/news" element={<News />} />
         <Route path="/maps" element={<Home />} />
         <Route path="/documents" element={<Home />} />
       </Routes >
