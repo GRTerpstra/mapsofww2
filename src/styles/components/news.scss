@@ -1,3 +1,64 @@
 .news {
-    margin-top: 4rem;
+    padding: 6rem 1rem 2rem;
+
+    &__articles-container {
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 1rem; 
+    }
+
+    &__header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 0.35rem;
+        width: 95%;
+        margin-bottom: 2.5rem;
+        background-image: linear-gradient(to right, transparent, black 50%, transparent);
+        user-select: none;
+
+        h1 {
+            margin: 0;
+            padding: 0.25rem 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0.075rem 0.075rem 0.25rem black;
+            font-weight: 400;
+            font-size: calc(1vw + 1rem);
+            color: black;
+            background-color: $highlight-light-color;
+        }
+    }
+
+    &__article {
+        max-height: 25rem;
+        list-style-type: none;
+        box-shadow: 0.5rem 0.5rem 1rem black;
+        overflow: hidden;
+        padding: 1rem 0;
+    }
+
+    &__article-title {
+        font-weight: 600;
+        padding: 1rem;
+        font-size: calc(0.4vw + 1rem);
+    }
+
+    &__article-image {
+        width: 100%;
+    }
+
+    &__article-description {
+        padding: 1rem;
+        font-size: calc(0.2vw + 1rem);
+    }
+    
+    @media all and (min-width: $lg) {
+        padding: 8rem 0 2rem;
+        &__articles-container {
+            margin-inline: auto;
+            margin-top: 5rem;
+            width: 90%;
+            grid-template-columns: auto auto auto auto;
+        }
+    }
 }

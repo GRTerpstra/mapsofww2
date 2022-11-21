@@ -4,15 +4,13 @@ import { useEffect, useState } from 'react';
 
 const News = () => {
 
-    const [state, setState] = useState({
-        news: {}
+    const [state, setState]: any = useState({
+        news: []
     })
 
-    var news: any;
     const url = 'https://newsapi.org/v2/everything?' +
-        'q=Apple&' +
-        'from=2022-11-21&' +
-        'sortBy=popularity&' +
+        'q="ww2" OR "world war 2" OR "second world war" NOT (games OR game OR shooter OR putin)&' +
+        'language=en&' +
         'apiKey=a04e43ab681544aeafc42489705bcb76';
     var req = new Request(url);
 
@@ -20,14 +18,31 @@ const News = () => {
         fetch(req).then((response) => response.json())
             .then((data) => {
                 setState({
-                    news: data.articles[0].title
+                    news: data.articles
                 })
-                console.log(data.articles[0].title);
+                console.log(data.articles);
             });
     }, [])
 
     return (
-        <div className="news">{state.news.toString()}</div>
+        <div className="news">
+            <div className="news__header">
+                <h1>Latest WW2 News:</h1>
+            </div>
+            <div className="news__articles-container">
+                {state.news.slice(0, 15).map((article: any) => (
+                    <li className="news__article">
+                        <div className="news__article-title">
+                            {article.title}
+                        </div>
+                        <img className="news__article-image" src={article.urlToImage} />
+                        <div className="news__article-description" >
+                            {article.description}
+                        </div>
+                    </li>
+                ))}
+            </div>
+        </div>
     )
 }
 
