@@ -4,6 +4,7 @@
     flex-direction: column;
     z-index: 1;
     height: 100vh;
+    min-height: 40rem;
 
     &__video {
         display: none;
@@ -64,8 +65,7 @@
         align-items: center;
         gap: 1rem;
         width: 100%;
-        animation: buttons 1.5s forwards ease-in-out;
-        animation-delay: 0.5s;
+        animation: buttons 1.5s forwards ease-out;
     }
 
     &__button {
@@ -99,19 +99,13 @@
     }
 
     &__image-button {
-        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
         width: 100%;
-        background-position: center;
-        background-size: cover;
+        min-height: 100%;
+        margin: auto;
         filter: grayscale(25%);
-    }
-
-    &__documents-image {
-        background-image: url(../../../../public/images/home-documents-link.jpeg);
-    }
-
-    &__maps-image {
-        background-image: url(../../../../public/images/home-maps-link.jpg);
     }
 
     // -------------------------------------- Medium Screen ---------------------------------------
@@ -140,7 +134,7 @@
             height: 65%;
             margin-top: 0;
             gap: 0;
-        }        
+        }
 
         &__header {
             margin-top: 0;
@@ -164,13 +158,17 @@
 
         &__button {
             height: 100%;
-            width: 37.5%;
-            max-height: 15rem;
-            max-width: 30rem;
+            width: fit-content;
+        }
 
-            h1 {
-                -webkit-text-stroke: 0.065rem white;
-            }
+        &__image-text {
+            -webkit-text-stroke: 0.065rem white;
+        }
+
+        &__image-button {
+            position: static;
+            height: 100%;
+            width: auto;
         }
     }
 
@@ -213,16 +211,18 @@
         }
 
         &__buttons {
-            opacity: 0;
-            margin-bottom: 3rem;
+            opacity: 10%;
+            margin-bottom: 1rem;
         }
 
         @keyframes buttons {
             from {
-                opacity: 0%;
+                opacity: 10%;
+                transform: translateY(0.75rem);
             }
             to {
                 opacity: 100%;
+                transform: translateY(0);
             }
         }
 
