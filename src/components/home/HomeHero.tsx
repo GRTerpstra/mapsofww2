@@ -12,11 +12,11 @@ const HomeHero = () => {
           <div className="home-hero__buttons">
             <Link to="/documents" className="home-hero__button home-hero__documents-button">
               <h1 className="home-hero__image-text">Documents</h1>
-              <img className="home-hero__image-button home-hero__documents-image" src="images/home-documents-link.jpeg"/>
+              <img className="home-hero__image-button home-hero__documents-image" src="images/home-documents-image.jpeg"/>
             </Link>
             <Link to="/maps" className="home-hero__button home-hero__maps-button">
               <h1 className="home-hero__image-text">Interactive Maps</h1>
-              <img className="home-hero__image-button home-hero__maps-image" src="images/home-maps-link.jpg"/>
+              <img className="home-hero__image-button home-hero__maps-image" src="images/home-maps-image.jpg"/>
             </Link>
           </div>
       </div>

@@ -17,10 +17,10 @@ const News = () => {
     useEffect(() => {
         fetch(req).then((response) => response.json())
             .then((data) => {
+                document.getElementById("loaderIcon")?.remove();
                 setState({
                     news: data.articles
                 })
-                console.log(data.articles);
             });
     }, [])
 
@@ -29,17 +29,20 @@ const News = () => {
             <div className="news__header">
                 <h1>Latest WW2 News:</h1>
             </div>
+        <img className="news__loader-icon" id="loaderIcon" src="icons/loader-icon.svg" alt="Loading Articles..." />
             <div className="news__articles-container">
-                {state.news.slice(0, 15).map((article: any) => (
-                    <li className="news__article">
+                {state.news?.slice(0, 12).map((article: any) => (
+                    <a className="news__article" href={article.url} target="_blank">
                         <div className="news__article-title">
                             {article.title}
                         </div>
-                        <img className="news__article-image" src={article.urlToImage} />
+                        <div className="news__article-image-wrapper">
+                            <img className="news__article-image" src={article.urlToImage} />
+                        </div>
                         <div className="news__article-description" >
                             {article.description}
                         </div>
-                    </li>
+                    </a>
                 ))}
             </div>
         </div>

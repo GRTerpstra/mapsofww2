@@ -29,7 +29,7 @@ const Navbar = () => {
   }
 
   /**
-   * Toggles the title of the web app in the Navbar if the user scrolls past the header in Home.
+   * Toggles the height of the navigation bar when the user scrolls past 155px in height
    */
    function toggleNavbarHeight() {
     if (window.scrollY > 155) {
@@ -41,7 +41,7 @@ const Navbar = () => {
   };
 
   /**
-   * Toggles the title of the web app in the Navbar if the user scrolls past the header in Home.
+   * Toggles the title of the web app in the Navbar when the user scroll past the header in Home.
    */
   function toggleTitle() {
     if (window.scrollY > 155) {
