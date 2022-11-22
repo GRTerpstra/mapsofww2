@@ -64,7 +64,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="navbar" id="navbar">
+    <nav className="navbar" id="navbar">
       <div className="navbar__dropdown-icon-wrapper">
         {
           state.showMobileNavbar == true ?
@@ -79,7 +79,7 @@ const Navbar = () => {
         <Link to="/documents" className={location.pathname == "/documents" ? "navbar__link navbar__link--active" : "navbar__link"} onClick={() => toggleMobileNavbar()}> Documents </Link>
       </div>
       <h1 className="navbar__title navbar__title--off" id="navbarTitle" onClick={() => ScrollToTop()}> Maps of WW2 </h1>
-    </div>
+    </nav>
   )
 }
 

@@ -11,7 +11,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 90%;
+        height: 100%;
         width: 100%;
     }
 
@@ -42,8 +42,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 70%;
         width: 100%;
-        margin-top: -1rem;
     }
 
     &__documents {
@@ -51,7 +51,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 30rem;
+        height: 100%;
         width: 100%;
         transform-style: preserve-3d;
         gap: 1.5rem;

@@ -25,10 +25,10 @@ const News = () => {
     }, [])
 
     return (
-        <div className="news">
-            <div className="news__header">
+        <section className="news">
+            <header className="news__header">
                 <h1>Latest WW2 News:</h1>
-            </div>
+            </header>
         <img className="news__loader-icon" id="loaderIcon" src="icons/loader-icon.svg" alt="Loading Articles..." />
             <div className="news__articles-container">
                 {state.news?.slice(0, 12).map((article: any) => (
@@ -45,7 +45,7 @@ const News = () => {
                     </a>
                 ))}
             </div>
-        </div>
+        </section>
     )
 }
 

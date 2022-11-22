@@ -3,11 +3,11 @@ import { Link } from "react-router-dom"
 
 const HomeInfo = () => {
   return (
-    <div className="home-info">
+    <section className="home-info">
       <div className="home-info__container">
-        <div className="home-info__header">
+        <section className="home-info__header">
           <h1>Recently Added Documents</h1>
-        </div>
+        </section>
         <div className="home-info__content">
           <div className="home-info__documents">
             <input type="radio" name="slider" id="card1" defaultChecked />
@@ -46,7 +46,7 @@ const HomeInfo = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

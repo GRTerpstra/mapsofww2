@@ -54,14 +54,11 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="home">
+    <section className="home">
       <HomeHero />
       <HomeInfo />
       <KeyboardDoubleArrowDownIcon className="home__scroll-icon" id="homeScrollIcon" onClick={() => goToBottomPage()} />
-      <div id="homeFooter" className="home__footer">
-        <p className="home__copyright-text">Copyright © 2022 Maps of WW2. All rights reserved.</p>
-      </div>
-    </div>
+    </section>
   )
 }
 
