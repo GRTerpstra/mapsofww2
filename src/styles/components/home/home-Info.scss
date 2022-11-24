@@ -105,6 +105,7 @@
         height: 100%;
         width: 60%;
         margin: auto;
+        border-radius: 0.75rem;
         box-shadow: 0.2rem 0.2rem 1rem black;
         cursor: pointer;
         transition: transform 0.4s ease;
@@ -128,7 +129,7 @@
         height: 8rem;
         width: 80%;
         padding: 1rem;
-        border-radius: 8px;
+        border-radius: 0.75rem;
         box-shadow: 0.1rem 0.1rem 0.5rem black;
         background-color: #fff;
     }

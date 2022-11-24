@@ -11,19 +11,19 @@
         opacity: 0;
         z-index: 1;
         position: fixed;
-        bottom: 2.25rem;
+        bottom: 2.5rem;
         left: 0;
         right: 0;
         margin: auto;
-        padding: 0.5rem 0.25rem 0.25rem;
-        border-radius: 0 0 5rem 5rem;
-        font-size: 2.75rem !important;
+        padding: 0.75rem 0.2rem 0.25rem;
+        border-radius: 0 0 7rem 7rem;
+        font-size: calc(1.5vw + 2.5rem) !important;
         color: $silver-text-color;
         background-image: linear-gradient(to bottom, transparent, black);
         -webkit-text-stroke: 0.04rem white !important;
-        box-shadow: 0 0 0.25rem black;
+        box-shadow: 0 0.2rem 0.1rem black;
         cursor: pointer;
-        transition: 0s !important;
+        transition: 1s !important;
         animation: blinker 1.75s linear infinite;
         animation-delay: 5s;
     }
@@ -66,8 +66,8 @@
     // -------------------------------------- Medium Screen ---------------------------------------
     @media all and (min-width: $md) {
         &__scroll-icon {
+            left: 50%;
             border-radius: 0 0 5rem 5rem;
-            font-size: 3rem !important;
             background-image: linear-gradient(to bottom, transparent, black);
         }
 
@@ -79,19 +79,9 @@
             font-size: 0.9rem;
         }
     }
-
-    // -------------------------------------- Large Screen ---------------------------------------
-    @media all and (min-width: $lg) {
-        &__scroll-icon {
-            font-size: 3.5rem !important;
-        }
-    }
-
+    
     // -------------------------------------- XXL Screen ---------------------------------------
     @media all and (min-width: $xxl) {
-        &__scroll-icon {
-            font-size: 5rem !important;
-        }
         
         &__copyright-text {
             font-size: 1rem;
