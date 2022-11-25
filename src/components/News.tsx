@@ -8,7 +8,7 @@ const News = () => {
 
     const [state, setState]: any = useState({
         news: [],
-        descriptionCharacterMax: 125
+        descriptionCharacterMax: 140
     })
 
     /**
@@ -24,7 +24,7 @@ const News = () => {
             newCharacterMax = 100;
         }
         else {
-            newCharacterMax = 250;
+            newCharacterMax = 190;
         }
         setState((prevState: any) => ({
             ...prevState,

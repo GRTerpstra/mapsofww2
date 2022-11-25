@@ -31,7 +31,7 @@ const Navbar = () => {
   /**
    * Toggles the height of the navigation bar when the user scrolls past 155px in height
    */
-   function toggleNavbarHeight() {
+  function toggleNavbarHeight() {
     if (window.scrollY > 155) {
       document.getElementById("navbar")!.classList.add('navbar--tall');
     }

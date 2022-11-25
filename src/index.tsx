@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import Home from './components/home/Home';
 import Navbar from './components/Navbar';
 import News from './components/News';
+import Maps from './components/Maps';
 import {
   HashRouter,
   Routes,
@@ -37,7 +38,7 @@ root.render(
       <Routes >
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
-        <Route path="/maps" element={<Home />} />
+        <Route path="/maps" element={<Maps />} />
         <Route path="/documents" element={<Home />} />
       </Routes >
     </HashRouter>
