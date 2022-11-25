@@ -31,7 +31,6 @@ export default function ScrollToTop() {
 }
 
 root.render(
-  <React.StrictMode>
     <HashRouter>
       <ScrollToTop />
       <Navbar />
@@ -42,5 +41,4 @@ root.render(
         <Route path="/documents" element={<Home />} />
       </Routes >
     </HashRouter>
-  </React.StrictMode>
 );

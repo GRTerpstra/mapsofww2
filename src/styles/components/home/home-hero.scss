@@ -161,7 +161,7 @@
         &__buttons-container {
             position: relative;
             display: flex;
-            width: 90%;
+            width: 77.5%;
             height: 80%;
             margin: 0;
         }
@@ -171,8 +171,8 @@
             align-self: flex-end;
             align-items: center;
             overflow: hidden;
-            width: calc(50% + 104.5px);
             height: 27.5%;
+            width: calc(50% + 104.5px);
             padding: 8px;
             background-image: linear-gradient(to right, $silver-background-color 25%, transparent);
             border-radius: 3rem 0 0 3rem;
@@ -238,7 +238,7 @@
             width: 50%;
             height: fit-content;
             margin-left: 2rem;
-            font-size: calc(0.6vw + 0.5rem);
+            font-size: clamp(0.9rem, 1.2vw, 1.25rem);
             color: black;
         }
     }

@@ -1,8 +1,6 @@
 
 import newsArticlesMock from "../data/news-articles-mock.json"
-
 import { useEffect, useState } from 'react';
-import { formatDiagnosticsWithColorAndContext } from "typescript";
 
 const News = () => {
 

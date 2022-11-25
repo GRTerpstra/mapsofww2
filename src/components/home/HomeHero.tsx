@@ -15,10 +15,10 @@ const HomeHero = () => {
               <h1 className="home-hero__button-image-title">Interactive Maps</h1>
               <img className="home-hero__button-image" src="images/home-maps-image.jpg" />
             </div>
-            <p className="home-hero__button-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus soluta voluptatum obcaecati numquam quos blanditiis error unde, sequi magnam quae harum optio corrupti velit odio quibusdam alias esse cum quo?</p>
+            <p className="home-hero__button-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus soluta voluptatum obcaecati optio corrupti velit odio quibusdam alias esse cum quo amet consectetur adipisicing.</p>
           </Link>
           <Link to="/documents" className="home-hero__button-container">
-            <p className="home-hero__button-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus soluta voluptatum obcaecati numquam quos blanditiis error unde, sequi magnam quae harum optio corrupti velit odio quibusdam alias esse cum quo?</p>
+            <p className="home-hero__button-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus soluta voluptatum obcaecati numquam quos blanditiis error unde, sequi magnam quae harum.</p>
             <div className="home-hero__image-container">
               <h1 className="home-hero__button-image-title">Documents</h1>
               <img className="home-hero__button-image" src="images/home-documents-image.jpeg" />
