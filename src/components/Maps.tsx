@@ -11,13 +11,12 @@ const Maps = () => {
     return (
         <div className="maps">
             <GoogleMap
+                id="kml-layer-example"
                 zoom={5}
                 center={{ lat: 48, lng: 10.73582498356971 }}
                 mapContainerClassName="map-container"
             >
-                <KmlLayer url="https://drive.google.com/file/d/1uKjx-38C37WyAI4WS79EMYkVQbBAYtyk/view?usp=sharing"
-                    options={{ preserveViewport: true }}
-                />
+                <KmlLayer url="https://drive.google.com/u/0/uc?id=1isBPQYS0OGPPNs0eBDdf-Z7PuwUj2oY9&export=download" />
             </GoogleMap>
         </div>
     )

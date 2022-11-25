@@ -75,8 +75,8 @@ const Navbar = () => {
       <div className={state.showMobileNavbar == true ? "navbar__links" : "navbar__links navbar__links--off"}>
         <Link to="/" className={location.pathname == "/" ? "navbar__link navbar__link--active" : "navbar__link"} onClick={() => toggleMobileNavbar()}> Home </Link>
         <Link to="/news" className={location.pathname == "/news" ? "navbar__link navbar__link--active" : "navbar__link"} onClick={() => toggleMobileNavbar()}> News </Link>
-        <a href="https://www.mapsofww2.com/maps" className={location.pathname == "/maps" ? "navbar__link navbar__link--active" : "navbar__link"} onClick={() => toggleMobileNavbar()}> Maps </a>
-        <a href="https://www.mapsofww2.com/documents" className={location.pathname == "/documents" ? "navbar__link navbar__link--active" : "navbar__link"} onClick={() => toggleMobileNavbar()}> Documents </a>
+        <Link to="/maps" className={location.pathname == "/maps" ? "navbar__link navbar__link--active" : "navbar__link"} onClick={() => toggleMobileNavbar()}> Maps </Link>
+        <Link to="/documents" className={location.pathname == "/documents" ? "navbar__link navbar__link--active" : "navbar__link"} onClick={() => toggleMobileNavbar()}> Documents </Link>
       </div>
       <h1 className="navbar__title navbar__title--off" id="navbarTitle" onClick={() => ScrollToTop()}> Maps of WW2 </h1>
     </nav>
