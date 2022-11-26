@@ -1,29 +1,66 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { GoogleMap, useLoadScript, KmlLayer } from '@react-google-maps/api'
-import kmlLayersMock from '../data/kmlLayersMock.json'
+import { default as kmlLayerData } from '../../data/kmlLayersMock.json'
+import { default as documentData } from '../../data/documentsMock.json'
+import MapsInfo from './MapsInfo'
 
 const Maps = () => {
 
+    // TODO: Remove initial values of kmlLayer, theatre, month and year and set loadingIcon to true.
     const [state, setState] = useState({
-        kmlLayer: "",
-        theatre: "",
-        month: "",
-        year: ""
+        kmlLayer: "https://drive.google.com/u/0/uc?id=19g7Sp4rt-Tl22SiyHXZwgAZRC36Zgniw&export=download",
+        kmlLayerHighlight: "",
+        theatre: "europe",
+        month: "6",
+        year: "1940",
+        document: documentData.documents.europe,
+        documentTitle: documentData.documents.europe.title,
+        coordinates: { lat: 48, lng: 10.73582498356971 },
+        zoom: 5,
+        loadingIcon: true
     })
 
+    /* Save the coordinates where the map pans to in a variable with the help of the useMemo React hook.
+    This to prevent the map from always panning to the same unchanged coordinates on a re-render. */
+    const center = useMemo(() => (state.coordinates), [state.coordinates]);
+
+    const mapOptions = {
+        mapId: "399a6059fa43175f",
+        streetViewControl: true,
+        mapTypeControl: false,
+    }
+
     function setKmlLayer(newKmlLayer: string) {
+        // TODO: Laat typescript weten dat hier een string uit komt ipv onnodig de toString() method aan te roepen.
+        let newKmlLayerUrl = kmlLayerData.kmlLayers[newKmlLayer as keyof Object]?.toString()
+        if (newKmlLayerUrl && newKmlLayerUrl != state.kmlLayer) {
+            toggleLoadingIconOn()
+            setState((prevState: any) => ({
+                ...prevState,
+                kmlLayer: newKmlLayerUrl,
+                kmlLayerHighlight: ""
+            }))
+        }
+    }
+
+    function setKmlLayerHighlight(newKmlLayerHighlight: string) {
+        // TODO: Laat typescript weten dat hier een string uit komt ipv onnodig de toString() method aan te roepen.
+        let newKmlLayerUrl = kmlLayerData.kmlLayers[newKmlLayerHighlight as keyof Object]?.toString()
+        if (!newKmlLayerUrl) newKmlLayerUrl = "";
         setState((prevState: any) => ({
             ...prevState,
-            kmlLayer: kmlLayersMock.kmlLayers[newKmlLayer as keyof Object],
+            kmlLayerHighlight: newKmlLayerUrl
         }))
     }
 
     function setTheatre(newTheatre: string) {
         setState((prevState: any) => ({
             ...prevState,
-            theatre: newTheatre
+            theatre: newTheatre,
+            kmlLayerHighlight: ""
         }));
         setKmlLayer(newTheatre + "-" + state.month + "-" + state.year);
+        setDocument(newTheatre);
     }
 
     function setMonth(newMonth: string) {
@@ -32,6 +69,7 @@ const Maps = () => {
             month: newMonth
         }));
         setKmlLayer(state.theatre + "-" + newMonth + "-" + state.year);
+        setKmlLayerHighlight(state.documentTitle + "-" + newMonth + "-" + state.year)
     }
 
     function setYear(newYear: string) {
@@ -40,15 +78,38 @@ const Maps = () => {
             year: newYear
         }));
         setKmlLayer(state.theatre + "-" + state.month + "-" + newYear);
+        setKmlLayerHighlight(state.documentTitle + "-" + state.month + "-" + newYear)
     }
 
-    useEffect(() => {
-        setKmlLayer(state.theatre + "-" + state.month + "-" + state.year);
-        const timer = setTimeout(() => {
+    function setDocument(documentTitle: string) {
+        let newDocument: any = documentData.documents[documentTitle as keyof Object];
+        setState((prevState) => ({
+            ...prevState,
+            document: newDocument,
+            documentTitle: newDocument?.title,
+            coordinates: newDocument?.coordinates,
+            zoom: newDocument?.zoom
+        }))
+    }
 
-        }, 500);
+    // TODO: Misschien hier één gezamelijke function van maken ipv één voor on en één voor off.
+    function toggleLoadingIconOff() {
+        setState((prevState: any) => ({
+            ...prevState,
+            loadingIcon: false
+        }))
+    }
+
+    function toggleLoadingIconOn() {
+        setState((prevState: any) => ({
+            ...prevState,
+            loadingIcon: true
+        }))
+    }
+
+    // TODO: Google Maps Scripts weghalen, want die stacken in <head> bij elke render.
+    useEffect(() => {
         return () => {
-            clearTimeout(timer);
         };
     }, [])
 
@@ -62,23 +123,36 @@ const Maps = () => {
             <div className="maps__container">
                 <div className="maps__theatre-buttons">
                     <button className={state.theatre == 'europe' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("europe")}>Europe</button>
-                    <button className={state.theatre == 'theAtlantic' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("theAtlantic")}>The Atlantic</button>
+                    <button className={state.theatre == 'atlantic' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("atlantic")}>The Atlantic</button>
                     <button className={state.theatre == 'africa' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("africa")}>Africa</button>
                     <button className={state.theatre == 'asia' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("asia")}>Asia</button>
-                    <button className={state.theatre == 'thePacific' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("thePacific")}>The Pacific</button>
+                    <button className={state.theatre == 'Pacific' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("pacific")}>The Pacific</button>
                 </div>
                 <div className="maps__map-document-container">
                     <GoogleMap
                         mapContainerClassName="maps__map"
-                        zoom={5}
-                        center={{ lat: 48, lng: 10.73582498356971 }}
+                        zoom={state.zoom}
+                        center={center}
+                        options={mapOptions}
+
                     >
                         <KmlLayer
                             url={state.kmlLayer}
-                            options={{ preserveViewport: true }}
+                            options={{ preserveViewport: true, suppressInfoWindows: true }}
+                            onStatusChanged={() => toggleLoadingIconOff()}
+                            onClick={(event: any) => (setDocument(event.featureData.name), setKmlLayerHighlight(event.featureData.name + "-" + state.month + "-" + state.year))}
                         />
+                        <KmlLayer
+                            url={state.kmlLayerHighlight}
+                            options={{ preserveViewport: true, suppressInfoWindows: true }}
+                        />
+                        {state.loadingIcon && <div className="maps__loader-icon-container">
+                            <div className="maps__loader-icon-background" />
+                            <img className="maps__loader-icon" id="loaderIcon" src="icons/loader-icon.svg" alt="Loading map..." />
+                        </div>
+                        }
                     </GoogleMap>
-                    <div className="maps__document"></div>
+                    <div className="maps__document"><MapsInfo document={state.document} /></div>
                 </div>
                 <div className="maps__year-month-container">
                     <div className="year-buttons">
@@ -108,7 +182,7 @@ const Maps = () => {
                             <div className="maps__month">Nov</div>
                             <div className="maps__month">Dec</div>
                         </div>
-                        {/* TODO: Kijken of de manier waarop de value van deze range input wordt opgehaald wel best case is met React */}
+                        {/* TODO: Kijken of de manier waarop de value van deze range input wordt opgehaald wel best practice is met React */}
                         <input type="range" id="monthSlider" min="1" max="12" value={state.month} onChange={() => setMonth((document.getElementById('monthSlider') as HTMLInputElement).value)} />
                     </div>
                 </div>

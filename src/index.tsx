@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import Home from './components/home/Home';
 import Navbar from './components/Navbar';
 import News from './components/News';
-import Maps from './components/Maps';
+import Maps from './components/maps/Maps';
 import {
   HashRouter,
   Routes,

@@ -54,4 +54,5 @@ Download: https://nodejs.org/en/download/releases/
 
 The @react-google-maps/api library has been used to create the Google Maps in the Maps component.
 Package info: https://www.npmjs.com/package/@react-google-maps/api
-Documentation: https://react-google-maps-api-docs.netlify.app/
+React Google Maps API Documentation: https://react-google-maps-api-docs.netlify.app/
+Google Maps API Documentation: https://developers.google.com/maps/documentation/javascript/reference

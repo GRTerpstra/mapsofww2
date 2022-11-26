@@ -14,24 +14,32 @@ body,
     -webkit-tap-highlight-color: transparent;
 }
 
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
 // Fonts
 * {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
 }
 
 // -------------------------------------- Imports ---------------------------------------
 
 // Project Style Files
-@import './variables.scss';
-@import './components/navbar.scss';
-@import './components/home/home.scss';
-@import './components/home/home-hero.scss';
-@import './components/home/home-info.scss';
-@import './components/news.scss';
-@import './components/maps.scss';
+@import "./variables.scss";
+@import "./components/navbar.scss";
+@import "./components/home/home.scss";
+@import "./components/home/home-hero.scss";
+@import "./components/home/home-info.scss";
+@import "./components/news.scss";
+@import "./components/maps/maps.scss";
+@import "./components/maps/maps-info.scss";
 
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
 
 html {
     background-color: linear-gradient(to bottom, $silver-background-color, $silver-light-background-color);

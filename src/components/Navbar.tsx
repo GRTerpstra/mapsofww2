@@ -5,7 +5,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 const Navbar = () => {
 
-  const location = useLocation();
+  const location = useLocation().pathname;
 
   // Navbar state hook
   const [state, setState] = useState({
@@ -56,7 +56,6 @@ const Navbar = () => {
   useEffect(() => {
     window.addEventListener('scroll', toggleTitle);
     window.addEventListener('scroll', toggleNavbarHeight);
-
     return () => {
       window.removeEventListener('scroll', toggleTitle);
       window.removeEventListener('scroll', toggleNavbarHeight);
@@ -64,7 +63,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="navbar" id="navbar">
+    <nav className={location === '/maps' ? "navbar navbar--tall" : "navbar"} id="navbar">
       <div className="navbar__dropdown-icon-wrapper">
         {
           state.showMobileNavbar == true ?
@@ -72,11 +71,11 @@ const Navbar = () => {
             <MenuIcon className="navbar__dropdown-icon" onClick={() => toggleMobileNavbar()} />
         }
       </div>
-      <div className={state.showMobileNavbar == true ? "navbar__links" : "navbar__links navbar__links--off"}>
-        <Link to="/" className={location.pathname == "/" ? "navbar__link navbar__link--active" : "navbar__link"} onClick={() => toggleMobileNavbar()}> Home </Link>
-        <Link to="/news" className={location.pathname == "/news" ? "navbar__link navbar__link--active" : "navbar__link"} onClick={() => toggleMobileNavbar()}> News </Link>
-        <Link to="/maps" className={location.pathname == "/maps" ? "navbar__link navbar__link--active" : "navbar__link"} onClick={() => toggleMobileNavbar()}> Maps </Link>
-        <Link to="/documents" className={location.pathname == "/documents" ? "navbar__link navbar__link--active" : "navbar__link"} onClick={() => toggleMobileNavbar()}> Documents </Link>
+      <div className={state.showMobileNavbar === true ? "navbar__links" : "navbar__links navbar__links--off"}>
+        <Link to="/" className={location === "/" ? "navbar__link navbar__link--active" : "navbar__link"} onClick={() => toggleMobileNavbar()}> Home </Link>
+        <Link to="/news" className={location === "/news" ? "navbar__link navbar__link--active" : "navbar__link"} onClick={() => toggleMobileNavbar()}> News </Link>
+        <Link to="/maps" className={location === "/maps" ? "navbar__link navbar__link--active" : "navbar__link"} onClick={() => toggleMobileNavbar()}> Maps </Link>
+        <Link to="/documents" className={location === "/documents" ? "navbar__link navbar__link--active" : "navbar__link"} onClick={() => toggleMobileNavbar()}> Documents </Link>
       </div>
       <h1 className="navbar__title navbar__title--off" id="navbarTitle" onClick={() => ScrollToTop()}> Maps of WW2 </h1>
     </nav>
