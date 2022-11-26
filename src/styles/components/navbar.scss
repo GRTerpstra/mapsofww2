@@ -52,6 +52,10 @@
     padding: 0.5rem;
     font-size: 2rem !important;
     color: $highlight-color;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   // -------------------- Links --------------------

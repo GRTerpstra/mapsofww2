@@ -1,14 +1,12 @@
 
 import newsArticlesMock from "../data/news-articles-mock.json"
-
 import { useEffect, useState } from 'react';
-import { formatDiagnosticsWithColorAndContext } from "typescript";
 
 const News = () => {
 
     const [state, setState]: any = useState({
         news: [],
-        descriptionCharacterMax: 125
+        descriptionCharacterMax: 140
     })
 
     /**
@@ -24,7 +22,7 @@ const News = () => {
             newCharacterMax = 100;
         }
         else {
-            newCharacterMax = 250;
+            newCharacterMax = 190;
         }
         setState((prevState: any) => ({
             ...prevState,
@@ -69,7 +67,7 @@ const News = () => {
     return (
         <section className="news">
             <header className="news__header">
-                <h1>Latest WW2 News:</h1>
+                <h1>Latest WW2 News</h1>
             </header>
             <img className="news__loader-icon" id="loaderIcon" src="icons/loader-icon.svg" alt="Loading Articles..." />
             <div className="news__articles-container">
