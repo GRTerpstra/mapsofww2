@@ -2,23 +2,30 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { GoogleMap, useLoadScript, KmlLayer } from '@react-google-maps/api'
 import { default as kmlLayerData } from '../../data/kmlLayersMock.json'
 import { default as documentData } from '../../data/documentsMock.json'
+import { selectDocument } from '../../store/slices/documentsSlice'
+import { useSelector, useDispatch } from 'react-redux'
 import MapsInfo from './MapsInfo'
 
 const Maps = () => {
 
+    const dispatch = useDispatch();
+    const selectedDocument = useSelector((state: any) => state.documents.selectedDocument)
+
     // TODO: Remove initial values of kmlLayer, theatre, month and year and set loadingIcon to true.
+    // TODO: Initial values hier niet invullen maar in een begin menu voordat de kaart getoont wordt.
     const [state, setState] = useState({
-        kmlLayer: "https://drive.google.com/u/0/uc?id=19g7Sp4rt-Tl22SiyHXZwgAZRC36Zgniw&export=download",
+        kmlLayer: "https://drive.google.com/u/0/uc?id=18eBAJxKIBrQBXRcZ0MBbB6SnhoP4ukKa&export=download",
         kmlLayerHighlight: "",
         theatre: "europe",
-        month: "6",
+        month: "5",
         year: "1940",
-        document: documentData.documents.europe,
-        documentTitle: documentData.documents.europe.title,
-        coordinates: { lat: 48, lng: 10.73582498356971 },
+        document: documentData.documents[0],
+        documentTitle: documentData.documents[0].title,
+        coordinates: selectedDocument.coordinates,
         zoom: 5,
         loadingIcon: true
     })
+
 
     /* Save the coordinates where the map pans to in a variable with the help of the useMemo React hook.
     This to prevent the map from always panning to the same unchanged coordinates on a re-render. */
@@ -46,6 +53,7 @@ const Maps = () => {
     function setKmlLayerHighlight(newKmlLayerHighlight: string) {
         // TODO: Laat typescript weten dat hier een string uit komt ipv onnodig de toString() method aan te roepen.
         let newKmlLayerUrl = kmlLayerData.kmlLayers[newKmlLayerHighlight as keyof Object]?.toString()
+        console.log("new" + newKmlLayerUrl)
         if (!newKmlLayerUrl) newKmlLayerUrl = "";
         setState((prevState: any) => ({
             ...prevState,
@@ -82,7 +90,13 @@ const Maps = () => {
     }
 
     function setDocument(documentTitle: string) {
-        let newDocument: any = documentData.documents[documentTitle as keyof Object];
+        let newDocument: any
+        try {
+            newDocument = documentData.documents.filter((document) => document.title == documentTitle)[0];
+        } catch (error) {
+            console.error(error);
+        }
+        dispatch(selectDocument(newDocument))
         setState((prevState) => ({
             ...prevState,
             document: newDocument,
@@ -108,7 +122,15 @@ const Maps = () => {
     }
 
     // TODO: Google Maps Scripts weghalen, want die stacken in <head> bij elke render.
+    // TODO: State hier niet zette maar in een begin menu voordat de kaart getoont wordt.
     useEffect(() => {
+        if (state.coordinates === undefined) {
+            console.log("undefined")
+            setState((prevState: any) => ({
+                ...prevState,
+                coordinates: { "lat": 50, "lng": 10 }
+            }))
+        }
         return () => {
         };
     }, [])
@@ -122,11 +144,11 @@ const Maps = () => {
         <div className="maps">
             <div className="maps__container">
                 <div className="maps__theatre-buttons">
-                    <button className={state.theatre == 'europe' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("europe")}>Europe</button>
-                    <button className={state.theatre == 'atlantic' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("atlantic")}>The Atlantic</button>
-                    <button className={state.theatre == 'africa' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("africa")}>Africa</button>
-                    <button className={state.theatre == 'asia' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("asia")}>Asia</button>
-                    <button className={state.theatre == 'Pacific' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("pacific")}>The Pacific</button>
+                    <button className={state.theatre == 'europe' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("Europe")}>Europe</button>
+                    <button className={state.theatre == 'atlantic' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("The Atlantic")}>The Atlantic</button>
+                    <button className={state.theatre == 'africa' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("The African Theatre")}>Africa</button>
+                    <button className={state.theatre == 'asia' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("The Asian Theatre")}>Asia</button>
+                    <button className={state.theatre == 'Pacific' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("The Pacific")}>The Pacific</button>
                 </div>
                 <div className="maps__map-document-container">
                     <GoogleMap
@@ -140,7 +162,7 @@ const Maps = () => {
                             url={state.kmlLayer}
                             options={{ preserveViewport: true, suppressInfoWindows: true }}
                             onStatusChanged={() => toggleLoadingIconOff()}
-                            onClick={(event: any) => (setDocument(event.featureData.name), setKmlLayerHighlight(event.featureData.name + "-" + state.month + "-" + state.year))}
+                            onClick={(event: any) => (setDocument(event.featureData.name), console.log(event.featureData.name), setKmlLayerHighlight(event.featureData.name + "-" + state.month + "-" + state.year))}
                         />
                         <KmlLayer
                             url={state.kmlLayerHighlight}

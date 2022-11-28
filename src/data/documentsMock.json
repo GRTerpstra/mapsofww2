@@ -1,8 +1,9 @@
 {
-    "documents": {
-        "europe": {
-            "title": "The European Theatre",
+    "documents": [
+        {
+            "title": "Europe",
             "description": "The European theatre of World War II was one of the two main theatres of combat during World War II. It saw heavy fighting across Europe for almost six     years, starting with Germany's invasion of Poland on 1 September 1939 and ending with the Western Allies conquering most of Western Europe, the Soviet Union conquering most of Eastern Europe and Germany's unconditional surrender on 8 May 1945 (9 May in the Soviet Union) but the fighting on the Eastern front continued until 11 May during the Prague offensive and the end of the Battle of Odzak on 25 May. The Allied powers fought the Axis powers on two major fronts (Eastern Front and Western Front) as well as in a strategic bombing offensive and in the adjoining Mediterranean and Middle East theatre.",
+            "contentUrl": "https://en.wikipedia.org/wiki/European_theatre_of_World_War_II",
             "image": "https://dorf6zgs.anvilcloud.pub/wp-content/uploads/W-Insight-1-HT-Oct10.jpg",
             "coordinates": {
                 "lat": 50,
@@ -10,8 +11,8 @@
             },
             "zoom": 5
         },
-        "atlantic": {
-            "title": "The Battle for the Atlantic",
+        {
+            "title": "The Atlantic",
             "description": "The Battle of the Atlantic, the longest continuous military campaign in World War II, ran from 1939 to the defeat of Nazi Germany in 1945, covering a major part of the naval history of World War II. At its core was the Allied naval blockade of Germany, announced the day after the declaration of war, and Germany's subsequent counter-blockade. The campaign peaked from mid-1940 through to the end of 1943.The Battle of the Atlantic pitted U-boats and other warships of the German Kriegsmarine (Navy) and aircraft of the Luftwaffe (Air Force) against the Royal Navy, Royal Canadian Navy, United States Navy, and Allied merchant shipping. Convoys, coming mainly from North America and predominantly going to the United Kingdom and the Soviet Union, were protected for the most part by the British and Canadian navies and air forces. These forces were aided by ships and aircraft of the United States beginning September 13, 1941. The Germans were joined by submarines of the Italian Regia Marina (Royal Navy) after Germany's Axis ally Italy entered the war on June 10, 1940. As an island country, the United Kingdom was highly dependent on imported goods. Britain required more than a million tons of imported material per week in order to survive and fight. In essence, the Battle of the Atlantic involved a tonnage war: the Allied struggle to supply Britain and the Axis attempt to stem the flow of merchant shipping that enabled Britain to keep fighting. Rationing in the United Kingdom was also used with the aim of reducing demand, by reducing wastage and increasing domestic production and equality of distribution. From 1942 onward the Axis also sought to prevent the build-up of Allied supplies and equipment in the British Isles in preparation for the invasion of occupied Europe. The defeat of the U-boat threat was a prerequisite for pushing back the Axis in Western Europe. The outcome of the battle was a strategic victory for the Allies—the German blockade failed—but at great cost: 3,500 merchant ships and 175 warships were sunk in the Atlantic for the loss of 783 U-boats (the majority of them Type VII submarines) and 47 German surface warships, including 4 battleships (Bismarck, Scharnhorst, Gneisenau, and Tirpitz), 9 cruisers, 7 raiders, and 27 destroyers. Of the U-boats, 519 were sunk by British, Canadian, or other allied forces, while 175 were destroyed by American forces; 15 were destroyed by the Soviets and 73 were scuttled by their crews before the end of the war for various reasons The Battle of the Atlantic has been called the longest, largest, and most complex naval battle in history. The campaign started immediately after the European War began, during the so-called Phoney War, and lasted more than five years, until the German surrender in May 1945. It involved thousands of ships in more than 100 convoy battles and perhaps 1,000 single-ship encounters, in a theatre covering millions of square miles of ocean. The situation changed constantly, with one side or the other gaining advantage, as participating countries surrendered, joined and even changed sides in the war, and as new weapons, tactics, counter-measures and equipment were developed by both sides. The Allies gradually gained the upper hand, overcoming German surface-raiders by the end of 1942 and defeating the U-boats by mid-1943, though losses due to U-boats continued until the war's end. British Prime Minister Winston Churchill later wrote The only thing that really frightened me during the war was the U-boat peril. I was even more anxious about this battle than I had been about the glorious air fight called the 'Battle of Britain'.",
             "coordinates": {
                 "lat": 34.439345389491,
@@ -19,7 +20,7 @@
             },
             "zoom": 3
         },
-        "africa": {
+        {
             "title": "The African Theatre",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget enim commodo, finibus nibh eu, condimentum orci. Vivamus id lectus sit amet orci pharetra mollis. Ut accumsan sapien sit amet est hendrerit, ac tincidunt diam pretium. Quisque rhoncus eget est fringilla porta. Nam porttitor dignissim turpis et rutrum. Fusce nec nibh ut dolor feugiat sollicitudin nec et nulla. Fusce dapibus mollis viverra. In in quam et mauris luctus ultricies. Nulla convallis metus at ipsum imperdiet, non hendrerit nisl porta.",
             "coordinates": {
@@ -28,7 +29,7 @@
             },
             "zoom": 4
         },
-        "asia": {
+        {
             "title": "The Asian Theatre",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget enim commodo, finibus nibh eu, condimentum orci. Vivamus id lectus sit amet orci pharetra mollis. Ut accumsan sapien sit amet est hendrerit, ac tincidunt diam pretium. Quisque rhoncus eget est fringilla porta. Nam porttitor dignissim turpis et rutrum. Fusce nec nibh ut dolor feugiat sollicitudin nec et nulla. Fusce dapibus mollis viverra. In in quam et mauris luctus ultricies. Nulla convallis metus at ipsum imperdiet, non hendrerit nisl porta.",
             "coordinates": {
@@ -37,8 +38,8 @@
             },
             "zoom": 4
         },
-        "pacific": {
-            "title": "The Battle for the Pacific",
+        {
+            "title": "The Pacific",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget enim commodo, finibus nibh eu, condimentum orci. Vivamus id lectus sit amet orci pharetra mollis. Ut accumsan sapien sit amet est hendrerit, ac tincidunt diam pretium. Quisque rhoncus eget est fringilla porta. Nam porttitor dignissim turpis et rutrum. Fusce nec nibh ut dolor feugiat sollicitudin nec et nulla. Fusce dapibus mollis viverra. In in quam et mauris luctus ultricies. Nulla convallis metus at ipsum imperdiet, non hendrerit nisl porta.",
             "coordinates": {
                 "lat": 18.953348508673233,
@@ -46,10 +47,79 @@
             },
             "zoom": 3
         },
-        "Germany": {
+        {
             "title": "Germany",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget enim commodo, finibus nibh eu, condimentum orci. Vivamus id lectus sit amet orci pharetra mollis. Ut accumsan sapien sit amet est hendrerit, ac tincidunt diam pretium. Quisque rhoncus eget est fringilla porta. Nam porttitor dignissim turpis et rutrum. Fusce nec nibh ut dolor feugiat sollicitudin nec et nulla. Fusce dapibus mollis viverra. In in quam et mauris luctus ultricies. Nulla convallis metus at ipsum imperdiet, non hendrerit nisl porta.",
-            "image": "https://static.tvtropes.org/pmwiki/pub/images/nazigermany.jpg" 
+            "contentUrl": "https://en.wikipedia.org/wiki/Nazi_Germany",
+            "image": "https://static.tvtropes.org/pmwiki/pub/images/nazigermany.jpg",
+            "coordinates": {
+                "lat": 50,
+                "lng": 10.73582498356971
+            }
+        },
+        {
+            "title": "France",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget enim commodo, finibus nibh eu, condimentum orci. Vivamus id lectus sit amet orci pharetra mollis. Ut accumsan sapien sit amet est hendrerit, ac tincidunt diam pretium. Quisque rhoncus eget est fringilla porta. Nam porttitor dignissim turpis et rutrum. Fusce nec nibh ut dolor feugiat sollicitudin nec et nulla. Fusce dapibus mollis viverra. In in quam et mauris luctus ultricies. Nulla convallis metus at ipsum imperdiet, non hendrerit nisl porta.",
+            "contentUrl": "https://en.wikipedia.org/wiki/France_during_World_War_II",
+            "image": "https://images.immediate.co.uk/production/volatile/sites/7/2020/03/GettyImages-142628193-631c2d3.jpg?quality=90&crop=5px,0px,1014px,675px&resize=980,654",
+            "coordinates": {
+                "lat": 47.00111559678911,
+                "lng": 2.1874134340269142
+            }
+        },
+        {
+            "title": "Military Administration of France",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget enim commodo, finibus nibh eu, condimentum orci. Vivamus id lectus sit amet orci pharetra mollis. Ut accumsan sapien sit amet est hendrerit, ac tincidunt diam pretium. Quisque rhoncus eget est fringilla porta. Nam porttitor dignissim turpis et rutrum. Fusce nec nibh ut dolor feugiat sollicitudin nec et nulla. Fusce dapibus mollis viverra. In in quam et mauris luctus ultricies. Nulla convallis metus at ipsum imperdiet, non hendrerit nisl porta.",
+            "image": "https://images.immediate.co.uk/production/volatile/sites/7/2020/03/GettyImages-142628193-631c2d3.jpg?quality=90&crop=5px,0px,1014px,675px&resize=980,654",
+            "coordinates": {
+                "lat": 48.8223385837143, 
+                "lng": 2.291933582129814
+            }
+        },
+        {
+            "title": "Vichy France",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget enim commodo, finibus nibh eu, condimentum orci. Vivamus id lectus sit amet orci pharetra mollis. Ut accumsan sapien sit amet est hendrerit, ac tincidunt diam pretium. Quisque rhoncus eget est fringilla porta. Nam porttitor dignissim turpis et rutrum. Fusce nec nibh ut dolor feugiat sollicitudin nec et nulla. Fusce dapibus mollis viverra. In in quam et mauris luctus ultricies. Nulla convallis metus at ipsum imperdiet, non hendrerit nisl porta.",
+            "image": "https://images.immediate.co.uk/production/volatile/sites/7/2020/03/GettyImages-142628193-631c2d3.jpg?quality=90&crop=5px,0px,1014px,675px&resize=980,654",
+            "coordinates": {
+                "lat": 45.51985062512592, 
+                "lng": 3.702955581518842 
+            }
+        },
+        {
+            "title": "Poland",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget enim commodo, finibus nibh eu, condimentum orci. Vivamus id lectus sit amet orci pharetra mollis. Ut accumsan sapien sit amet est hendrerit, ac tincidunt diam pretium. Quisque rhoncus eget est fringilla porta. Nam porttitor dignissim turpis et rutrum. Fusce nec nibh ut dolor feugiat sollicitudin nec et nulla. Fusce dapibus mollis viverra. In in quam et mauris luctus ultricies. Nulla convallis metus at ipsum imperdiet, non hendrerit nisl porta.",
+            "image": "https://images.immediate.co.uk/production/volatile/sites/7/2020/03/GettyImages-142628193-631c2d3.jpg?quality=90&crop=5px,0px,1014px,675px&resize=980,654",
+            "coordinates": {
+                "lat": 52.30583244761772, 
+                "lng": 23.039183294652066
+            }
+        },
+        {
+            "title": "General Government",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget enim commodo, finibus nibh eu, condimentum orci. Vivamus id lectus sit amet orci pharetra mollis. Ut accumsan sapien sit amet est hendrerit, ac tincidunt diam pretium. Quisque rhoncus eget est fringilla porta. Nam porttitor dignissim turpis et rutrum. Fusce nec nibh ut dolor feugiat sollicitudin nec et nulla. Fusce dapibus mollis viverra. In in quam et mauris luctus ultricies. Nulla convallis metus at ipsum imperdiet, non hendrerit nisl porta.",
+            "image": "https://images.immediate.co.uk/production/volatile/sites/7/2020/03/GettyImages-142628193-631c2d3.jpg?quality=90&crop=5px,0px,1014px,675px&resize=980,654",
+            "coordinates": {
+                "lat": 50.712262316202185, 
+                "lng": 21.26234077690292
+            }
+        },
+        {
+            "title": "Slovak Republic",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget enim commodo, finibus nibh eu, condimentum orci. Vivamus id lectus sit amet orci pharetra mollis. Ut accumsan sapien sit amet est hendrerit, ac tincidunt diam pretium. Quisque rhoncus eget est fringilla porta. Nam porttitor dignissim turpis et rutrum. Fusce nec nibh ut dolor feugiat sollicitudin nec et nulla. Fusce dapibus mollis viverra. In in quam et mauris luctus ultricies. Nulla convallis metus at ipsum imperdiet, non hendrerit nisl porta.",
+            "image": "https://images.immediate.co.uk/production/volatile/sites/7/2020/03/GettyImages-142628193-631c2d3.jpg?quality=90&crop=5px,0px,1014px,675px&resize=980,654",
+            "coordinates": {
+                "lat": 48.61546634877748, 
+                "lng": 20.06035907371967
+            }
+        },
+        {
+            "title": "Protectorate of Bohemia and Moravia",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget enim commodo, finibus nibh eu, condimentum orci. Vivamus id lectus sit amet orci pharetra mollis. Ut accumsan sapien sit amet est hendrerit, ac tincidunt diam pretium. Quisque rhoncus eget est fringilla porta. Nam porttitor dignissim turpis et rutrum. Fusce nec nibh ut dolor feugiat sollicitudin nec et nulla. Fusce dapibus mollis viverra. In in quam et mauris luctus ultricies. Nulla convallis metus at ipsum imperdiet, non hendrerit nisl porta.",
+            "image": "https://images.immediate.co.uk/production/volatile/sites/7/2020/03/GettyImages-142628193-631c2d3.jpg?quality=90&crop=5px,0px,1014px,675px&resize=980,654",
+            "coordinates": {
+                "lat": 49.64133270553417, 
+                "lng": 15.565992705295356
+            }
         }
-    }
+    ]
 }

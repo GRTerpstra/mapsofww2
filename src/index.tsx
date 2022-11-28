@@ -4,6 +4,9 @@ import Home from './components/home/Home';
 import Navbar from './components/Navbar';
 import News from './components/News';
 import Maps from './components/maps/Maps';
+import store from './store/store';
+import { Provider } from 'react-redux';
+import Documents from './components/documents/Documents';
 import {
   HashRouter,
   Routes,
@@ -31,6 +34,7 @@ export default function ScrollToTop() {
 }
 
 root.render(
+  <Provider store={store}>
     <HashRouter>
       <ScrollToTop />
       <Navbar />
@@ -38,7 +42,8 @@ root.render(
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
         <Route path="/maps" element={<Maps />} />
-        <Route path="/documents" element={<Home />} />
+        <Route path="/documents" element={<Documents />} />
       </Routes >
     </HashRouter>
+  </Provider>
 );

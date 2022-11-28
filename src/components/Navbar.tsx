@@ -63,7 +63,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={location === '/maps' ? "navbar navbar--tall" : "navbar"} id="navbar">
+    <nav className="navbar" id="navbar">
       <div className="navbar__dropdown-icon-wrapper">
         {
           state.showMobileNavbar == true ?

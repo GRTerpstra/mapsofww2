@@ -7,7 +7,7 @@
     height: 100%;
     padding: 1rem 2rem;
 
-    &__header {
+    &__title {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -19,10 +19,21 @@
     }
 
     &__image-wrapper {
+        position: relative;
         overflow: hidden;
         width: 100%;
         height: 40%;
         margin-bottom: 1rem;
+        border: 1px solid black;
+
+        
+        img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            min-height: 100%;
+        }
     }
 
     &__description {
