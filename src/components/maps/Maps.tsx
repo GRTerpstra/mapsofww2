@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { GoogleMap, useLoadScript, KmlLayer, Marker } from '@react-google-maps/api'
 import { default as kmlLayerData } from '../../data/kmlLayersMock.json'
+import { default as kmlLayerHighlightData } from '../../data/kmlLayersHighlightsMock.json'
 import { default as documentData } from '../../data/documentsMock.json'
 import { selectDocument } from '../../store/slices/documentsSlice'
 import { useSelector, useDispatch } from 'react-redux'
@@ -11,7 +12,8 @@ const Maps = () => {
 
     const dispatch = useDispatch();
     const selectedDocument = useSelector((state: any) => state.documents.selectedDocument)
-
+    const countryMarkers = []
+    
     // TODO: Remove initial values of kmlLayer, theatre, month and year and set loadingIcon to true.
     // TODO: Initial values hier niet invullen maar in een begin menu voordat de kaart getoont wordt.
     const [state, setState] = useState({
@@ -29,15 +31,21 @@ const Maps = () => {
         sliderMonthMax: 12
     })
 
-
     /* Save the coordinates where the map pans to in a variable with the help of the useMemo React hook.
     This to prevent the map from always panning to the same unchanged coordinates on a re-render. */
     const center = useMemo(() => (state.coordinates), [state.coordinates]);
+
+    
+    const monthArray: Array<String> = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"];
+    const monthElements = monthArray.map((months, i) =>
+        <div className={state.year === "1939" && i < 8 ? "maps__month maps__month--disabled" : "maps__month"}>{months}</div>
+    )
 
     const mapOptions = {
         mapId: "399a6059fa43175f",
         streetViewControl: true,
         mapTypeControl: false,
+        minZoom: 2,
     }
 
     function setKmlLayer(newKmlLayer: string) {
@@ -57,7 +65,7 @@ const Maps = () => {
 
     function setKmlLayerHighlight(newKmlLayerHighlight: string) {
         // TODO: Laat typescript weten dat hier een string uit komt ipv onnodig de toString() method aan te roepen.
-        let newKmlLayerUrl = kmlLayerData.kmlLayers[newKmlLayerHighlight as keyof Object]?.toString()
+        let newKmlLayerUrl = kmlLayerHighlightData.kmlLayersHighlights[newKmlLayerHighlight as keyof Object]?.kmlLayer?.toString()
         if (!newKmlLayerUrl) newKmlLayerUrl = "";
         setState((prevState: any) => ({
             ...prevState,
@@ -135,10 +143,9 @@ const Maps = () => {
         }))
     }
 
-    const monthArray: Array<String> = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"];
-    const monthElements = monthArray.map((months, i) =>
-        <div className={state.year === "1939" && i < 8 ? "maps__month maps__month--disabled" : "maps__month"}>{months}</div>
-    )
+    function refreshCountryMarkers() {
+
+    }
 
     // TODO: Haal key op uit .env file ipv in de JS code opslaan.
     const { isLoaded } = useLoadScript({ googleMapsApiKey: 'AIzaSyCVzAS0AE5GqpXxq3fjJeEmB9natOTa-2g' });
@@ -169,6 +176,7 @@ const Maps = () => {
                         zoom={state.zoom}
                         center={center}
                         options={mapOptions}
+                        onZoomChanged={refreshCountryMarkers}
 
                     >
                         <KmlLayer
