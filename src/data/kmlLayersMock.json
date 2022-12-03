@@ -1,20 +1,491 @@
 {
-    "kmlLayers": {
-        "Europe-9-1939": "https://drive.google.com/u/0/uc?id=106aPX6P_rml5ssmwguYIQMmj1IbGAJf1&export=download",
-        "Europe-10-1939": "https://drive.google.com/u/0/uc?id=15ihCymQvE_VU3BK8ji9lP7yy2DSU4PYc&export=download",
-        "Europe-11-1939": "https://drive.google.com/u/0/uc?id=15ihCymQvE_VU3BK8ji9lP7yy2DSU4PYc&export=download&export=download",
-        "Europe-12-1939": "https://drive.google.com/u/0/uc?id=15ihCymQvE_VU3BK8ji9lP7yy2DSU4PYc&export=download&export=download",
-        "Europe-1-1940": "https://drive.google.com/u/0/uc?id=15ihCymQvE_VU3BK8ji9lP7yy2DSU4PYc&export=download&export=download",
-        "Europe-2-1940": "https://drive.google.com/u/0/uc?id=15ihCymQvE_VU3BK8ji9lP7yy2DSU4PYc&export=download&export=download",
-        "Europe-3-1940": "https://drive.google.com/u/0/uc?id=15ihCymQvE_VU3BK8ji9lP7yy2DSU4PYc&export=download&export=download",
-        "Europe-4-1940": "https://drive.google.com/u/0/uc?id=1m7HtIkTic5d78fFlS0ftwzAZjITuC6IZ&export=download",
-        "Europe-5-1940": "https://drive.google.com/u/0/uc?id=18eBAJxKIBrQBXRcZ0MBbB6SnhoP4ukKa&export=download",
-        "Europe-6-1940": "https://drive.google.com/u/0/uc?id=19g7Sp4rt-Tl22SiyHXZwgAZRC36Zgniw&export=download",
-        "Europe-7-1940": "https://drive.google.com/u/0/uc?id=1Tyg1x9VB0YPnY3ZYAUd_9aZ2joVWCXOy&export=download",
-        "Europe-8-1940": "https://drive.google.com/u/0/uc?id=1Tyg1x9VB0YPnY3ZYAUd_9aZ2joVWCXOy&export=download",
-        "Europe-9-1940": "https://drive.google.com/u/0/uc?id=1Tyg1x9VB0YPnY3ZYAUd_9aZ2joVWCXOy&export=download",
-        "Europe-10-1940": "https://drive.google.com/u/0/uc?id=18aceD7C8HcpbnN6wonyjx_qv9d0XZhTB&export=download",
-        "Europe-11-1940": "https://drive.google.com/u/0/uc?id=1zIjOdtPIugvoQwLNPDikTIhRMxbqw9Sy&export=download",
-        "Europe-12-1940": "https://drive.google.com/u/0/uc?id=1uKjx-38C37WyAI4WS79EMYkVQbBAYtyk&export=download"
-    }
+    "kmlLayers": [
+        {
+            "theatre": "europe",
+            "month": 9,
+            "year": 1939,
+            "url": "https://drive.google.com/u/0/uc?id=106aPX6P_rml5ssmwguYIQMmj1IbGAJf1&export=download",
+            "countryMarkers": [
+                {
+                    "title": "Germany",
+                    "position": {
+                        "lat": 51,
+                        "lng": 11.5
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "France",
+                    "position": {
+                        "lat": 47,
+                        "lng": 2.5
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "The Netherlands",
+                    "position": {
+                        "lat": 52,
+                        "lng": 5.5
+                    },
+                    "type": "medium",
+                    "font": 12
+                },
+                {
+                    "title": "Belgium",
+                    "position": {
+                        "lat": 50.5,
+                        "lng": 4.75
+                    },
+                    "type": "medium",
+                    "font": 12
+                }
+            ]
+        },
+        {
+            "theatre": "europe",
+            "month": 10,
+            "year": 1939,
+            "url": "https://drive.google.com/u/0/uc?id=15ihCymQvE_VU3BK8ji9lP7yy2DSU4PYc&export=download",
+            "countryMarkers": [
+                {
+                    "title": "Germany",
+                    "position": {
+                        "lat": 51.5,
+                        "lng": 13
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "France",
+                    "position": {
+                        "lat": 47,
+                        "lng": 2.5
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "The Netherlands",
+                    "position": {
+                        "lat": 52,
+                        "lng": 5.5
+                    },
+                    "type": "medium",
+                    "font": 12
+                },
+                {
+                    "title": "Belgium",
+                    "position": {
+                        "lat": 50.5,
+                        "lng": 4.75
+                    },
+                    "type": "medium",
+                    "font": 12
+                }
+            ]
+        },
+        {
+            "theatre": "europe",
+            "month": 11,
+            "year": 1939,
+            "url": "https://drive.google.com/u/0/uc?id=15ihCymQvE_VU3BK8ji9lP7yy2DSU4PYc&export=download",
+            "countryMarkers": [
+                {
+                    "title": "Germany",
+                    "position": {
+                        "lat": 51.5,
+                        "lng": 13
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "France",
+                    "position": {
+                        "lat": 47,
+                        "lng": 2.5
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "The Netherlands",
+                    "position": {
+                        "lat": 52,
+                        "lng": 5.5
+                    },
+                    "type": "medium",
+                    "font": 12
+                },
+                {
+                    "title": "Belgium",
+                    "position": {
+                        "lat": 50.5,
+                        "lng": 4.75
+                    },
+                    "type": "medium",
+                    "font": 12
+                }
+            ]
+        },
+        {
+            "theatre": "europe",
+            "month": 12,
+            "year": 1939,
+            "url": "https://drive.google.com/u/0/uc?id=15ihCymQvE_VU3BK8ji9lP7yy2DSU4PYc&export=download",
+            "countryMarkers": [
+                {
+                    "title": "Germany",
+                    "position": {
+                        "lat": 52,
+                        "lng": 12
+                    },
+                    "type": "large"
+                }
+            ]
+        },
+        {
+            "theatre": "europe",
+            "month": 1,
+            "year": 1940,
+            "url": "https://drive.google.com/u/0/uc?id=15ihCymQvE_VU3BK8ji9lP7yy2DSU4PYc&export=download",
+            "countryMarkers": [
+                {
+                    "title": "Germany",
+                    "position": {
+                        "lat": 51.5,
+                        "lng": 13
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "France",
+                    "position": {
+                        "lat": 47,
+                        "lng": 2.5
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "The Netherlands",
+                    "position": {
+                        "lat": 52,
+                        "lng": 5.5
+                    },
+                    "type": "medium",
+                    "font": 12
+                },
+                {
+                    "title": "Belgium",
+                    "position": {
+                        "lat": 50.5,
+                        "lng": 4.75
+                    },
+                    "type": "medium",
+                    "font": 12
+                }
+            ]
+        },
+        {
+            "theatre": "europe",
+            "month": 2,
+            "year": 1940,
+            "url": "https://drive.google.com/u/0/uc?id=15ihCymQvE_VU3BK8ji9lP7yy2DSU4PYc&export=download",
+            "countryMarkers": [
+                {
+                    "title": "Germany",
+                    "position": {
+                        "lat": 51.5,
+                        "lng": 13
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "France",
+                    "position": {
+                        "lat": 47,
+                        "lng": 2.5
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "The Netherlands",
+                    "position": {
+                        "lat": 52,
+                        "lng": 5.5
+                    },
+                    "type": "medium",
+                    "font": 12
+                },
+                {
+                    "title": "Belgium",
+                    "position": {
+                        "lat": 50.5,
+                        "lng": 4.75
+                    },
+                    "type": "medium",
+                    "font": 12
+                }
+            ]
+        },
+        {
+            "theatre": "europe",
+            "month": 3,
+            "year": 1940,
+            "url": "https://drive.google.com/u/0/uc?id=15ihCymQvE_VU3BK8ji9lP7yy2DSU4PYc&export=download",
+            "countryMarkers": [
+                {
+                    "title": "Germany",
+                    "position": {
+                        "lat": 51.5,
+                        "lng": 13
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "France",
+                    "position": {
+                        "lat": 47,
+                        "lng": 2.5
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "The Netherlands",
+                    "position": {
+                        "lat": 52,
+                        "lng": 5.5
+                    },
+                    "type": "medium",
+                    "font": 12
+                },
+                {
+                    "title": "Belgium",
+                    "position": {
+                        "lat": 50.5,
+                        "lng": 4.75
+                    },
+                    "type": "medium",
+                    "font": 12
+                }
+            ]
+        },
+        {
+            "theatre": "europe",
+            "month": 4,
+            "year": 1940,
+            "url": "https://drive.google.com/u/0/uc?id=1m7HtIkTic5d78fFlS0ftwzAZjITuC6IZ&export=download",
+            "countryMarkers": [
+                {
+                    "title": "Germany",
+                    "position": {
+                        "lat": 51.5,
+                        "lng": 13
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "France",
+                    "position": {
+                        "lat": 47,
+                        "lng": 2.5
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "The Netherlands",
+                    "position": {
+                        "lat": 52,
+                        "lng": 5.5
+                    },
+                    "type": "medium",
+                    "font": 12
+                },
+                {
+                    "title": "Belgium",
+                    "position": {
+                        "lat": 50.5,
+                        "lng": 4.75
+                    },
+                    "type": "medium",
+                    "font": 12
+                }
+            ]
+        },
+        {
+            "theatre": "europe",
+            "month": 5,
+            "year": 1940,
+            "url": "https://drive.google.com/u/0/uc?id=18eBAJxKIBrQBXRcZ0MBbB6SnhoP4ukKa&export=download",
+            "countryMarkers": [
+                {
+                    "title": "Germany",
+                    "position": {
+                        "lat": 51.5,
+                        "lng": 13
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "France",
+                    "position": {
+                        "lat": 47,
+                        "lng": 2.5
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "The Netherlands",
+                    "position": {
+                        "lat": 52,
+                        "lng": 5.5
+                    },
+                    "type": "medium",
+                    "font": 12
+                },
+                {
+                    "title": "Belgium",
+                    "position": {
+                        "lat": 50.5,
+                        "lng": 4.75
+                    },
+                    "type": "medium",
+                    "font": 12
+                }
+            ]
+        },
+        {
+            "theatre": "europe",
+            "month": 6,
+            "year": 1940,
+            "url": "https://drive.google.com/u/0/uc?id=19g7Sp4rt-Tl22SiyHXZwgAZRC36Zgniw&export=download",
+            "countryMarkers": [
+                {
+                    "title": "Germany",
+                    "position": {
+                        "lat": 51.5,
+                        "lng": 13
+                    },
+                    "type": "large",
+                    "font": 16
+                }
+            ]
+        },
+        {
+            "theatre": "europe",
+            "month": 7,
+            "year": 1940,
+            "url": "https://drive.google.com/u/0/uc?id=1Tyg1x9VB0YPnY3ZYAUd_9aZ2joVWCXOy&export=download",
+            "countryMarkers": [
+                {
+                    "title": "Germany",
+                    "position": {
+                        "lat": 51.5,
+                        "lng": 13
+                    },
+                    "type": "large",
+                    "font": 16
+                }
+            ]
+        },
+        {
+            "theatre": "europe",
+            "month": 8,
+            "year": 1940,
+            "url": "https://drive.google.com/u/0/uc?id=1Tyg1x9VB0YPnY3ZYAUd_9aZ2joVWCXOy&export=download",
+            "countryMarkers": [
+                {
+                    "title": "Germany",
+                    "position": {
+                        "lat": 51.5,
+                        "lng": 13
+                    },
+                    "type": "large",
+                    "font": 16
+                }
+            ]
+        },
+        {
+            "theatre": "europe",
+            "month": 9,
+            "year": 1940,
+            "url": "https://drive.google.com/u/0/uc?id=1Tyg1x9VB0YPnY3ZYAUd_9aZ2joVWCXOy&export=download",
+            "countryMarkers": [
+                {
+                    "title": "Germany",
+                    "position": {
+                        "lat": 51.5,
+                        "lng": 13
+                    },
+                    "type": "large",
+                    "font": 16
+                }
+            ]
+        },
+        {
+            "theatre": "europe",
+            "month": 10,
+            "year": 1940,
+            "url": "https://drive.google.com/u/0/uc?id=18aceD7C8HcpbnN6wonyjx_qv9d0XZhTB&export=download",
+            "countryMarkers": [
+                {
+                    "title": "Germany",
+                    "position": {
+                        "lat": 51.5,
+                        "lng": 13
+                    },
+                    "type": "large",
+                    "font": 16
+                }
+            ]
+        },
+        {
+            "theatre": "europe",
+            "month": 11,
+            "year": 1940,
+            "url": "https://drive.google.com/u/0/uc?id=1zIjOdtPIugvoQwLNPDikTIhRMxbqw9Sy&export=download",
+            "countryMarkers": [
+                {
+                    "title": "Germany",
+                    "position": {
+                        "lat": 51.5,
+                        "lng": 13
+                    },
+                    "type": "large",
+                    "font": 16
+                }
+            ]
+        },
+        {
+            "theatre": "europe",
+            "month": 12,
+            "year": 1940,
+            "url": "https://drive.google.com/u/0/uc?id=1uKjx-38C37WyAI4WS79EMYkVQbBAYtyk&export=download",
+            "countryMarkers": [
+                {
+                    "title": "Germany",
+                    "position": {
+                        "lat": 51.5,
+                        "lng": 13
+                    },
+                    "type": "large",
+                    "font": 16
+                }
+            ]
+        }
+    ]
 }

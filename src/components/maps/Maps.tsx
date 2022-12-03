@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { GoogleMap, useLoadScript, KmlLayer, Marker } from '@react-google-maps/api'
 import { default as kmlLayerData } from '../../data/kmlLayersMock.json'
 import { default as kmlLayerHighlightData } from '../../data/kmlLayersHighlightsMock.json'
@@ -7,38 +7,43 @@ import { selectDocument } from '../../store/slices/documentsSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import MapsInfo from './MapsInfo'
 import { stepIconClasses } from '@mui/material'
+import { convertCompilerOptionsFromJson } from 'typescript'
 
+// TODO: Typing fixen in het hele component
 const Maps = () => {
 
     const dispatch = useDispatch();
     const selectedDocument = useSelector((state: any) => state.documents.selectedDocument)
-    const countryMarkers = []
-    
-    // TODO: Remove initial values of kmlLayer, theatre, month and year and set loadingIcon to true.
+    const mapRef: any = useRef<GoogleMap>();
+    const onLoad: any = useCallback((map: any) => (mapRef.current = map), []);
+
     // TODO: Initial values hier niet invullen maar in een begin menu voordat de kaart getoont wordt.
     const [state, setState] = useState({
-        kmlLayer: "https://drive.google.com/u/0/uc?id=18eBAJxKIBrQBXRcZ0MBbB6SnhoP4ukKa&export=download",
+        countryMarkers: kmlLayerData.kmlLayers.filter((layer) => layer.theatre === "europe" && layer.month === 5 && layer.year === 1940)[0].countryMarkers,
+        kmlLayerUrl: "https://drive.google.com/u/0/uc?id=18eBAJxKIBrQBXRcZ0MBbB6SnhoP4ukKa&export=download",
         kmlLayerHighlight: "",
-        theatre: "Europe",
+        theatre: "europe",
         month: 5,
-        year: "1940",
+        year: 1940,
         document: selectedDocument,
         documentTitle: selectedDocument?.title,
         coordinates: selectedDocument?.coordinates,
         zoom: 5,
         loadingIcon: true,
         sliderMonthMin: 1,
-        sliderMonthMax: 12
+        sliderMonthMax: 12,
+        countryMarkersLarge: [],
+        countryMarkersMedium: [],
+        countryMarkersSmall: []
     })
 
     /* Save the coordinates where the map pans to in a variable with the help of the useMemo React hook.
     This to prevent the map from always panning to the same unchanged coordinates on a re-render. */
     const center = useMemo(() => (state.coordinates), [state.coordinates]);
 
-    
     const monthArray: Array<String> = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"];
     const monthElements = monthArray.map((months, i) =>
-        <div className={state.year === "1939" && i < 8 ? "maps__month maps__month--disabled" : "maps__month"}>{months}</div>
+        <div className={state.year === 1939 && i < 8 ? "maps__month maps__month--disabled" : "maps__month"}>{months}</div>
     )
 
     const mapOptions = {
@@ -48,24 +53,56 @@ const Maps = () => {
         minZoom: 2,
     }
 
-    function setKmlLayer(newKmlLayer: string) {
-        console.log(newKmlLayer)
+    function refreshCountryMarkers() {
+        let zoomLevel: number = 5;
+        if(mapRef.current?.getZoom() !== undefined) zoomLevel = mapRef.current?.getZoom()
+        let countryMarkersLarge: any = []
+        let countryMarkersMedium: any = []
+        let countryMarkersSmall: any = []
+        if (zoomLevel < 4) {
+        }
+        else if (zoomLevel < 5) {
+            countryMarkersLarge = state.countryMarkers.filter((countryMarker: any) => countryMarker.type === "large")
+        }
+        else if (zoomLevel < 7) {
+            countryMarkersLarge = state.countryMarkers.filter((countryMarker: any) => countryMarker.type === "large")
+            countryMarkersMedium = state.countryMarkers.filter((countryMarker: any) => countryMarker.type === "medium")
+        }
+        else if (zoomLevel >= 7) {
+            countryMarkersLarge = state.countryMarkers.filter((countryMarker: any) => countryMarker.type === "large")
+            countryMarkersMedium = state.countryMarkers.filter((countryMarker: any) => countryMarker.type === "medium")
+            countryMarkersSmall = state.countryMarkers.filter((countryMarker: any) => countryMarker.type === "small")
+        }
+        console.log(countryMarkersLarge)
+        setState((prevState: any) => ({
+            ...prevState,
+            countryMarkersLarge: countryMarkersLarge,
+            countryMarkersMedium: countryMarkersMedium,
+            countryMarkersSmall: countryMarkersSmall
+        }))
+    }
+
+    function setKmlLayer(theatre: string, month: number, year: number) {
         // TODO: Laat typescript weten dat hier een string uit komt ipv onnodig de toString() method aan te roepen.
-        let newKmlLayerUrl = kmlLayerData.kmlLayers[newKmlLayer as keyof Object]?.toString()
-        console.log(newKmlLayerUrl)
-        if (newKmlLayerUrl && newKmlLayerUrl != state.kmlLayer) {
+        let newKmlLayer = kmlLayerData.kmlLayers.filter((layer) => layer.theatre === theatre && layer.month === month && layer.year === year)[0];
+        let newKmlLayerUrl = newKmlLayer?.url
+        if (newKmlLayerUrl && newKmlLayerUrl != state.kmlLayerUrl) {
             toggleLoadingIconOn()
             setState((prevState: any) => ({
                 ...prevState,
-                kmlLayer: newKmlLayerUrl,
-                kmlLayerHighlight: ""
+                kmlLayerUrl: newKmlLayerUrl,
+                kmlLayerHighlight: "",
+                countryMarkers: newKmlLayer.countryMarkers,
+                countryMarkersLarge: newKmlLayer?.countryMarkers?.filter((countryMarker) => countryMarker.type === "large"),
+                countryMarkersMedium: newKmlLayer?.countryMarkers?.filter((countryMarker) => countryMarker.type === "medium"),
+                countryMarkersSmall: newKmlLayer?.countryMarkers?.filter((countryMarker) => countryMarker.type === "small")
             }))
         }
     }
 
     function setKmlLayerHighlight(newKmlLayerHighlight: string) {
         // TODO: Laat typescript weten dat hier een string uit komt ipv onnodig de toString() method aan te roepen.
-        let newKmlLayerUrl = kmlLayerHighlightData.kmlLayersHighlights[newKmlLayerHighlight as keyof Object]?.kmlLayer?.toString()
+        let newKmlLayerUrl = kmlLayerHighlightData.kmlLayersHighlights.filter((highlight) => highlight.title === newKmlLayerHighlight)[0]?.kmlLayer
         if (!newKmlLayerUrl) newKmlLayerUrl = "";
         setState((prevState: any) => ({
             ...prevState,
@@ -79,7 +116,7 @@ const Maps = () => {
             theatre: newTheatre,
             kmlLayerHighlight: ""
         }));
-        setKmlLayer(newTheatre + "-" + state.month + "-" + state.year);
+        setKmlLayer(newTheatre, state.month, state.year);
         setDocument(newTheatre);
     }
 
@@ -88,22 +125,22 @@ const Maps = () => {
             ...prevState,
             month: newMonth
         }));
-        setKmlLayer(state.theatre + "-" + newMonth + "-" + state.year);
+        setKmlLayer(state.theatre, newMonth, state.year);
         setKmlLayerHighlight(state.documentTitle + "-" + newMonth + "-" + state.year)
     }
 
-    function setYear(newYear: string) {
+    function setYear(newYear: number) {
         setState((prevState: any) => ({
             ...prevState,
             year: newYear
         }));
-        newYear === "1939" ? setMonthMin(9) : setMonthMin(1);
+        newYear === 1939 ? setMonthMin(9) : setMonthMin(1);
         if (state.month < 9) {
             setMonth(9);
-            setKmlLayer(state.theatre + "-" + 9 + "-" + newYear);
+            setKmlLayer(state.theatre, 9, newYear);
         }
         else {
-            setKmlLayer(state.theatre + "-" + state.month + "-" + newYear);
+            setKmlLayer(state.theatre, state.month, newYear);
         }
         setKmlLayerHighlight(state.documentTitle + "-" + state.month + "-" + newYear);
     }
@@ -143,17 +180,13 @@ const Maps = () => {
         }))
     }
 
-    function refreshCountryMarkers() {
-
-    }
-
     // TODO: Haal key op uit .env file ipv in de JS code opslaan.
     const { isLoaded } = useLoadScript({ googleMapsApiKey: 'AIzaSyCVzAS0AE5GqpXxq3fjJeEmB9natOTa-2g' });
-
 
     // TODO: Google Maps Scripts weghalen, want die stacken in <head> bij elke render.
     useEffect(() => {
         return () => {
+            
         };
     }, [])
 
@@ -164,7 +197,7 @@ const Maps = () => {
         <div className="maps">
             <div className="maps__container">
                 <div className="maps__theatre-buttons">
-                    <button className={state.theatre == 'Europe' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("Europe")}>Europe</button>
+                    <button className={state.theatre == 'europe' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("europe")}>Europe</button>
                     <button className={state.theatre == 'The Atlantic' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("The Atlantic")}>The Atlantic</button>
                     <button className={state.theatre == 'The African Theatre' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("The African Theatre")}>Africa</button>
                     <button className={state.theatre == 'The Asian Theatre' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("The Asian Theatre")}>Asia</button>
@@ -177,26 +210,57 @@ const Maps = () => {
                         center={center}
                         options={mapOptions}
                         onZoomChanged={refreshCountryMarkers}
-
+                        onLoad={onLoad}
                     >
                         <KmlLayer
-                            url={state.kmlLayer}
+                            url={state.kmlLayerUrl}
                             options={{ preserveViewport: true, suppressInfoWindows: true }}
                             onStatusChanged={() => toggleLoadingIconOff()}
                             onClick={(event: any) => (setDocument(event.featureData.name), console.log(event.featureData.name), setKmlLayerHighlight(event.featureData.name + "-" + state.month + "-" + state.year))}
                         />
-                        <Marker
-                            position={{lat: 51.5, lng: 13}}
-                            options={{
-                                label: {
-                                    text: 'Germany',
-                                    fontSize: '32px',
-                                    fontWeight: '400',
-                                  },
-                                  clickable: false,
-                                  icon: "false"
-                            }}
-                        />
+                        {state.countryMarkersLarge?.map((countryMarker: any) => (
+                            <Marker
+                                position={countryMarker.position}
+                                options={{
+                                    label: {
+                                        text: countryMarker.title,
+                                        fontSize: (countryMarker.font * (mapRef.current?.getZoom() / 3)) + "px",
+                                        fontWeight: '800',
+                                        fontFamily: "Roboto Condensed sans-serif"
+                                    },
+                                    clickable: false,
+                                    icon: "false"
+                                }}
+                            />
+                        ))}
+                        {state.countryMarkersMedium?.map((countryMarker: any) => (
+                            <Marker
+                                position={countryMarker.position}
+                                options={{
+                                    label: {
+                                        text: countryMarker.title,
+                                        fontSize: (countryMarker.font * (mapRef.current?.getZoom() / 3)) + "px",
+                                        fontWeight: '600',
+                                    },
+                                    clickable: false,
+                                    icon: "false"
+                                }}
+                            />
+                        ))}
+                        {state.countryMarkersSmall?.map((countryMarker: any) => (
+                            <Marker
+                                position={countryMarker.position}
+                                options={{
+                                    label: {
+                                        text: countryMarker.title,
+                                        fontSize: (countryMarker.font * (mapRef.current?.getZoom() / 3)) + "px",
+                                        fontWeight: '600',
+                                    },
+                                    clickable: false,
+                                    icon: "false"
+                                }}
+                            />
+                        ))}
                         <KmlLayer
                             url={state.kmlLayerHighlight}
                             options={{ preserveViewport: true, suppressInfoWindows: true }}
@@ -212,13 +276,13 @@ const Maps = () => {
                 <div className="maps__year-month-container">
                     <div className="year-buttons">
                         <div className="maps__year-buttons">
-                            <button className={state.year == "1939" ? 'maps__year-button maps__button--selected' : 'maps__year-button'} onClick={() => setYear("1939")}>1939</button>
-                            <button className={state.year == "1940" ? 'maps__year-button maps__button--selected' : 'maps__year-button'} onClick={() => setYear("1940")}>1940</button>
-                            <button className={state.year == "1941" ? 'maps__year-button maps__button--selected' : 'maps__year-button maps__button--disabled'} >1941</button>
-                            <button className={state.year == "1942" ? 'maps__year-button maps__button--selected' : 'maps__year-button maps__button--disabled'} >1942</button>
-                            <button className={state.year == "1943" ? 'maps__year-button maps__button--selected' : 'maps__year-button maps__button--disabled'} >1943</button>
-                            <button className={state.year == "1944" ? 'maps__year-button maps__button--selected' : 'maps__year-button maps__button--disabled'} >1944</button>
-                            <button className={state.year == "1945" ? 'maps__year-button maps__button--selected' : 'maps__year-button maps__button--disabled'} >1945</button>
+                            <button className={state.year == 1939 ? 'maps__year-button maps__button--selected' : 'maps__year-button'} onClick={() => setYear(1939)}>1939</button>
+                            <button className={state.year == 1940 ? 'maps__year-button maps__button--selected' : 'maps__year-button'} onClick={() => setYear(1940)}>1940</button>
+                            <button className={state.year == 1941 ? 'maps__year-button maps__button--selected' : 'maps__year-button maps__button--disabled'} >1941</button>
+                            <button className={state.year == 1942 ? 'maps__year-button maps__button--selected' : 'maps__year-button maps__button--disabled'} >1942</button>
+                            <button className={state.year == 1943 ? 'maps__year-button maps__button--selected' : 'maps__year-button maps__button--disabled'} >1943</button>
+                            <button className={state.year == 1944 ? 'maps__year-button maps__button--selected' : 'maps__year-button maps__button--disabled'} >1944</button>
+                            <button className={state.year == 1945 ? 'maps__year-button maps__button--selected' : 'maps__year-button maps__button--disabled'} >1945</button>
                         </div>
                     </div>
                     <div className={state.sliderMonthMin == 9 ? "maps__month-slider maps__month-slider--1939" : "maps__month-slider"}>
