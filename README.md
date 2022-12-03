@@ -47,7 +47,7 @@ Builds and deploys the web app so that it can be hosted on GitHub Pages.
 
 ### Node.js version 19.0.0
 
-Node.js version 19.0.0 has been used for this project. Please have this version installed before running this project or managing dependencies.
+Node.js version 19.0.0 has been used for this project. Please have this version installed before running this project or managing dependencies.\
 Download: https://nodejs.org/en/download/releases/
 
 ### @react-google-maps/api
@@ -55,4 +55,4 @@ Download: https://nodejs.org/en/download/releases/
 The @react-google-maps/api library has been used to create the Google Maps in the Maps component.\
 Package info: https://www.npmjs.com/package/@react-google-maps/api \
 @react-google-maps/api Documentation: https://react-google-maps-api-docs.netlify.app/ \
-Google Maps API Documentation: https://developers.google.com/maps/documentation/javascript/reference \
+Google Maps API Documentation: https://developers.google.com/maps/documentation/javascript/reference

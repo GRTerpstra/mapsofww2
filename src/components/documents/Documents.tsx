@@ -17,7 +17,7 @@ const Documents = () => {
             <div className="documents__container">
                 <div className="documents__menu"></div>
                 <div className="documents__document-container">
-                    <iframe className="documents__document" id="myFrame" src={selectedDocument.contentUrl} title="Wikipedia" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                    <iframe className="documents__document" id="myFrame" src={selectedDocument?.contentUrl} title="Wikipedia" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                 <div className="documents__buttons">
                     <Link to="/maps" className="documents__button">See on map</Link>
                 </div>

@@ -3,6 +3,7 @@ import { default as documentsData } from '../../data/documentsMock.json'
 
 const documentSlice = createSlice({
     name: "documents",
+    // TODO: initialState uiteindelijk leeghalen/buiten dit bestand vullen
     initialState: {
         documents: Object.values(documentsData)[0],
         selectedDocument: Object.values(documentsData)[0][0]
@@ -10,13 +11,7 @@ const documentSlice = createSlice({
     reducers: {
         selectDocument(state: any, action: any) {
             state.selectedDocument = action.payload;
-        },
-        // addDocument(state: any, action: any) {
-        //     state.documents.push(action.payload);
-        // },
-        // deleteDocument(state: any, action: any) {
-        //     state.documents.filter((document: { title: string; }) => document.title !== action.payload.title);
-        // },
+        }
     },
 })
 

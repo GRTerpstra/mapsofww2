@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { GoogleMap, useLoadScript, KmlLayer } from '@react-google-maps/api'
+import { GoogleMap, useLoadScript, KmlLayer, Marker } from '@react-google-maps/api'
 import { default as kmlLayerData } from '../../data/kmlLayersMock.json'
 import { default as documentData } from '../../data/documentsMock.json'
 import { selectDocument } from '../../store/slices/documentsSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import MapsInfo from './MapsInfo'
+import { stepIconClasses } from '@mui/material'
 
 const Maps = () => {
 
@@ -16,14 +17,16 @@ const Maps = () => {
     const [state, setState] = useState({
         kmlLayer: "https://drive.google.com/u/0/uc?id=18eBAJxKIBrQBXRcZ0MBbB6SnhoP4ukKa&export=download",
         kmlLayerHighlight: "",
-        theatre: "europe",
-        month: "5",
+        theatre: "Europe",
+        month: 5,
         year: "1940",
-        document: documentData.documents[0],
-        documentTitle: documentData.documents[0].title,
-        coordinates: selectedDocument.coordinates,
+        document: selectedDocument,
+        documentTitle: selectedDocument?.title,
+        coordinates: selectedDocument?.coordinates,
         zoom: 5,
-        loadingIcon: true
+        loadingIcon: true,
+        sliderMonthMin: 1,
+        sliderMonthMax: 12
     })
 
 
@@ -38,8 +41,10 @@ const Maps = () => {
     }
 
     function setKmlLayer(newKmlLayer: string) {
+        console.log(newKmlLayer)
         // TODO: Laat typescript weten dat hier een string uit komt ipv onnodig de toString() method aan te roepen.
         let newKmlLayerUrl = kmlLayerData.kmlLayers[newKmlLayer as keyof Object]?.toString()
+        console.log(newKmlLayerUrl)
         if (newKmlLayerUrl && newKmlLayerUrl != state.kmlLayer) {
             toggleLoadingIconOn()
             setState((prevState: any) => ({
@@ -53,7 +58,6 @@ const Maps = () => {
     function setKmlLayerHighlight(newKmlLayerHighlight: string) {
         // TODO: Laat typescript weten dat hier een string uit komt ipv onnodig de toString() method aan te roepen.
         let newKmlLayerUrl = kmlLayerData.kmlLayers[newKmlLayerHighlight as keyof Object]?.toString()
-        console.log("new" + newKmlLayerUrl)
         if (!newKmlLayerUrl) newKmlLayerUrl = "";
         setState((prevState: any) => ({
             ...prevState,
@@ -71,7 +75,7 @@ const Maps = () => {
         setDocument(newTheatre);
     }
 
-    function setMonth(newMonth: string) {
+    function setMonth(newMonth: number) {
         setState((prevState: any) => ({
             ...prevState,
             month: newMonth
@@ -85,17 +89,27 @@ const Maps = () => {
             ...prevState,
             year: newYear
         }));
-        setKmlLayer(state.theatre + "-" + state.month + "-" + newYear);
-        setKmlLayerHighlight(state.documentTitle + "-" + state.month + "-" + newYear)
+        newYear === "1939" ? setMonthMin(9) : setMonthMin(1);
+        if (state.month < 9) {
+            setMonth(9);
+            setKmlLayer(state.theatre + "-" + 9 + "-" + newYear);
+        }
+        else {
+            setKmlLayer(state.theatre + "-" + state.month + "-" + newYear);
+        }
+        setKmlLayerHighlight(state.documentTitle + "-" + state.month + "-" + newYear);
+    }
+
+    function setMonthMin(monthMin: number) {
+        setState((prevState: any) => ({
+            ...prevState,
+            sliderMonthMin: monthMin
+        }))
     }
 
     function setDocument(documentTitle: string) {
         let newDocument: any
-        try {
-            newDocument = documentData.documents.filter((document) => document.title == documentTitle)[0];
-        } catch (error) {
-            console.error(error);
-        }
+        newDocument = documentData.documents.filter((document) => document.title == documentTitle)[0];
         dispatch(selectDocument(newDocument))
         setState((prevState) => ({
             ...prevState,
@@ -121,34 +135,33 @@ const Maps = () => {
         }))
     }
 
-    // TODO: Google Maps Scripts weghalen, want die stacken in <head> bij elke render.
-    // TODO: State hier niet zette maar in een begin menu voordat de kaart getoont wordt.
-    useEffect(() => {
-        if (state.coordinates === undefined) {
-            console.log("undefined")
-            setState((prevState: any) => ({
-                ...prevState,
-                coordinates: { "lat": 50, "lng": 10 }
-            }))
-        }
-        return () => {
-        };
-    }, [])
+    const monthArray: Array<String> = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"];
+    const monthElements = monthArray.map((months, i) =>
+        <div className={state.year === "1939" && i < 8 ? "maps__month maps__month--disabled" : "maps__month"}>{months}</div>
+    )
 
     // TODO: Haal key op uit .env file ipv in de JS code opslaan.
     const { isLoaded } = useLoadScript({ googleMapsApiKey: 'AIzaSyCVzAS0AE5GqpXxq3fjJeEmB9natOTa-2g' });
 
+
+    // TODO: Google Maps Scripts weghalen, want die stacken in <head> bij elke render.
+    useEffect(() => {
+        return () => {
+        };
+    }, [])
+
+    // TODO: loader icon
     if (!isLoaded) return <div>Loading...</div>
 
     return (
         <div className="maps">
             <div className="maps__container">
                 <div className="maps__theatre-buttons">
-                    <button className={state.theatre == 'europe' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("Europe")}>Europe</button>
-                    <button className={state.theatre == 'atlantic' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("The Atlantic")}>The Atlantic</button>
-                    <button className={state.theatre == 'africa' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("The African Theatre")}>Africa</button>
-                    <button className={state.theatre == 'asia' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("The Asian Theatre")}>Asia</button>
-                    <button className={state.theatre == 'Pacific' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("The Pacific")}>The Pacific</button>
+                    <button className={state.theatre == 'Europe' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("Europe")}>Europe</button>
+                    <button className={state.theatre == 'The Atlantic' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("The Atlantic")}>The Atlantic</button>
+                    <button className={state.theatre == 'The African Theatre' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("The African Theatre")}>Africa</button>
+                    <button className={state.theatre == 'The Asian Theatre' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("The Asian Theatre")}>Asia</button>
+                    <button className={state.theatre == 'The Pacific' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("The Pacific")}>The Pacific</button>
                 </div>
                 <div className="maps__map-document-container">
                     <GoogleMap
@@ -163,6 +176,18 @@ const Maps = () => {
                             options={{ preserveViewport: true, suppressInfoWindows: true }}
                             onStatusChanged={() => toggleLoadingIconOff()}
                             onClick={(event: any) => (setDocument(event.featureData.name), console.log(event.featureData.name), setKmlLayerHighlight(event.featureData.name + "-" + state.month + "-" + state.year))}
+                        />
+                        <Marker
+                            position={{lat: 51.5, lng: 13}}
+                            options={{
+                                label: {
+                                    text: 'Germany',
+                                    fontSize: '32px',
+                                    fontWeight: '400',
+                                  },
+                                  clickable: false,
+                                  icon: "false"
+                            }}
                         />
                         <KmlLayer
                             url={state.kmlLayerHighlight}
@@ -188,24 +213,10 @@ const Maps = () => {
                             <button className={state.year == "1945" ? 'maps__year-button maps__button--selected' : 'maps__year-button maps__button--disabled'} >1945</button>
                         </div>
                     </div>
-                    <div className="maps__month-slider">
-                        <div className="maps__slider-text">
-                            {/* TODO: Waarschijnlijk maar even via een lijstje doen */}
-                            <div className="maps__month">Jan</div>
-                            <div className="maps__month">Feb</div>
-                            <div className="maps__month">Mar</div>
-                            <div className="maps__month">Apr</div>
-                            <div className="maps__month">May</div>
-                            <div className="maps__month">Jun</div>
-                            <div className="maps__month">Jul</div>
-                            <div className="maps__month">Aug</div>
-                            <div className="maps__month">Sep</div>
-                            <div className="maps__month">Okt</div>
-                            <div className="maps__month">Nov</div>
-                            <div className="maps__month">Dec</div>
-                        </div>
+                    <div className={state.sliderMonthMin == 9 ? "maps__month-slider maps__month-slider--1939" : "maps__month-slider"}>
+                        <div className="maps__slider-text"> {monthElements} </div>
                         {/* TODO: Kijken of de manier waarop de value van deze range input wordt opgehaald wel best practice is met React */}
-                        <input type="range" id="monthSlider" min="1" max="12" value={state.month} onChange={() => setMonth((document.getElementById('monthSlider') as HTMLInputElement).value)} />
+                        <input type="range" id="monthSlider" min={state.sliderMonthMin} max={state.sliderMonthMax} value={state.month} onChange={() => setMonth(Number((document.getElementById('monthSlider') as HTMLInputElement).value))} />
                     </div>
                 </div>
             </div>
