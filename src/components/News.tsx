@@ -63,6 +63,7 @@ const News = () => {
     //             })
     //         });
     // }, [])
+    
 
     return (
         <section className="news">

@@ -58,6 +58,16 @@
             }
         },
         {
+            "title": "United Kingdom",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget enim commodo, finibus nibh eu, condimentum orci. Vivamus id lectus sit amet orci pharetra mollis. Ut accumsan sapien sit amet est hendrerit, ac tincidunt diam pretium. Quisque rhoncus eget est fringilla porta. Nam porttitor dignissim turpis et rutrum. Fusce nec nibh ut dolor feugiat sollicitudin nec et nulla. Fusce dapibus mollis viverra. In in quam et mauris luctus ultricies. Nulla convallis metus at ipsum imperdiet, non hendrerit nisl porta.",
+            "contentUrl": "https://en.wikipedia.org/wiki/Military_history_of_the_United_Kingdom_during_World_War_II#:~:text=British%20forces%20played%20major%20roles,States%20and%20other%20Allied%20countries.",
+            "image": "https://i.pinimg.com/originals/d8/6e/05/d86e055aad2603ca1829a7d83a38ff8e.jpg",
+            "coordinates": {
+                "lat": 54.24537703552507,
+                "lng": -2.006809857811464
+            }
+        },
+        {
             "title": "France",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget enim commodo, finibus nibh eu, condimentum orci. Vivamus id lectus sit amet orci pharetra mollis. Ut accumsan sapien sit amet est hendrerit, ac tincidunt diam pretium. Quisque rhoncus eget est fringilla porta. Nam porttitor dignissim turpis et rutrum. Fusce nec nibh ut dolor feugiat sollicitudin nec et nulla. Fusce dapibus mollis viverra. In in quam et mauris luctus ultricies. Nulla convallis metus at ipsum imperdiet, non hendrerit nisl porta.",
             "contentUrl": "https://en.wikipedia.org/wiki/France_during_World_War_II",
@@ -97,7 +107,8 @@
         {
             "title": "General Government",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget enim commodo, finibus nibh eu, condimentum orci. Vivamus id lectus sit amet orci pharetra mollis. Ut accumsan sapien sit amet est hendrerit, ac tincidunt diam pretium. Quisque rhoncus eget est fringilla porta. Nam porttitor dignissim turpis et rutrum. Fusce nec nibh ut dolor feugiat sollicitudin nec et nulla. Fusce dapibus mollis viverra. In in quam et mauris luctus ultricies. Nulla convallis metus at ipsum imperdiet, non hendrerit nisl porta.",
-            "image": "https://images.immediate.co.uk/production/volatile/sites/7/2020/03/GettyImages-142628193-631c2d3.jpg?quality=90&crop=5px,0px,1014px,675px&resize=980,654",
+            "contentUrl": "https://en.wikipedia.org/wiki/General_Government",
+            "image": "https://encyclopedia.ushmm.org/images/large/a73e7ec0-6883-479a-8b79-b7e7dbf1490a.jpg.pagespeed.ce.iU7yvTRFqp.jpg",
             "coordinates": {
                 "lat": 50.712262316202185, 
                 "lng": 21.26234077690292

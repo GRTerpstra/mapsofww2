@@ -7,7 +7,7 @@ import { selectDocument } from '../../store/slices/documentsSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import MapsInfo from './MapsInfo'
 import { stepIconClasses } from '@mui/material'
-import { convertCompilerOptionsFromJson } from 'typescript'
+import { convertCompilerOptionsFromJson, isConditionalExpression } from 'typescript'
 
 // TODO: Typing fixen in het hele component
 const Maps = () => {
@@ -53,27 +53,26 @@ const Maps = () => {
         minZoom: 2,
     }
 
-    function refreshCountryMarkers() {
+    function refreshCountryMarkers(newCountryMarkers: any = []) {
+        let countryMarkers: any = [];
+        newCountryMarkers.length !== 0 ? countryMarkers = newCountryMarkers : countryMarkers = state.countryMarkers;
         let zoomLevel: number = 5;
         if(mapRef.current?.getZoom() !== undefined) zoomLevel = mapRef.current?.getZoom()
         let countryMarkersLarge: any = []
         let countryMarkersMedium: any = []
         let countryMarkersSmall: any = []
-        if (zoomLevel < 4) {
+        if (zoomLevel >= 6) {
+            countryMarkersLarge = countryMarkers.filter((countryMarker: any) => countryMarker.type === "large")
+            countryMarkersMedium = countryMarkers.filter((countryMarker: any) => countryMarker.type === "medium")
+            countryMarkersSmall = countryMarkers.filter((countryMarker: any) => countryMarker.type === "small")
         }
-        else if (zoomLevel < 5) {
-            countryMarkersLarge = state.countryMarkers.filter((countryMarker: any) => countryMarker.type === "large")
+        else if (zoomLevel >= 5) {
+            countryMarkersLarge = countryMarkers.filter((countryMarker: any) => countryMarker.type === "large")
+            countryMarkersMedium = countryMarkers.filter((countryMarker: any) => countryMarker.type === "medium")
         }
-        else if (zoomLevel < 7) {
-            countryMarkersLarge = state.countryMarkers.filter((countryMarker: any) => countryMarker.type === "large")
-            countryMarkersMedium = state.countryMarkers.filter((countryMarker: any) => countryMarker.type === "medium")
+        else if (zoomLevel >= 4) {
+            countryMarkersLarge = countryMarkers.filter((countryMarker: any) => countryMarker.type === "large")
         }
-        else if (zoomLevel >= 7) {
-            countryMarkersLarge = state.countryMarkers.filter((countryMarker: any) => countryMarker.type === "large")
-            countryMarkersMedium = state.countryMarkers.filter((countryMarker: any) => countryMarker.type === "medium")
-            countryMarkersSmall = state.countryMarkers.filter((countryMarker: any) => countryMarker.type === "small")
-        }
-        console.log(countryMarkersLarge)
         setState((prevState: any) => ({
             ...prevState,
             countryMarkersLarge: countryMarkersLarge,
@@ -83,7 +82,6 @@ const Maps = () => {
     }
 
     function setKmlLayer(theatre: string, month: number, year: number) {
-        // TODO: Laat typescript weten dat hier een string uit komt ipv onnodig de toString() method aan te roepen.
         let newKmlLayer = kmlLayerData.kmlLayers.filter((layer) => layer.theatre === theatre && layer.month === month && layer.year === year)[0];
         let newKmlLayerUrl = newKmlLayer?.url
         if (newKmlLayerUrl && newKmlLayerUrl != state.kmlLayerUrl) {
@@ -93,11 +91,9 @@ const Maps = () => {
                 kmlLayerUrl: newKmlLayerUrl,
                 kmlLayerHighlight: "",
                 countryMarkers: newKmlLayer.countryMarkers,
-                countryMarkersLarge: newKmlLayer?.countryMarkers?.filter((countryMarker) => countryMarker.type === "large"),
-                countryMarkersMedium: newKmlLayer?.countryMarkers?.filter((countryMarker) => countryMarker.type === "medium"),
-                countryMarkersSmall: newKmlLayer?.countryMarkers?.filter((countryMarker) => countryMarker.type === "small")
             }))
         }
+        refreshCountryMarkers(newKmlLayer.countryMarkers);
     }
 
     function setKmlLayerHighlight(newKmlLayerHighlight: string) {
@@ -111,13 +107,18 @@ const Maps = () => {
     }
 
     function setTheatre(newTheatre: string) {
+        let newDocument: any = documentData.documents.filter((document) => document.title == newTheatre)[0];
+        dispatch(selectDocument(newDocument))
         setState((prevState: any) => ({
             ...prevState,
             theatre: newTheatre,
-            kmlLayerHighlight: ""
+            kmlLayerHighlight: "",
+            document: newDocument,
+            documentTitle: newDocument?.title,
+            coordinates: newDocument?.coordinates,
+            zoom: newDocument?.zoom
         }));
         setKmlLayer(newTheatre, state.month, state.year);
-        setDocument(newTheatre);
     }
 
     function setMonth(newMonth: number) {
@@ -160,7 +161,6 @@ const Maps = () => {
             ...prevState,
             document: newDocument,
             documentTitle: newDocument?.title,
-            coordinates: newDocument?.coordinates,
             zoom: newDocument?.zoom
         }))
     }

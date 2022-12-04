@@ -16,6 +16,24 @@
                     "font": 16
                 },
                 {
+                    "title": "Slovak Republic",
+                    "position": {
+                        "lat": 48.65,
+                        "lng": 19.310598391681765
+                    },
+                    "type": "medium",
+                    "font": 8
+                },
+                {
+                    "title": "United Kingdom",
+                    "position": {
+                        "lat": 54.24537703552507,
+                        "lng": -2.006809857811464
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
                     "title": "France",
                     "position": {
                         "lat": 47,
@@ -25,22 +43,22 @@
                     "font": 16
                 },
                 {
-                    "title": "The Netherlands",
+                    "title": "Poland",
                     "position": {
-                        "lat": 52,
-                        "lng": 5.5
+                        "lat": 51.5,
+                        "lng": 22.5
                     },
-                    "type": "medium",
-                    "font": 12
+                    "type": "large",
+                    "font": 16
                 },
                 {
-                    "title": "Belgium",
+                    "title": "Protectorate of Bohemia and Moravia",
                     "position": {
-                        "lat": 50.5,
-                        "lng": 4.75
+                        "lat": 49.5,
+                        "lng": 15.198865402596716
                     },
-                    "type": "medium",
-                    "font": 12
+                    "type": "small",
+                    "font": 7
                 }
             ]
         },
@@ -60,6 +78,24 @@
                     "font": 16
                 },
                 {
+                    "title": "Slovak Republic",
+                    "position": {
+                        "lat": 48.65,
+                        "lng": 19.310598391681765
+                    },
+                    "type": "medium",
+                    "font": 8
+                },
+                {
+                    "title": "United Kingdom",
+                    "position": {
+                        "lat": 54.24537703552507,
+                        "lng": -2.006809857811464
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
                     "title": "France",
                     "position": {
                         "lat": 47,
@@ -69,22 +105,22 @@
                     "font": 16
                 },
                 {
-                    "title": "The Netherlands",
+                    "title": "General Govenment",
                     "position": {
-                        "lat": 52,
-                        "lng": 5.5
+                        "lat": 51,
+                        "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 12
+                    "font": 10
                 },
                 {
-                    "title": "Belgium",
+                    "title": "Protectorate of Bohemia and Moravia",
                     "position": {
-                        "lat": 50.5,
-                        "lng": 4.75
+                        "lat": 49.5,
+                        "lng": 15.198865402596716
                     },
-                    "type": "medium",
-                    "font": 12
+                    "type": "small",
+                    "font": 7
                 }
             ]
         },
@@ -104,6 +140,24 @@
                     "font": 16
                 },
                 {
+                    "title": "Slovak Republic",
+                    "position": {
+                        "lat": 48.65,
+                        "lng": 19.310598391681765
+                    },
+                    "type": "medium",
+                    "font": 8
+                },
+                {
+                    "title": "United Kingdom",
+                    "position": {
+                        "lat": 54.24537703552507,
+                        "lng": -2.006809857811464
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
                     "title": "France",
                     "position": {
                         "lat": 47,
@@ -113,28 +167,28 @@
                     "font": 16
                 },
                 {
-                    "title": "The Netherlands",
+                    "title": "General Govenment",
                     "position": {
-                        "lat": 52,
-                        "lng": 5.5
+                        "lat": 51,
+                        "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 12
+                    "font": 10
                 },
                 {
-                    "title": "Belgium",
+                    "title": "Protectorate of Bohemia and Moravia",
                     "position": {
-                        "lat": 50.5,
-                        "lng": 4.75
+                        "lat": 49.5,
+                        "lng": 15.198865402596716
                     },
-                    "type": "medium",
-                    "font": 12
+                    "type": "small",
+                    "font": 7
                 }
             ]
         },
         {
             "theatre": "europe",
-            "month": 12,
+            "month": 11,
             "year": 1939,
             "url": "https://drive.google.com/u/0/uc?id=15ihCymQvE_VU3BK8ji9lP7yy2DSU4PYc&export=download",
             "countryMarkers": [
@@ -142,9 +196,27 @@
                     "title": "Germany",
                     "position": {
                         "lat": 52,
-                        "lng": 12
+                        "lng": 11
                     },
                     "type": "large"
+                },
+                {
+                    "title": "Slovak Republic",
+                    "position": {
+                        "lat": 48.65,
+                        "lng": 19.310598391681765
+                    },
+                    "type": "medium",
+                    "font": 8
+                },
+                {
+                    "title": "United Kingdom",
+                    "position": {
+                        "lat": 54.24537703552507,
+                        "lng": -2.006809857811464
+                    },
+                    "type": "large",
+                    "font": 16
                 }
             ]
         },
@@ -164,6 +236,24 @@
                     "font": 16
                 },
                 {
+                    "title": "Slovak Republic",
+                    "position": {
+                        "lat": 48.65,
+                        "lng": 19.310598391681765
+                    },
+                    "type": "medium",
+                    "font": 8
+                },
+                {
+                    "title": "United Kingdom",
+                    "position": {
+                        "lat": 54.24537703552507,
+                        "lng": -2.006809857811464
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
                     "title": "France",
                     "position": {
                         "lat": 47,
@@ -173,22 +263,22 @@
                     "font": 16
                 },
                 {
-                    "title": "The Netherlands",
+                    "title": "General Govenment",
                     "position": {
-                        "lat": 52,
-                        "lng": 5.5
+                        "lat": 51,
+                        "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 12
+                    "font": 10
                 },
                 {
-                    "title": "Belgium",
+                    "title": "Protectorate of Bohemia and Moravia",
                     "position": {
-                        "lat": 50.5,
-                        "lng": 4.75
+                        "lat": 49.5,
+                        "lng": 15.198865402596716
                     },
-                    "type": "medium",
-                    "font": 12
+                    "type": "small",
+                    "font": 7
                 }
             ]
         },
@@ -208,6 +298,24 @@
                     "font": 16
                 },
                 {
+                    "title": "Slovak Republic",
+                    "position": {
+                        "lat": 48.65,
+                        "lng": 19.310598391681765
+                    },
+                    "type": "medium",
+                    "font": 8
+                },
+                {
+                    "title": "United Kingdom",
+                    "position": {
+                        "lat": 54.24537703552507,
+                        "lng": -2.006809857811464
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
                     "title": "France",
                     "position": {
                         "lat": 47,
@@ -217,22 +325,22 @@
                     "font": 16
                 },
                 {
-                    "title": "The Netherlands",
+                    "title": "General Govenment",
                     "position": {
-                        "lat": 52,
-                        "lng": 5.5
+                        "lat": 51,
+                        "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 12
+                    "font": 10
                 },
                 {
-                    "title": "Belgium",
+                    "title": "Protectorate of Bohemia and Moravia",
                     "position": {
-                        "lat": 50.5,
-                        "lng": 4.75
+                        "lat": 49.5,
+                        "lng": 15.198865402596716
                     },
-                    "type": "medium",
-                    "font": 12
+                    "type": "small",
+                    "font": 7
                 }
             ]
         },
@@ -252,6 +360,24 @@
                     "font": 16
                 },
                 {
+                    "title": "Slovak Republic",
+                    "position": {
+                        "lat": 48.65,
+                        "lng": 19.310598391681765
+                    },
+                    "type": "medium",
+                    "font": 8
+                },
+                {
+                    "title": "United Kingdom",
+                    "position": {
+                        "lat": 54.24537703552507,
+                        "lng": -2.006809857811464
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
                     "title": "France",
                     "position": {
                         "lat": 47,
@@ -261,22 +387,22 @@
                     "font": 16
                 },
                 {
-                    "title": "The Netherlands",
+                    "title": "General Govenment",
                     "position": {
-                        "lat": 52,
-                        "lng": 5.5
+                        "lat": 51,
+                        "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 12
+                    "font": 10
                 },
                 {
-                    "title": "Belgium",
+                    "title": "Protectorate of Bohemia and Moravia",
                     "position": {
-                        "lat": 50.5,
-                        "lng": 4.75
+                        "lat": 49.5,
+                        "lng": 15.198865402596716
                     },
-                    "type": "medium",
-                    "font": 12
+                    "type": "small",
+                    "font": 7
                 }
             ]
         },
@@ -296,6 +422,24 @@
                     "font": 16
                 },
                 {
+                    "title": "Slovak Republic",
+                    "position": {
+                        "lat": 48.65,
+                        "lng": 19.310598391681765
+                    },
+                    "type": "medium",
+                    "font": 8
+                },
+                {
+                    "title": "United Kingdom",
+                    "position": {
+                        "lat": 54.24537703552507,
+                        "lng": -2.006809857811464
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
                     "title": "France",
                     "position": {
                         "lat": 47,
@@ -305,22 +449,40 @@
                     "font": 16
                 },
                 {
-                    "title": "The Netherlands",
+                    "title": "General Govenment",
                     "position": {
-                        "lat": 52,
-                        "lng": 5.5
+                        "lat": 51,
+                        "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 12
+                    "font": 10
                 },
                 {
-                    "title": "Belgium",
+                    "title": "Protectorate of Bohemia and Moravia",
                     "position": {
-                        "lat": 50.5,
-                        "lng": 4.75
+                        "lat": 49.5,
+                        "lng": 15.198865402596716
+                    },
+                    "type": "small",
+                    "font": 7
+                },
+                {
+                    "title": "Denmark",
+                    "position": {
+                        "lat": 55.25,
+                        "lng": 10.180195473146615
                     },
                     "type": "medium",
-                    "font": 12
+                    "font": 11
+                },
+                {
+                    "title": "Norway",
+                    "position": {
+                        "lat": 61.59040296331235, 
+                        "lng": 8.841814420935062
+                    },
+                    "type": "large",
+                    "font": 16
                 }
             ]
         },
@@ -340,6 +502,24 @@
                     "font": 16
                 },
                 {
+                    "title": "Slovak Republic",
+                    "position": {
+                        "lat": 48.65,
+                        "lng": 19.310598391681765
+                    },
+                    "type": "medium",
+                    "font": 8
+                },
+                {
+                    "title": "United Kingdom",
+                    "position": {
+                        "lat": 54.24537703552507,
+                        "lng": -2.006809857811464
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
                     "title": "France",
                     "position": {
                         "lat": 47,
@@ -355,16 +535,71 @@
                         "lng": 5.5
                     },
                     "type": "medium",
-                    "font": 12
+                    "font": 10
                 },
                 {
                     "title": "Belgium",
                     "position": {
                         "lat": 50.5,
-                        "lng": 4.75
+                        "lng": 4.5
                     },
                     "type": "medium",
+                    "font": 10
+                },
+                {
+                    "title": "General Govenment",
+                    "position": {
+                        "lat": 51,
+                        "lng": 21.75
+                    },
+                    "type": "medium",
+                    "font": 10
+                },
+                {
+                    "title": "Protectorate of Bohemia and Moravia",
+                    "position": {
+                        "lat": 49.5,
+                        "lng": 15.198865402596716
+                    },
+                    "type": "small",
+                    "font": 7
+                },
+                {
+                    "title": "Protectorate of Denmark",
+                    "position": {
+                        "lat": 55.25,
+                        "lng": 10.180195473146615
+                    },
+                    "type": "medium",
+                    "font": 10
+                },
+                {
+                    "title": "Norway",
+                    "position": {
+                        "lat": 69.2, 
+                        "lng": 19.959335252509526
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "German Occupied Norwegian Territory",
+                    "position": {
+                        "lat": 61.59040296331235, 
+                        "lng": 8.841814420935062
+                    },
+                    "type": "large",
                     "font": 12
+                }
+                ,
+                {
+                    "title": "Luxembourg",
+                    "position": {
+                        "lat": 49.6, 
+                        "lng": 6.110007095723923 
+                    },
+                    "type": "small",
+                    "font": 7
                 }
             ]
         },
@@ -382,6 +617,69 @@
                     },
                     "type": "large",
                     "font": 16
+                },
+                {
+                    "title": "Slovak Republic",
+                    "position": {
+                        "lat": 48.65,
+                        "lng": 19.310598391681765
+                    },
+                    "type": "medium",
+                    "font": 8
+                },
+                {
+                    "title": "United Kingdom",
+                    "position": {
+                        "lat": 54.24537703552507,
+                        "lng": -2.006809857811464
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "General Govenment",
+                    "position": {
+                        "lat": 51,
+                        "lng": 21.75
+                    },
+                    "type": "medium",
+                    "font": 10
+                },
+                {
+                    "title": "Protectorate of Bohemia and Moravia",
+                    "position": {
+                        "lat": 49.5,
+                        "lng": 15.198865402596716
+                    },
+                    "type": "small",
+                    "font": 7
+                },
+                {
+                    "title": "Protectorate of Denmark",
+                    "position": {
+                        "lat": 55.25,
+                        "lng": 10.180195473146615
+                    },
+                    "type": "medium",
+                    "font": 10
+                },
+                {
+                    "title": "Reichskommissariat Norway",
+                    "position": {
+                        "lat": 61.59040296331235, 
+                        "lng": 8.841814420935062
+                    },
+                    "type": "large",
+                    "font": 12
+                },
+                {
+                    "title": "Reichskommissariat of The Netherlands",
+                    "position": {
+                        "lat": 52,
+                        "lng": 5.5
+                    },
+                    "type": "small",
+                    "font": 8
                 }
             ]
         },
@@ -399,6 +697,69 @@
                     },
                     "type": "large",
                     "font": 16
+                },
+                {
+                    "title": "Slovak Republic",
+                    "position": {
+                        "lat": 48.65,
+                        "lng": 19.310598391681765
+                    },
+                    "type": "medium",
+                    "font": 8
+                },
+                {
+                    "title": "United Kingdom",
+                    "position": {
+                        "lat": 54.24537703552507,
+                        "lng": -2.006809857811464
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "General Govenment",
+                    "position": {
+                        "lat": 51,
+                        "lng": 21.75
+                    },
+                    "type": "medium",
+                    "font": 10
+                },
+                {
+                    "title": "Protectorate of Bohemia and Moravia",
+                    "position": {
+                        "lat": 49.5,
+                        "lng": 15.198865402596716
+                    },
+                    "type": "small",
+                    "font": 7
+                },
+                {
+                    "title": "Protectorate of Denmark",
+                    "position": {
+                        "lat": 55.25,
+                        "lng": 10.180195473146615
+                    },
+                    "type": "medium",
+                    "font": 10
+                },
+                {
+                    "title": "Reichskommissariat Norway",
+                    "position": {
+                        "lat": 61.59040296331235, 
+                        "lng": 8.841814420935062
+                    },
+                    "type": "large",
+                    "font": 12
+                },
+                {
+                    "title": "Reichskommissariat of The Netherlands",
+                    "position": {
+                        "lat": 52,
+                        "lng": 5.5
+                    },
+                    "type": "small",
+                    "font": 8
                 }
             ]
         },
@@ -416,6 +777,69 @@
                     },
                     "type": "large",
                     "font": 16
+                },
+                {
+                    "title": "Slovak Republic",
+                    "position": {
+                        "lat": 48.65,
+                        "lng": 19.310598391681765
+                    },
+                    "type": "medium",
+                    "font": 8
+                },
+                {
+                    "title": "United Kingdom",
+                    "position": {
+                        "lat": 54.24537703552507,
+                        "lng": -2.006809857811464
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "General Govenment",
+                    "position": {
+                        "lat": 51,
+                        "lng": 21.75
+                    },
+                    "type": "medium",
+                    "font": 10
+                },
+                {
+                    "title": "Protectorate of Bohemia and Moravia",
+                    "position": {
+                        "lat": 49.5,
+                        "lng": 15.198865402596716
+                    },
+                    "type": "small",
+                    "font": 7
+                },
+                {
+                    "title": "Protectorate of Denmark",
+                    "position": {
+                        "lat": 55.25,
+                        "lng": 10.180195473146615
+                    },
+                    "type": "medium",
+                    "font": 10
+                },
+                {
+                    "title": "Reichskommissariat Norway",
+                    "position": {
+                        "lat": 61.59040296331235, 
+                        "lng": 8.841814420935062
+                    },
+                    "type": "large",
+                    "font": 12
+                },
+                {
+                    "title": "Reichskommissariat of The Netherlands",
+                    "position": {
+                        "lat": 52,
+                        "lng": 5.5
+                    },
+                    "type": "small",
+                    "font": 8
                 }
             ]
         },
@@ -433,6 +857,69 @@
                     },
                     "type": "large",
                     "font": 16
+                },
+                {
+                    "title": "Slovak Republic",
+                    "position": {
+                        "lat": 48.65,
+                        "lng": 19.310598391681765
+                    },
+                    "type": "medium",
+                    "font": 8
+                },
+                {
+                    "title": "United Kingdom",
+                    "position": {
+                        "lat": 54.24537703552507,
+                        "lng": -2.006809857811464
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "General Govenment",
+                    "position": {
+                        "lat": 51,
+                        "lng": 21.75
+                    },
+                    "type": "medium",
+                    "font": 10
+                },
+                {
+                    "title": "Protectorate of Bohemia and Moravia",
+                    "position": {
+                        "lat": 49.5,
+                        "lng": 15.198865402596716
+                    },
+                    "type": "small",
+                    "font": 7
+                },
+                {
+                    "title": "Protectorate of Denmark",
+                    "position": {
+                        "lat": 55.25,
+                        "lng": 10.180195473146615
+                    },
+                    "type": "medium",
+                    "font": 10
+                },
+                {
+                    "title": "Reichskommissariat Norway",
+                    "position": {
+                        "lat": 61.59040296331235, 
+                        "lng": 8.841814420935062
+                    },
+                    "type": "large",
+                    "font": 12
+                },
+                {
+                    "title": "Reichskommissariat of The Netherlands",
+                    "position": {
+                        "lat": 52,
+                        "lng": 5.5
+                    },
+                    "type": "small",
+                    "font": 8
                 }
             ]
         },
@@ -450,6 +937,69 @@
                     },
                     "type": "large",
                     "font": 16
+                },
+                {
+                    "title": "Slovak Republic",
+                    "position": {
+                        "lat": 48.65,
+                        "lng": 19.310598391681765
+                    },
+                    "type": "medium",
+                    "font": 8
+                },
+                {
+                    "title": "United Kingdom",
+                    "position": {
+                        "lat": 54.24537703552507,
+                        "lng": -2.006809857811464
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "General Govenment",
+                    "position": {
+                        "lat": 51,
+                        "lng": 21.75
+                    },
+                    "type": "medium",
+                    "font": 10
+                },
+                {
+                    "title": "Protectorate of Bohemia and Moravia",
+                    "position": {
+                        "lat": 49.5,
+                        "lng": 15.198865402596716
+                    },
+                    "type": "small",
+                    "font": 7
+                },
+                {
+                    "title": "Protectorate of Denmark",
+                    "position": {
+                        "lat": 55.25,
+                        "lng": 10.180195473146615
+                    },
+                    "type": "medium",
+                    "font": 10
+                },
+                {
+                    "title": "Reichskommissariat Norway",
+                    "position": {
+                        "lat": 61.59040296331235, 
+                        "lng": 8.841814420935062
+                    },
+                    "type": "large",
+                    "font": 12
+                },
+                {
+                    "title": "Reichskommissariat of The Netherlands",
+                    "position": {
+                        "lat": 52,
+                        "lng": 5.5
+                    },
+                    "type": "small",
+                    "font": 8
                 }
             ]
         },
@@ -467,12 +1017,75 @@
                     },
                     "type": "large",
                     "font": 16
+                },
+                {
+                    "title": "Slovak Republic",
+                    "position": {
+                        "lat": 48.65,
+                        "lng": 19.310598391681765
+                    },
+                    "type": "medium",
+                    "font": 8
+                },
+                {
+                    "title": "United Kingdom",
+                    "position": {
+                        "lat": 54.24537703552507,
+                        "lng": -2.006809857811464
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "General Govenment",
+                    "position": {
+                        "lat": 51,
+                        "lng": 21.75
+                    },
+                    "type": "medium",
+                    "font": 10
+                },
+                {
+                    "title": "Protectorate of Bohemia and Moravia",
+                    "position": {
+                        "lat": 49.5,
+                        "lng": 15.198865402596716
+                    },
+                    "type": "small",
+                    "font": 7
+                },
+                {
+                    "title": "Protectorate of Denmark",
+                    "position": {
+                        "lat": 55.25,
+                        "lng": 10.180195473146615
+                    },
+                    "type": "medium",
+                    "font": 10
+                },
+                {
+                    "title": "Reichskommissariat Norway",
+                    "position": {
+                        "lat": 61.59040296331235, 
+                        "lng": 8.841814420935062
+                    },
+                    "type": "large",
+                    "font": 12
+                },
+                {
+                    "title": "Reichskommissariat of The Netherlands",
+                    "position": {
+                        "lat": 52,
+                        "lng": 5.5
+                    },
+                    "type": "small",
+                    "font": 8
                 }
             ]
         },
         {
             "theatre": "europe",
-            "month": 12,
+            "month": 11,
             "year": 1940,
             "url": "https://drive.google.com/u/0/uc?id=1uKjx-38C37WyAI4WS79EMYkVQbBAYtyk&export=download",
             "countryMarkers": [
@@ -484,6 +1097,69 @@
                     },
                     "type": "large",
                     "font": 16
+                },
+                {
+                    "title": "Slovak Republic",
+                    "position": {
+                        "lat": 48.65,
+                        "lng": 19.310598391681765
+                    },
+                    "type": "medium",
+                    "font": 8
+                },
+                {
+                    "title": "United Kingdom",
+                    "position": {
+                        "lat": 54.24537703552507,
+                        "lng": -2.006809857811464
+                    },
+                    "type": "large",
+                    "font": 16
+                },
+                {
+                    "title": "General Govenment",
+                    "position": {
+                        "lat": 51,
+                        "lng": 21.75
+                    },
+                    "type": "medium",
+                    "font": 10
+                },
+                {
+                    "title": "Protectorate of Bohemia and Moravia",
+                    "position": {
+                        "lat": 49.5,
+                        "lng": 15.198865402596716
+                    },
+                    "type": "small",
+                    "font": 7
+                },
+                {
+                    "title": "Protectorate of Denmark",
+                    "position": {
+                        "lat": 55.25,
+                        "lng": 10.180195473146615
+                    },
+                    "type": "medium",
+                    "font": 10
+                },
+                {
+                    "title": "Reichskommissariat Norway",
+                    "position": {
+                        "lat": 61.59040296331235, 
+                        "lng": 8.841814420935062
+                    },
+                    "type": "large",
+                    "font": 12
+                },
+                {
+                    "title": "Reichskommissariat of The Netherlands",
+                    "position": {
+                        "lat": 52,
+                        "lng": 5.5
+                    },
+                    "type": "small",
+                    "font": 8
                 }
             ]
         }
