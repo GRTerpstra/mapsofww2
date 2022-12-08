@@ -6,8 +6,6 @@ import { default as documentData } from '../../data/documentsMock.json'
 import { selectDocument } from '../../store/slices/documentsSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import MapsInfo from './MapsInfo'
-import { stepIconClasses } from '@mui/material'
-import { convertCompilerOptionsFromJson, isConditionalExpression } from 'typescript'
 
 // TODO: Typing fixen in het hele component
 const Maps = () => {
@@ -15,20 +13,25 @@ const Maps = () => {
     const dispatch = useDispatch();
     const selectedDocument = useSelector((state: any) => state.documents.selectedDocument)
     const mapRef: any = useRef<GoogleMap>();
+    const markersLargeRef: any = useRef<Marker>();
+    const markersMediumRef: any = useRef<Marker>();
+    const markersSmallRef: any = useRef<Marker>();
     const onLoad: any = useCallback((map: any) => (mapRef.current = map), []);
+    const onMarkersLargeLoad: any = useCallback((marker: any) => (markersLargeRef.current = marker), []);
+    const onMarkersMediumLoad: any = useCallback((marker: any) => (markersMediumRef.current = marker), []);
+    const onMarkersSmallLoad: any = useCallback((marker: any) => (markersSmallRef.current = marker), []);
 
     // TODO: Initial values hier niet invullen maar in een begin menu voordat de kaart getoont wordt.
     const [state, setState] = useState({
-        countryMarkers: kmlLayerData.kmlLayers.filter((layer) => layer.theatre === "europe" && layer.month === 5 && layer.year === 1940)[0].countryMarkers,
+        countryMarkers: kmlLayerData.kmlLayers.filter((layer) => layer.theatre === "The European Theatre" && layer.month === 5 && layer.year === 1940)[0].countryMarkers,
         kmlLayerUrl: "https://drive.google.com/u/0/uc?id=18eBAJxKIBrQBXRcZ0MBbB6SnhoP4ukKa&export=download",
         kmlLayerHighlight: "",
-        theatre: "europe",
+        theatre: selectedDocument?.theatre,
         month: 5,
         year: 1940,
         document: selectedDocument,
         documentTitle: selectedDocument?.title,
         coordinates: selectedDocument?.coordinates,
-        zoom: 5,
         loadingIcon: true,
         sliderMonthMin: 1,
         sliderMonthMax: 12,
@@ -40,6 +43,9 @@ const Maps = () => {
     /* Save the coordinates where the map pans to in a variable with the help of the useMemo React hook.
     This to prevent the map from always panning to the same unchanged coordinates on a re-render. */
     const center = useMemo(() => (state.coordinates), [state.coordinates]);
+
+    // The zoom value of the map only changes when the theatre changes.  
+    const zoom = useMemo(() =>  (selectedDocument?.zoom ? selectedDocument?.zoom : 5), [state.theatre]);
 
     const monthArray: Array<String> = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"];
     const monthElements = monthArray.map((months, i) =>
@@ -56,8 +62,8 @@ const Maps = () => {
     function refreshCountryMarkers(newCountryMarkers: any = []) {
         let countryMarkers: any = [];
         newCountryMarkers.length !== 0 ? countryMarkers = newCountryMarkers : countryMarkers = state.countryMarkers;
-        let zoomLevel: number = 5;
-        if(mapRef.current?.getZoom() !== undefined) zoomLevel = mapRef.current?.getZoom()
+        let zoomLevel: number = zoom;
+        if (mapRef.current?.getZoom() !== undefined) zoomLevel = mapRef.current?.getZoom()
         let countryMarkersLarge: any = []
         let countryMarkersMedium: any = []
         let countryMarkersSmall: any = []
@@ -82,8 +88,8 @@ const Maps = () => {
     }
 
     function setKmlLayer(theatre: string, month: number, year: number) {
-        let newKmlLayer = kmlLayerData.kmlLayers.filter((layer) => layer.theatre === theatre && layer.month === month && layer.year === year)[0];
-        let newKmlLayerUrl = newKmlLayer?.url
+        var newKmlLayer = kmlLayerData.kmlLayers.filter((layer) => layer.theatre === theatre && layer.month === month && layer.year === year)[0];
+        var newKmlLayerUrl = newKmlLayer?.url
         if (newKmlLayerUrl && newKmlLayerUrl != state.kmlLayerUrl) {
             toggleLoadingIconOn()
             setState((prevState: any) => ({
@@ -97,8 +103,7 @@ const Maps = () => {
     }
 
     function setKmlLayerHighlight(newKmlLayerHighlight: string) {
-        // TODO: Laat typescript weten dat hier een string uit komt ipv onnodig de toString() method aan te roepen.
-        let newKmlLayerUrl = kmlLayerHighlightData.kmlLayersHighlights.filter((highlight) => highlight.title === newKmlLayerHighlight)[0]?.kmlLayer
+        var newKmlLayerUrl = kmlLayerHighlightData.kmlLayersHighlights.filter((highlight) => highlight.title === newKmlLayerHighlight)[0]?.kmlLayer
         if (!newKmlLayerUrl) newKmlLayerUrl = "";
         setState((prevState: any) => ({
             ...prevState,
@@ -107,7 +112,7 @@ const Maps = () => {
     }
 
     function setTheatre(newTheatre: string) {
-        let newDocument: any = documentData.documents.filter((document) => document.title == newTheatre)[0];
+        var newDocument: any = documentData.documents.filter((document) => document.title == newTheatre)[0];
         dispatch(selectDocument(newDocument))
         setState((prevState: any) => ({
             ...prevState,
@@ -116,9 +121,18 @@ const Maps = () => {
             document: newDocument,
             documentTitle: newDocument?.title,
             coordinates: newDocument?.coordinates,
-            zoom: newDocument?.zoom
         }));
         setKmlLayer(newTheatre, state.month, state.year);
+    }    
+
+    function setDocument(documentTitle: string) {
+        var newDocument: any = documentData.documents.filter((document) => document.title == documentTitle)[0];
+        dispatch(selectDocument(newDocument))
+        setState((prevState) => ({
+            ...prevState,
+            document: newDocument,
+            documentTitle: newDocument?.title
+        }))
     }
 
     function setMonth(newMonth: number) {
@@ -153,18 +167,6 @@ const Maps = () => {
         }))
     }
 
-    function setDocument(documentTitle: string) {
-        let newDocument: any
-        newDocument = documentData.documents.filter((document) => document.title == documentTitle)[0];
-        dispatch(selectDocument(newDocument))
-        setState((prevState) => ({
-            ...prevState,
-            document: newDocument,
-            documentTitle: newDocument?.title,
-            zoom: newDocument?.zoom
-        }))
-    }
-
     // TODO: Misschien hier één gezamelijke function van maken ipv één voor on en één voor off.
     function toggleLoadingIconOff() {
         setState((prevState: any) => ({
@@ -186,7 +188,6 @@ const Maps = () => {
     // TODO: Google Maps Scripts weghalen, want die stacken in <head> bij elke render.
     useEffect(() => {
         return () => {
-            
         };
     }, [])
 
@@ -197,7 +198,7 @@ const Maps = () => {
         <div className="maps">
             <div className="maps__container">
                 <div className="maps__theatre-buttons">
-                    <button className={state.theatre == 'europe' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("europe")}>Europe</button>
+                    <button className={state.theatre == 'The European Theatre' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("The European Theatre")}>Europe</button>
                     <button className={state.theatre == 'The Atlantic' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("The Atlantic")}>The Atlantic</button>
                     <button className={state.theatre == 'The African Theatre' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("The African Theatre")}>Africa</button>
                     <button className={state.theatre == 'The Asian Theatre' ? "maps__theatre-button maps__button--selected" : "maps__theatre-button"} onClick={() => setTheatre("The Asian Theatre")}>Asia</button>
@@ -206,7 +207,7 @@ const Maps = () => {
                 <div className="maps__map-document-container">
                     <GoogleMap
                         mapContainerClassName="maps__map"
-                        zoom={state.zoom}
+                        zoom={zoom}
                         center={center}
                         options={mapOptions}
                         onZoomChanged={refreshCountryMarkers}
@@ -218,22 +219,24 @@ const Maps = () => {
                             onStatusChanged={() => toggleLoadingIconOff()}
                             onClick={(event: any) => (setDocument(event.featureData.name), console.log(event.featureData.name), setKmlLayerHighlight(event.featureData.name + "-" + state.month + "-" + state.year))}
                         />
-                        {state.countryMarkersLarge?.map((countryMarker: any) => (
+                        {state.countryMarkersLarge?.map((countryMarker: any) =>
                             <Marker
                                 position={countryMarker.position}
                                 options={{
                                     label: {
                                         text: countryMarker.title,
                                         fontSize: (countryMarker.font * (mapRef.current?.getZoom() / 3)) + "px",
-                                        fontWeight: '800',
+                                        fontWeight: '600',
                                         fontFamily: "Roboto Condensed sans-serif"
                                     },
                                     clickable: false,
-                                    icon: "false"
+                                    icon: "false",
+                                    optimized: true
                                 }}
+                                onLoad={onMarkersLargeLoad}
                             />
-                        ))}
-                        {state.countryMarkersMedium?.map((countryMarker: any) => (
+                        )}
+                        {state.countryMarkersMedium?.map((countryMarker: any) =>
                             <Marker
                                 position={countryMarker.position}
                                 options={{
@@ -241,13 +244,16 @@ const Maps = () => {
                                         text: countryMarker.title,
                                         fontSize: (countryMarker.font * (mapRef.current?.getZoom() / 3)) + "px",
                                         fontWeight: '600',
+                                        fontFamily: "Roboto Condensed sans-serif"
                                     },
                                     clickable: false,
-                                    icon: "false"
+                                    icon: "false",
+                                    optimized: true
                                 }}
+                                onLoad={onMarkersMediumLoad}
                             />
-                        ))}
-                        {state.countryMarkersSmall?.map((countryMarker: any) => (
+                        )}
+                        {state.countryMarkersSmall?.map((countryMarker: any) =>
                             <Marker
                                 position={countryMarker.position}
                                 options={{
@@ -255,12 +261,15 @@ const Maps = () => {
                                         text: countryMarker.title,
                                         fontSize: (countryMarker.font * (mapRef.current?.getZoom() / 3)) + "px",
                                         fontWeight: '600',
+                                        fontFamily: "Roboto Condensed sans-serif"
                                     },
                                     clickable: false,
-                                    icon: "false"
+                                    icon: "false",
+                                    optimized: true
                                 }}
+                                onLoad={onMarkersSmallLoad}
                             />
-                        ))}
+                        )}
                         <KmlLayer
                             url={state.kmlLayerHighlight}
                             options={{ preserveViewport: true, suppressInfoWindows: true }}

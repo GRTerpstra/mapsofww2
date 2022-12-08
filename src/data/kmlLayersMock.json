@@ -1,7 +1,7 @@
 {
     "kmlLayers": [
         {
-            "theatre": "europe",
+            "theatre": "The European Theatre",
             "month": 9,
             "year": 1939,
             "url": "https://drive.google.com/u/0/uc?id=106aPX6P_rml5ssmwguYIQMmj1IbGAJf1&export=download",
@@ -13,7 +13,7 @@
                         "lng": 11.5
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "Slovak Republic",
@@ -22,7 +22,7 @@
                         "lng": 19.310598391681765
                     },
                     "type": "medium",
-                    "font": 8
+                    "font": 9
                 },
                 {
                     "title": "United Kingdom",
@@ -31,7 +31,7 @@
                         "lng": -2.006809857811464
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "France",
@@ -40,7 +40,7 @@
                         "lng": 2.5
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "Poland",
@@ -49,7 +49,7 @@
                         "lng": 22.5
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "Protectorate of Bohemia and Moravia",
@@ -58,12 +58,12 @@
                         "lng": 15.198865402596716
                     },
                     "type": "small",
-                    "font": 7
+                    "font": 8
                 }
             ]
         },
         {
-            "theatre": "europe",
+            "theatre": "The European Theatre",
             "month": 10,
             "year": 1939,
             "url": "https://drive.google.com/u/0/uc?id=15ihCymQvE_VU3BK8ji9lP7yy2DSU4PYc&export=download",
@@ -75,7 +75,7 @@
                         "lng": 13
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "Slovak Republic",
@@ -84,7 +84,7 @@
                         "lng": 19.310598391681765
                     },
                     "type": "medium",
-                    "font": 8
+                    "font": 9
                 },
                 {
                     "title": "United Kingdom",
@@ -93,7 +93,7 @@
                         "lng": -2.006809857811464
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "France",
@@ -102,7 +102,7 @@
                         "lng": 2.5
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "General Govenment",
@@ -111,7 +111,7 @@
                         "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
                     "title": "Protectorate of Bohemia and Moravia",
@@ -120,12 +120,12 @@
                         "lng": 15.198865402596716
                     },
                     "type": "small",
-                    "font": 7
+                    "font": 8
                 }
             ]
         },
         {
-            "theatre": "europe",
+            "theatre": "The European Theatre",
             "month": 11,
             "year": 1939,
             "url": "https://drive.google.com/u/0/uc?id=15ihCymQvE_VU3BK8ji9lP7yy2DSU4PYc&export=download",
@@ -137,7 +137,7 @@
                         "lng": 13
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "Slovak Republic",
@@ -146,7 +146,7 @@
                         "lng": 19.310598391681765
                     },
                     "type": "medium",
-                    "font": 8
+                    "font": 9
                 },
                 {
                     "title": "United Kingdom",
@@ -155,7 +155,7 @@
                         "lng": -2.006809857811464
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "France",
@@ -164,7 +164,7 @@
                         "lng": 2.5
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "General Govenment",
@@ -173,7 +173,7 @@
                         "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
                     "title": "Protectorate of Bohemia and Moravia",
@@ -182,12 +182,12 @@
                         "lng": 15.198865402596716
                     },
                     "type": "small",
-                    "font": 7
+                    "font": 8
                 }
             ]
         },
         {
-            "theatre": "europe",
+            "theatre": "The European Theatre",
             "month": 11,
             "year": 1939,
             "url": "https://drive.google.com/u/0/uc?id=15ihCymQvE_VU3BK8ji9lP7yy2DSU4PYc&export=download",
@@ -207,7 +207,7 @@
                         "lng": 19.310598391681765
                     },
                     "type": "medium",
-                    "font": 8
+                    "font": 9
                 },
                 {
                     "title": "United Kingdom",
@@ -216,12 +216,12 @@
                         "lng": -2.006809857811464
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 }
             ]
         },
         {
-            "theatre": "europe",
+            "theatre": "The European Theatre",
             "month": 1,
             "year": 1940,
             "url": "https://drive.google.com/u/0/uc?id=15ihCymQvE_VU3BK8ji9lP7yy2DSU4PYc&export=download",
@@ -233,7 +233,7 @@
                         "lng": 13
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "Slovak Republic",
@@ -242,7 +242,7 @@
                         "lng": 19.310598391681765
                     },
                     "type": "medium",
-                    "font": 8
+                    "font": 9
                 },
                 {
                     "title": "United Kingdom",
@@ -251,7 +251,7 @@
                         "lng": -2.006809857811464
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "France",
@@ -260,7 +260,7 @@
                         "lng": 2.5
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "General Govenment",
@@ -269,7 +269,7 @@
                         "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
                     "title": "Protectorate of Bohemia and Moravia",
@@ -278,12 +278,12 @@
                         "lng": 15.198865402596716
                     },
                     "type": "small",
-                    "font": 7
+                    "font": 8
                 }
             ]
         },
         {
-            "theatre": "europe",
+            "theatre": "The European Theatre",
             "month": 2,
             "year": 1940,
             "url": "https://drive.google.com/u/0/uc?id=15ihCymQvE_VU3BK8ji9lP7yy2DSU4PYc&export=download",
@@ -295,7 +295,7 @@
                         "lng": 13
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "Slovak Republic",
@@ -304,7 +304,7 @@
                         "lng": 19.310598391681765
                     },
                     "type": "medium",
-                    "font": 8
+                    "font": 9
                 },
                 {
                     "title": "United Kingdom",
@@ -313,7 +313,7 @@
                         "lng": -2.006809857811464
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "France",
@@ -322,7 +322,7 @@
                         "lng": 2.5
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "General Govenment",
@@ -331,7 +331,7 @@
                         "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
                     "title": "Protectorate of Bohemia and Moravia",
@@ -340,12 +340,12 @@
                         "lng": 15.198865402596716
                     },
                     "type": "small",
-                    "font": 7
+                    "font": 8
                 }
             ]
         },
         {
-            "theatre": "europe",
+            "theatre": "The European Theatre",
             "month": 3,
             "year": 1940,
             "url": "https://drive.google.com/u/0/uc?id=15ihCymQvE_VU3BK8ji9lP7yy2DSU4PYc&export=download",
@@ -357,7 +357,7 @@
                         "lng": 13
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "Slovak Republic",
@@ -366,7 +366,7 @@
                         "lng": 19.310598391681765
                     },
                     "type": "medium",
-                    "font": 8
+                    "font": 9
                 },
                 {
                     "title": "United Kingdom",
@@ -375,7 +375,7 @@
                         "lng": -2.006809857811464
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "France",
@@ -384,7 +384,7 @@
                         "lng": 2.5
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "General Govenment",
@@ -393,7 +393,7 @@
                         "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
                     "title": "Protectorate of Bohemia and Moravia",
@@ -402,12 +402,12 @@
                         "lng": 15.198865402596716
                     },
                     "type": "small",
-                    "font": 7
+                    "font": 8
                 }
             ]
         },
         {
-            "theatre": "europe",
+            "theatre": "The European Theatre",
             "month": 4,
             "year": 1940,
             "url": "https://drive.google.com/u/0/uc?id=1m7HtIkTic5d78fFlS0ftwzAZjITuC6IZ&export=download",
@@ -419,7 +419,7 @@
                         "lng": 13
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "Slovak Republic",
@@ -428,7 +428,7 @@
                         "lng": 19.310598391681765
                     },
                     "type": "medium",
-                    "font": 8
+                    "font": 9
                 },
                 {
                     "title": "United Kingdom",
@@ -437,7 +437,7 @@
                         "lng": -2.006809857811464
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "France",
@@ -446,7 +446,7 @@
                         "lng": 2.5
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "General Govenment",
@@ -455,7 +455,7 @@
                         "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
                     "title": "Protectorate of Bohemia and Moravia",
@@ -464,7 +464,7 @@
                         "lng": 15.198865402596716
                     },
                     "type": "small",
-                    "font": 7
+                    "font": 8
                 },
                 {
                     "title": "Denmark",
@@ -478,16 +478,16 @@
                 {
                     "title": "Norway",
                     "position": {
-                        "lat": 61.59040296331235, 
+                        "lat": 61.59040296331235,
                         "lng": 8.841814420935062
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 }
             ]
         },
         {
-            "theatre": "europe",
+            "theatre": "The European Theatre",
             "month": 5,
             "year": 1940,
             "url": "https://drive.google.com/u/0/uc?id=18eBAJxKIBrQBXRcZ0MBbB6SnhoP4ukKa&export=download",
@@ -499,7 +499,7 @@
                         "lng": 13
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "Slovak Republic",
@@ -508,7 +508,7 @@
                         "lng": 19.310598391681765
                     },
                     "type": "medium",
-                    "font": 8
+                    "font": 9
                 },
                 {
                     "title": "United Kingdom",
@@ -517,7 +517,7 @@
                         "lng": -2.006809857811464
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "France",
@@ -526,7 +526,7 @@
                         "lng": 2.5
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "The Netherlands",
@@ -535,7 +535,7 @@
                         "lng": 5.5
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
                     "title": "Belgium",
@@ -544,7 +544,7 @@
                         "lng": 4.5
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
                     "title": "General Govenment",
@@ -553,7 +553,7 @@
                         "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
                     "title": "Protectorate of Bohemia and Moravia",
@@ -562,7 +562,7 @@
                         "lng": 15.198865402596716
                     },
                     "type": "small",
-                    "font": 7
+                    "font": 8
                 },
                 {
                     "title": "Protectorate of Denmark",
@@ -571,40 +571,39 @@
                         "lng": 10.180195473146615
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
                     "title": "Norway",
                     "position": {
-                        "lat": 69.2, 
+                        "lat": 69.2,
                         "lng": 19.959335252509526
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "German Occupied Norwegian Territory",
                     "position": {
-                        "lat": 61.59040296331235, 
+                        "lat": 61.59040296331235,
                         "lng": 8.841814420935062
                     },
                     "type": "large",
                     "font": 12
-                }
-                ,
+                },
                 {
                     "title": "Luxembourg",
                     "position": {
-                        "lat": 49.6, 
-                        "lng": 6.110007095723923 
+                        "lat": 49.6,
+                        "lng": 6.110007095723923
                     },
                     "type": "small",
-                    "font": 7
+                    "font": 8
                 }
             ]
         },
         {
-            "theatre": "europe",
+            "theatre": "The European Theatre",
             "month": 6,
             "year": 1940,
             "url": "https://drive.google.com/u/0/uc?id=19g7Sp4rt-Tl22SiyHXZwgAZRC36Zgniw&export=download",
@@ -616,7 +615,7 @@
                         "lng": 13
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "Slovak Republic",
@@ -625,7 +624,7 @@
                         "lng": 19.310598391681765
                     },
                     "type": "medium",
-                    "font": 8
+                    "font": 9
                 },
                 {
                     "title": "United Kingdom",
@@ -634,7 +633,7 @@
                         "lng": -2.006809857811464
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "General Govenment",
@@ -643,7 +642,7 @@
                         "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
                     "title": "Protectorate of Bohemia and Moravia",
@@ -652,7 +651,7 @@
                         "lng": 15.198865402596716
                     },
                     "type": "small",
-                    "font": 7
+                    "font": 8
                 },
                 {
                     "title": "Protectorate of Denmark",
@@ -661,30 +660,66 @@
                         "lng": 10.180195473146615
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
-                    "title": "Reichskommissariat Norway",
+                    "title": "Reich Commissariat of Norway",
                     "position": {
-                        "lat": 61.59040296331235, 
+                        "lat": 61.59040296331235,
                         "lng": 8.841814420935062
                     },
                     "type": "large",
                     "font": 12
                 },
                 {
-                    "title": "Reichskommissariat of The Netherlands",
+                    "title": "Reich Commissariat of The Netherlands",
                     "position": {
                         "lat": 52,
                         "lng": 5.5
                     },
                     "type": "small",
+                    "font": 9
+                },
+                {
+                    "title": "Military Administration of Belgium and Northern France",
+                    "position": {
+                        "lat": 50.45,
+                        "lng": 3.953548800812087
+                    },
+                    "type": "small",
                     "font": 8
+                },
+                {
+                    "title": "German Occupied French Territory",
+                    "position": {
+                        "lat": 49.5,
+                        "lng": 2.8
+                    },
+                    "type": "small",
+                    "font": 8
+                },
+                {
+                    "title": "France",
+                    "position": {
+                        "lat": 46.2,
+                        "lng": 2.5
+                    },
+                    "type": "large",
+                    "font": 17
+                },
+                {
+                    "title": "Italy",
+                    "position": {
+                        "lat": 42.64983954030814, 
+                        "lng": 12.471749624530036
+                    },
+                    "type": "large",
+                    "font": 17
                 }
             ]
         },
         {
-            "theatre": "europe",
+            "theatre": "The European Theatre",
             "month": 7,
             "year": 1940,
             "url": "https://drive.google.com/u/0/uc?id=1Tyg1x9VB0YPnY3ZYAUd_9aZ2joVWCXOy&export=download",
@@ -696,7 +731,7 @@
                         "lng": 13
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "Slovak Republic",
@@ -705,7 +740,7 @@
                         "lng": 19.310598391681765
                     },
                     "type": "medium",
-                    "font": 8
+                    "font": 9
                 },
                 {
                     "title": "United Kingdom",
@@ -714,7 +749,7 @@
                         "lng": -2.006809857811464
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "General Govenment",
@@ -723,7 +758,7 @@
                         "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
                     "title": "Protectorate of Bohemia and Moravia",
@@ -732,7 +767,7 @@
                         "lng": 15.198865402596716
                     },
                     "type": "small",
-                    "font": 7
+                    "font": 8
                 },
                 {
                     "title": "Protectorate of Denmark",
@@ -741,30 +776,66 @@
                         "lng": 10.180195473146615
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
-                    "title": "Reichskommissariat Norway",
+                    "title": "Reich Commissariat of Norway",
                     "position": {
-                        "lat": 61.59040296331235, 
+                        "lat": 61.59040296331235,
                         "lng": 8.841814420935062
                     },
                     "type": "large",
                     "font": 12
                 },
                 {
-                    "title": "Reichskommissariat of The Netherlands",
+                    "title": "Reich Commissariat of The Netherlands",
                     "position": {
                         "lat": 52,
                         "lng": 5.5
                     },
                     "type": "small",
+                    "font": 9
+                },
+                {
+                    "title": "Military Administration of Belgium and Northern France",
+                    "position": {
+                        "lat": 50.45,
+                        "lng": 3.953548800812087
+                    },
+                    "type": "small",
                     "font": 8
+                },
+                {
+                    "title": "Italy",
+                    "position": {
+                        "lat": 42.64983954030814, 
+                        "lng": 12.471749624530036
+                    },
+                    "type": "large",
+                    "font": 17
+                },
+                {
+                    "title": "Military Administration of France",
+                    "position": {
+                        "lat": 48,
+                        "lng": 2
+                    },
+                    "type": "medium",
+                    "font": 11
+                },
+                {
+                    "title": "Vichy France ",
+                    "position": {
+                        "lat": 44.7,
+                        "lng": 3
+                    },
+                    "type": "medium",
+                    "font": 11
                 }
             ]
         },
         {
-            "theatre": "europe",
+            "theatre": "The European Theatre",
             "month": 8,
             "year": 1940,
             "url": "https://drive.google.com/u/0/uc?id=1Tyg1x9VB0YPnY3ZYAUd_9aZ2joVWCXOy&export=download",
@@ -776,7 +847,7 @@
                         "lng": 13
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "Slovak Republic",
@@ -785,7 +856,7 @@
                         "lng": 19.310598391681765
                     },
                     "type": "medium",
-                    "font": 8
+                    "font": 9
                 },
                 {
                     "title": "United Kingdom",
@@ -794,7 +865,7 @@
                         "lng": -2.006809857811464
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "General Govenment",
@@ -803,7 +874,7 @@
                         "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
                     "title": "Protectorate of Bohemia and Moravia",
@@ -812,7 +883,7 @@
                         "lng": 15.198865402596716
                     },
                     "type": "small",
-                    "font": 7
+                    "font": 8
                 },
                 {
                     "title": "Protectorate of Denmark",
@@ -821,30 +892,66 @@
                         "lng": 10.180195473146615
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
-                    "title": "Reichskommissariat Norway",
+                    "title": "Reich Commissariat of Norway",
                     "position": {
-                        "lat": 61.59040296331235, 
+                        "lat": 61.59040296331235,
                         "lng": 8.841814420935062
                     },
                     "type": "large",
                     "font": 12
                 },
                 {
-                    "title": "Reichskommissariat of The Netherlands",
+                    "title": "Reich Commissariat of The Netherlands",
                     "position": {
                         "lat": 52,
                         "lng": 5.5
                     },
                     "type": "small",
+                    "font": 9
+                },
+                {
+                    "title": "Military Administration of Belgium and Northern France",
+                    "position": {
+                        "lat": 50.45,
+                        "lng": 3.953548800812087
+                    },
+                    "type": "small",
                     "font": 8
+                },
+                {
+                    "title": "Italy",
+                    "position": {
+                        "lat": 42.64983954030814, 
+                        "lng": 12.471749624530036
+                    },
+                    "type": "large",
+                    "font": 17
+                },
+                {
+                    "title": "Military Administration of France",
+                    "position": {
+                        "lat": 48,
+                        "lng": 2
+                    },
+                    "type": "medium",
+                    "font": 11
+                },
+                {
+                    "title": "Vichy France ",
+                    "position": {
+                        "lat": 44.7,
+                        "lng": 3
+                    },
+                    "type": "medium",
+                    "font": 11
                 }
             ]
         },
         {
-            "theatre": "europe",
+            "theatre": "The European Theatre",
             "month": 9,
             "year": 1940,
             "url": "https://drive.google.com/u/0/uc?id=1Tyg1x9VB0YPnY3ZYAUd_9aZ2joVWCXOy&export=download",
@@ -856,7 +963,7 @@
                         "lng": 13
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "Slovak Republic",
@@ -865,7 +972,7 @@
                         "lng": 19.310598391681765
                     },
                     "type": "medium",
-                    "font": 8
+                    "font": 9
                 },
                 {
                     "title": "United Kingdom",
@@ -874,7 +981,7 @@
                         "lng": -2.006809857811464
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "General Govenment",
@@ -883,7 +990,7 @@
                         "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
                     "title": "Protectorate of Bohemia and Moravia",
@@ -892,7 +999,7 @@
                         "lng": 15.198865402596716
                     },
                     "type": "small",
-                    "font": 7
+                    "font": 8
                 },
                 {
                     "title": "Protectorate of Denmark",
@@ -901,30 +1008,66 @@
                         "lng": 10.180195473146615
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
-                    "title": "Reichskommissariat Norway",
+                    "title": "Reich Commissariat of Norway",
                     "position": {
-                        "lat": 61.59040296331235, 
+                        "lat": 61.59040296331235,
                         "lng": 8.841814420935062
                     },
                     "type": "large",
                     "font": 12
                 },
                 {
-                    "title": "Reichskommissariat of The Netherlands",
+                    "title": "Reich Commissariat of The Netherlands",
                     "position": {
                         "lat": 52,
                         "lng": 5.5
                     },
                     "type": "small",
+                    "font": 9
+                },
+                {
+                    "title": "Military Administration of Belgium and Northern France",
+                    "position": {
+                        "lat": 50.45,
+                        "lng": 3.953548800812087
+                    },
+                    "type": "small",
                     "font": 8
+                },
+                {
+                    "title": "Italy",
+                    "position": {
+                        "lat": 42.64983954030814, 
+                        "lng": 12.471749624530036
+                    },
+                    "type": "large",
+                    "font": 17
+                },
+                {
+                    "title": "Military Administration of France",
+                    "position": {
+                        "lat": 48,
+                        "lng": 2
+                    },
+                    "type": "medium",
+                    "font": 11
+                },
+                {
+                    "title": "Vichy France ",
+                    "position": {
+                        "lat": 44.7,
+                        "lng": 3
+                    },
+                    "type": "medium",
+                    "font": 11
                 }
             ]
         },
         {
-            "theatre": "europe",
+            "theatre": "The European Theatre",
             "month": 10,
             "year": 1940,
             "url": "https://drive.google.com/u/0/uc?id=18aceD7C8HcpbnN6wonyjx_qv9d0XZhTB&export=download",
@@ -936,7 +1079,7 @@
                         "lng": 13
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "Slovak Republic",
@@ -945,7 +1088,7 @@
                         "lng": 19.310598391681765
                     },
                     "type": "medium",
-                    "font": 8
+                    "font": 9
                 },
                 {
                     "title": "United Kingdom",
@@ -954,7 +1097,7 @@
                         "lng": -2.006809857811464
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "General Govenment",
@@ -963,7 +1106,7 @@
                         "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
                     "title": "Protectorate of Bohemia and Moravia",
@@ -972,7 +1115,7 @@
                         "lng": 15.198865402596716
                     },
                     "type": "small",
-                    "font": 7
+                    "font": 8
                 },
                 {
                     "title": "Protectorate of Denmark",
@@ -981,30 +1124,66 @@
                         "lng": 10.180195473146615
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
-                    "title": "Reichskommissariat Norway",
+                    "title": "Reich Commissariat of Norway",
                     "position": {
-                        "lat": 61.59040296331235, 
+                        "lat": 61.59040296331235,
                         "lng": 8.841814420935062
                     },
                     "type": "large",
                     "font": 12
                 },
                 {
-                    "title": "Reichskommissariat of The Netherlands",
+                    "title": "Reich Commissariat of The Netherlands",
                     "position": {
                         "lat": 52,
                         "lng": 5.5
                     },
                     "type": "small",
+                    "font": 9
+                },
+                {
+                    "title": "Military Administration of Belgium and Northern France",
+                    "position": {
+                        "lat": 50.45,
+                        "lng": 3.953548800812087
+                    },
+                    "type": "small",
                     "font": 8
+                },
+                {
+                    "title": "Italy",
+                    "position": {
+                        "lat": 42.64983954030814, 
+                        "lng": 12.471749624530036
+                    },
+                    "type": "large",
+                    "font": 17
+                },
+                {
+                    "title": "Military Administration of France",
+                    "position": {
+                        "lat": 48,
+                        "lng": 2
+                    },
+                    "type": "medium",
+                    "font": 11
+                },
+                {
+                    "title": "Vichy France ",
+                    "position": {
+                        "lat": 44.7,
+                        "lng": 3
+                    },
+                    "type": "medium",
+                    "font": 11
                 }
             ]
         },
         {
-            "theatre": "europe",
+            "theatre": "The European Theatre",
             "month": 11,
             "year": 1940,
             "url": "https://drive.google.com/u/0/uc?id=1zIjOdtPIugvoQwLNPDikTIhRMxbqw9Sy&export=download",
@@ -1016,7 +1195,7 @@
                         "lng": 13
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "Slovak Republic",
@@ -1025,7 +1204,7 @@
                         "lng": 19.310598391681765
                     },
                     "type": "medium",
-                    "font": 8
+                    "font": 9
                 },
                 {
                     "title": "United Kingdom",
@@ -1034,7 +1213,7 @@
                         "lng": -2.006809857811464
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "General Govenment",
@@ -1043,7 +1222,7 @@
                         "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
                     "title": "Protectorate of Bohemia and Moravia",
@@ -1052,7 +1231,7 @@
                         "lng": 15.198865402596716
                     },
                     "type": "small",
-                    "font": 7
+                    "font": 8
                 },
                 {
                     "title": "Protectorate of Denmark",
@@ -1061,30 +1240,66 @@
                         "lng": 10.180195473146615
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
-                    "title": "Reichskommissariat Norway",
+                    "title": "Reich Commissariat of Norway",
                     "position": {
-                        "lat": 61.59040296331235, 
+                        "lat": 61.59040296331235,
                         "lng": 8.841814420935062
                     },
                     "type": "large",
                     "font": 12
                 },
                 {
-                    "title": "Reichskommissariat of The Netherlands",
+                    "title": "Reich Commissariat of The Netherlands",
                     "position": {
                         "lat": 52,
                         "lng": 5.5
                     },
                     "type": "small",
+                    "font": 9
+                },
+                {
+                    "title": "Military Administration of Belgium and Northern France",
+                    "position": {
+                        "lat": 50.45,
+                        "lng": 3.953548800812087
+                    },
+                    "type": "small",
                     "font": 8
+                },
+                {
+                    "title": "Italy",
+                    "position": {
+                        "lat": 42.64983954030814, 
+                        "lng": 12.471749624530036
+                    },
+                    "type": "large",
+                    "font": 17
+                },
+                {
+                    "title": "Military Administration of France",
+                    "position": {
+                        "lat": 48,
+                        "lng": 2
+                    },
+                    "type": "medium",
+                    "font": 11
+                },
+                {
+                    "title": "Vichy France ",
+                    "position": {
+                        "lat": 44.7,
+                        "lng": 3
+                    },
+                    "type": "medium",
+                    "font": 11
                 }
             ]
         },
         {
-            "theatre": "europe",
+            "theatre": "The European Theatre",
             "month": 11,
             "year": 1940,
             "url": "https://drive.google.com/u/0/uc?id=1uKjx-38C37WyAI4WS79EMYkVQbBAYtyk&export=download",
@@ -1096,7 +1311,7 @@
                         "lng": 13
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "Slovak Republic",
@@ -1105,7 +1320,7 @@
                         "lng": 19.310598391681765
                     },
                     "type": "medium",
-                    "font": 8
+                    "font": 9
                 },
                 {
                     "title": "United Kingdom",
@@ -1114,7 +1329,7 @@
                         "lng": -2.006809857811464
                     },
                     "type": "large",
-                    "font": 16
+                    "font": 17
                 },
                 {
                     "title": "General Govenment",
@@ -1123,7 +1338,7 @@
                         "lng": 21.75
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
                     "title": "Protectorate of Bohemia and Moravia",
@@ -1132,7 +1347,7 @@
                         "lng": 15.198865402596716
                     },
                     "type": "small",
-                    "font": 7
+                    "font": 8
                 },
                 {
                     "title": "Protectorate of Denmark",
@@ -1141,25 +1356,61 @@
                         "lng": 10.180195473146615
                     },
                     "type": "medium",
-                    "font": 10
+                    "font": 11
                 },
                 {
-                    "title": "Reichskommissariat Norway",
+                    "title": "Reich Commissariat of Norway",
                     "position": {
-                        "lat": 61.59040296331235, 
+                        "lat": 61.59040296331235,
                         "lng": 8.841814420935062
                     },
                     "type": "large",
                     "font": 12
                 },
                 {
-                    "title": "Reichskommissariat of The Netherlands",
+                    "title": "Reich Commissariat of The Netherlands",
                     "position": {
                         "lat": 52,
                         "lng": 5.5
                     },
                     "type": "small",
+                    "font": 9
+                },
+                {
+                    "title": "Military Administration of Belgium and Northern France",
+                    "position": {
+                        "lat": 50.45,
+                        "lng": 3.953548800812087
+                    },
+                    "type": "small",
                     "font": 8
+                },
+                {
+                    "title": "Italy",
+                    "position": {
+                        "lat": 42.64983954030814, 
+                        "lng": 12.471749624530036
+                    },
+                    "type": "large",
+                    "font": 17
+                },
+                {
+                    "title": "Military Administration of France",
+                    "position": {
+                        "lat": 48,
+                        "lng": 2
+                    },
+                    "type": "medium",
+                    "font": 11
+                },
+                {
+                    "title": "Vichy France ",
+                    "position": {
+                        "lat": 44.7,
+                        "lng": 3
+                    },
+                    "type": "medium",
+                    "font": 11
                 }
             ]
         }

@@ -23,7 +23,11 @@
 
     &__theatre-button {
         height: 2.5rem;
-        width: 6rem;
+        width: 8rem;
+        border-radius: 0.2rem;
+        background-color: $silver-light-background-color;
+        box-shadow: $button-shadow;
+        font-size: 1.3rem;
 
         &:hover {
             cursor: pointer;
@@ -33,8 +37,10 @@
     &__map-document-container {
         display: flex;
         flex-direction: row;
+        overflow: hidden;
         height: 80%;
-        border: 0.1rem solid black;
+        border-radius: 0.35rem; 
+        box-shadow: 0.05rem 0.05rem 0.4rem black;
         background-color: rgb(212, 212, 212);
     }
 
@@ -44,13 +50,14 @@
         width: 75%;
     }
 
-    &__loader-icon-container {opacity: 0%;
-        animation: loaderIcon 1s ease-out 0.5s forwards ;
+    &__loader-icon-container {
+        opacity: 0%;
+        animation: loaderIcon 1s ease-out 0.5s forwards;
     }
 
     @keyframes loaderIcon {
         from {
-            opacity: 0%
+            opacity: 0%;
         }
         to {
             opacity: 100%;
@@ -73,9 +80,10 @@
     }
 
     &__document {
+        z-index: 1;
         height: 100%;
         width: 25%;
-        border-left: 0.1rem solid black;
+        box-shadow: 0 0 0.15rem black;
     }
 
     &__year-month-container {
@@ -95,6 +103,9 @@
     &__year-button {
         height: 2.5rem;
         width: 6rem;
+        border-radius: 0.2rem;
+        box-shadow: $button-shadow;
+        font-size: 1.1rem;
 
         &:hover {
             cursor: pointer;
@@ -102,25 +113,27 @@
     }
 
     &__button--selected {
-        border: 3px solid black;
+        border: 2px solid black;
     }
 
     &__button--disabled {
-        background-color: rgb(161, 161, 161);
-        border: 1px solid black;
+        color: $text-disabled-color;
+        background-color: $disabled-background-color;
 
         &:hover {
             cursor: default;
         }
     }
-    
+
     &__month-slider {
         display: flex;
         justify-content: center;
         position: relative;
         height: 2.5rem;
         width: 100%;
-        border: 1px solid black;
+        border-radius: 0.5rem;
+        box-shadow: $button-shadow;
+        font-size: 1.1rem;
 
         // ---------- Resetting user agent styles ---------------
         input[type="range"] {
@@ -234,16 +247,16 @@
 
     &__month-slider--1939 {
         justify-content: flex-end;
-        
+
         input[type="range"] {
             width: 33.33%;
         }
-        
+
         input[type="range"]::-webkit-slider-thumb {
             width: 25%;
         }
     }
-    
+
     &__slider-text {
         display: flex;
         z-index: -1;
@@ -260,11 +273,12 @@
         height: 100%;
 
         &:not(:first-child) {
-            border-left: 1px solid gray;
+            box-shadow: -0.02rem 0 0.05rem black;
         }
     }
 
     &__month--disabled {
-        background-color: rgb(161, 161, 161);
+        color: $text-disabled-color;
+        background-color: $disabled-background-color
     }
 }

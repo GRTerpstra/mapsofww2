@@ -9,15 +9,74 @@
     }
 
     &__menu {
+        z-index: 1;
+        overflow-x: hidden;
+        overflow-y: auto;
         width: max(15rem, 15%);
         height: 100%;
-        border-right: 1px solid black;
         background-color: silver;
+        box-shadow: 0 0 0.2rem black;
+        user-select: none;
+    }
+
+    &__menu-container {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        height: calc(100% - 1rem);
+        box-sizing: border-box;
+        list-style: none;
+    }
+
+    &__theatre {
+        width: 100%;
+        padding-left: 0.6rem;
+        background-image: linear-gradient(to right, transparent, $silver-background-color 50%, transparent);
+        box-shadow: 0.1rem 0.1rem 0.2rem black;
+        font-size: 1.3rem;
+        font-weight: 600;
+
+        &:hover {
+            cursor: pointer;
+            color: rgb(53, 53, 53);
+        }
+    }
+
+    &__theatre--selected {
+        background-image: none;
+        background-color: rgb(122, 122, 122);
+    }
+
+    &__menu-document {
+        padding-left: 0.6rem;
+        font-size: 1.2rem;
+        font-weight: 400;
+        list-style: none;
+
+        &:hover {
+            cursor: pointer;
+            color: rgb(53, 53, 53);
+        }
+
+        &:nth-child(2) {
+            margin-top: 0.75rem;
+        }
+
+        &:last-child {
+            margin-bottom: 0.25rem;
+        }
+    }
+
+    &__menu-document--selected {
+        background-color: rgb(122, 122, 122);
     }
 
     &__document-container {
         display: flex;
         flex-direction: column;
+        position: relative;
         width: 85%;
         height: 100%;
         overflow: hidden;
@@ -25,10 +84,38 @@
 
     &__document {
         width: 100%;
-        height: 90%;
+        height: 100%;
         border: none;
         margin: none;
-        border-bottom: 1px solid black;
+    }
+
+    &__loader-icon-container {
+        opacity: 0%;
+        animation: loaderIconContainer 1s ease-out 1s forwards ;
+    }
+
+    @keyframes loaderIconContainer {
+        from {
+            opacity: 0%
+        }
+        to {
+            opacity: 100%;
+        }
+    }
+    
+    &__loader-icon-background {
+        position: absolute;
+        opacity: 30%;
+        width: 100%;
+        height: 100%;
+        background: black;
+    }
+
+    &__loader-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     &__buttons {
@@ -37,19 +124,85 @@
         justify-content: center;
         align-items: center;
         gap: 1rem;
-        width: 100%;
-        height: 10%;
+        opacity: 0%;
+        position: absolute;
+        bottom: 1.5rem;
+        left: 50%;
+        padding: 0.45rem 1.8rem;
+        box-sizing: border-box;
+        transform: translateX(-50%);
+        border-radius: 0.5rem;
+        background-color: rgb(232, 232, 232, 0.8);
+        box-shadow: 0.05rem 0.05rem 0.2rem black;
+        animation: buttons 0.8s forwards ease-in;
+    }
+
+    @keyframes buttons {
+        from {
+            opacity: 0%;
+        }
+        to {
+            opacity: 100%;
+        }
     }
 
     &__button {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 6rem;
-        height: 3rem;
-        border: 1px solid black;
-        background-color: silver;
-        color: black;
+        opacity: 0%;
+        transform: translateY(0.4rem);
+        padding: 0.5rem;
+        border-radius: 50%;
+        background-image: linear-gradient(to top, $background-color-dark, #252525);
+        box-shadow: 0.1rem 0.1rem 0.15rem black;
         text-decoration: none;
+        animation: button 0.7s forwards;
+
+        svg {
+            color: $silver-light-background-color;
+            font-size: 2.25rem;
+        }
+
+        &:hover {
+            cursor: pointer;
+            transform: translateY(-0.2rem) !important;
+            box-shadow: 0.2rem 0.3rem 0.35rem rgb(58, 58, 58) !important;
+        }
+
+        @keyframes button {
+            0% {
+                transform: translateY(0.4rem);
+                box-shadow: 0rem 0rem 0.2rem #242424;
+                opacity: 0%;
+            }
+
+            50% {
+                transform: translateY(-1rem);
+                box-shadow: 0.5rem 0.8rem 0.35rem #3a3a3a;
+            }
+
+            100% {
+                transform: translateY(0rem);
+                box-shadow: 0.1rem 0.1rem 0.15rem #202020;
+                opacity: 100%;
+            }
+        }
     }
+}
+
+.animation-delay-100 {
+    animation-delay: 0.1s;
+}
+
+.animation-delay-200 {
+    animation-delay: 0.2s;
+}
+
+.animation-delay-300 {
+    animation-delay: 0.3s;
+}
+
+.animation-delay-400 {
+    animation-delay: 0.4s;
 }
