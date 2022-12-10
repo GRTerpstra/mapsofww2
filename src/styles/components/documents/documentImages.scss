@@ -1,0 +1,46 @@
+@import '/src/styles/variables.scss';
+
+.document-images {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75%;
+    height: calc(100% - 10.7rem);
+    margin-top: 2rem;
+    padding: 0.75rem 0 0.75rem 0.75rem;
+    border-radius: 0.5rem;
+    background-color: $silver-background-color;
+    box-shadow: 0.05rem 0.05rem 0.4rem black;
+
+    &__wrapper {
+        overflow-y: auto;
+        overflow-x: hidden;
+        z-index: 2;
+        width: 100%;
+    }
+
+    &__container {
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        z-index: 2;
+    }
+
+    &__image-wrapper {
+        width: 100%;
+        background-color: black;
+    }
+
+    &__image {
+        z-index: 1;
+        display: block;
+        width: auto;
+        height: 30rem;
+        margin: auto;
+    }
+}

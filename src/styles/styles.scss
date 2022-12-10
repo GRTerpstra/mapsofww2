@@ -39,15 +39,17 @@ button {
 // -------------------------------------- Imports ---------------------------------------
 
 // Project Style Files
-@import "./variables.scss";
-@import "./components/navbar.scss";
-@import "./components/home/home.scss";
-@import "./components/home/home-hero.scss";
-@import "./components/home/home-info.scss";
-@import "./components/news.scss";
-@import "./components/maps/maps.scss";
-@import "./components/maps/maps-info.scss";
-@import "./components/documents/documents.scss";
+@import './variables.scss';
+@import './components/navbar.scss';
+@import './components/home/home.scss';
+@import './components/home/home-hero.scss';
+@import './components/home/home-info.scss';
+@import './components/news.scss';
+@import './components/maps/maps.scss';
+@import './components/maps/maps-info.scss';
+@import './components/documents/documents.scss';
+@import './components/documents/documentVideos.scss';
+@import './components/documents/documentImages.scss';
 
 // Fonts
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");

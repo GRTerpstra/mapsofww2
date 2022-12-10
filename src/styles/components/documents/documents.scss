@@ -74,14 +74,20 @@
     }
 
     &__document-container {
-        display: flex;
-        flex-direction: column;
         position: relative;
+        display: flex;
         width: 85%;
         height: 100%;
         overflow: hidden;
     }
 
+    &__view-background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgb(0, 0, 0, 0.6);
+    }
+    
     &__document {
         width: 100%;
         height: 100%;
@@ -124,6 +130,7 @@
         justify-content: center;
         align-items: center;
         gap: 1rem;
+        z-index: 1;
         opacity: 0%;
         position: absolute;
         bottom: 1.5rem;

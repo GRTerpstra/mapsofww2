@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import { selectDocument } from "../../store/slices/documentsSlice";
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import GoogleIcon from '@mui/icons-material/Google';
+import ImageIcon from '@mui/icons-material/Image';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
+import DocumentVideos from './DocumentVideos';
+import DocumentImages from "./DocumentImages";
 
 const Documents = () => {
 
@@ -20,7 +22,7 @@ const Documents = () => {
     })
 
     function selectNewTheatre(theatre: string) {
-        if(theatre !== state.selectedTheatre) setLoadingIconTrue();
+        if (theatre !== state.selectedTheatre) setLoadingIconTrue();
         selectNewDocument(theatre)
         setState((prevState: any) => ({
             ...prevState,
@@ -29,13 +31,12 @@ const Documents = () => {
     }
 
     function selectNewDocument(documentTitle: string) {
-        if(documentTitle !== selectedDocument.title) setLoadingIconTrue();
+        if (documentTitle !== selectedDocument.title) setLoadingIconTrue();
         var newDocument: any = documents.filter((document: any) => document.title == documentTitle)[0];
         dispatch(selectDocument(newDocument));
     }
 
     function changeView(view: string) {
-        if(view !== state.selectedView) setLoadingIconTrue()
         setState((prevState: any) => ({
             ...prevState,
             selectedView: view
@@ -48,8 +49,9 @@ const Documents = () => {
             loadingIcon: true
         }))
     }
-    
+
     function setLoadingIconFalse() {
+        console.log('setFalse')
         setState((prevState) => ({
             ...prevState,
             loadingIcon: false
@@ -80,12 +82,16 @@ const Documents = () => {
                         <div className="maps__loader-icon-background" />
                         <img className="maps__loader-icon" id="loaderIcon" src="icons/loader-icon.svg" alt="Loading map..." />
                     </div>}
-                    <iframe className="documents__document" id="myFrame" src={selectedDocument[state.selectedView + 'Url']} onLoad={() => setLoadingIconFalse()} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                    {state.selectedView !== "wikipedia" && <div className="documents__view-background" onClick={() => changeView("wikipedia")}></div>
+                    }
+                    <iframe className="documents__document" id="myFrame" src={selectedDocument.wikipediaURL} onLoad={() => setLoadingIconFalse()} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                    {state.selectedView === "youtube" && <DocumentVideos youtubeVideos={selectedDocument.youtubeVideos} />}
+                    {state.selectedView === "images" && <DocumentImages images={selectedDocument.images} />}
                     <div className="documents__buttons">
                         <Link to="/maps" className="documents__button animation-delay-100"><TravelExploreIcon /></Link>
                         <div className="documents__button animation-delay-200" onClick={() => changeView("wikipedia")}><MenuBookIcon /></div>
                         <div className="documents__button animation-delay-300" onClick={() => changeView("youtube")}><YouTubeIcon /></div>
-                        <div className="documents__button animation-delay-400" onClick={() => changeView("google")}><GoogleIcon /></div>
+                        <div className="documents__button animation-delay-400" onClick={() => changeView("images")}><ImageIcon /></div>
                     </div>
                 </div>
             </div>
