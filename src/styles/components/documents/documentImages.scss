@@ -14,6 +14,38 @@
     background-color: $silver-background-color;
     box-shadow: 0.05rem 0.05rem 0.4rem black;
 
+    &__loader-icon-container {
+        z-index: 100;
+        opacity: 0%;
+        animation: loaderIconContainer 1s ease-out forwards;
+    }
+
+    @keyframes loaderIconContainer {
+        from {
+            opacity: 0%;
+        }
+        to {
+            opacity: 100%;
+        }
+    }
+
+    &__loader-icon-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 25%;
+        width: 100%;
+        height: 100%;
+        background: black;
+    }
+
+    &__loader-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
     &__wrapper {
         overflow-y: auto;
         overflow-x: hidden;
